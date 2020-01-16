@@ -93,7 +93,7 @@ $stm2 = $pdo_conn->query("SELECT * FROM `karyawan` WHERE karyawan.id_karyawan = 
           
           <div class="form-group">
             <label for="exampleInputEmail1">Nama</label>
-            <input type="email" class="form-control" id="exampleInputEmail1">  
+            <input type="email" class="form-control" id="exampleInputEmail1" value="<?=$row['nama']?>">  
           <div class="form-group">
             <label for="exampleInputEmail1">Departemen</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
