@@ -16,7 +16,6 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
                           WHERE karyawan.id_karyawan = '$id'");
 
     /* print_r($rows);*/
-
 ?>
 
 <!DOCTYPE html>
@@ -60,9 +59,11 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
         ?>
 
     <!-- Begin Page Content -->
-      <h2 style="margin-left: 20px">Halaman Detail Karyawan</h2>
+    <center><h2 style="margin-left: 20px" <p class="text-primary">Halaman Detail Karyawan</h2></center>
         <div class="container-fluid" style=" display: flex; justify-content: center; align-items: center; ">
-          <img src="../img/CVB.jpg" style="width: 300px; height: 400px; "> 
+          <img src="../img/CVB.jpg" style=
+          "width: 300px; 
+          height: 400px; "> 
 
         <?php
           while ($row = $stm2->fetch()) {
@@ -93,7 +94,7 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
         <label for="marital_status">Status</label>
         <input type="text" class="form-control" value="<?=$row['marital_status']?>">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
         
         <?php
@@ -124,6 +125,7 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
+    <!-- End of Scroll to Top Button-->
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -143,6 +145,7 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
         </div>
       </div>
     </div>
+    <!-- End of Logout Modal -->
 
     <!-- Bootstrap core JavaScript-->
     <script src="../assets/vendor/jquery/jquery.min.js"></script>

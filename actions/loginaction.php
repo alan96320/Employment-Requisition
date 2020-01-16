@@ -25,5 +25,4 @@ if ($row != null) {
 }
 
 //var_dump($row ['username']);
-//echo "berhasil " . $username. " ". $password;
 ?>

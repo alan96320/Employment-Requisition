@@ -29,7 +29,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 
   <title>SIER : Admin Dashboard </title>
   <!-- Favicon-->
-  <link rel="icon" href="../img/alcon.jpg" type="image/x-icon">
+  <link rel="icon" href="../img/alcr.jpg" type="image/x-icon">
 
   <!-- Custom fonts for this template-->
   <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

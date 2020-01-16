@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2020 at 01:08 PM
+-- Generation Time: Jan 16, 2020 at 08:45 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -110,6 +110,7 @@ CREATE TABLE `karyawan` (
   `alamat` text NOT NULL,
   `email` varchar(50) NOT NULL,
   `no_telepon` varchar(20) NOT NULL,
+  `foto` varchar(100) NOT NULL,
   `hak_akses` enum('admin','pic','manager') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -117,9 +118,9 @@ CREATE TABLE `karyawan` (
 -- Dumping data for table `karyawan`
 --
 
-INSERT INTO `karyawan` (`id_karyawan`, `id_dept`, `username`, `password`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, `hak_akses`) VALUES
-(1, 1, 'admin', '123', 'Rodo Landro Sianturi', 'HR', 'M1', '2018-03-13', 'Laki-laki', 'Permanen', 'Palembang', '2019-09-08', 'adcadcvad', 'rodo_landro.sianturi@alcon365.com', '085272216320', 'admin'),
-(2, 1, 'admin', '123', 'Rodo Sianturi', 'HR Officer', 'M1', '2014-12-15', 'Laki-Laki', 'Permanen', 'Palembang', '1978-10-16', 'Perum. Pondok Idaman - Batam Center', 'rodo_landro.sianturi@alcon365.com', '085272216320', 'admin');
+INSERT INTO `karyawan` (`id_karyawan`, `id_dept`, `username`, `password`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, `foto`, `hak_akses`) VALUES
+(1, 1, 'admin', '123', 'Rodo Landro Sianturi', 'L&D Officer', 'M1', '2018-01-17', 'Laki-laki', 'Permanen', 'Palembang', '2019-09-08', 'adcadcvad', 'rodo_landro.sianturi@alcon365.com', '085272216320', '', 'admin'),
+(2, 1, 'admin', '123', 'Rodo Sianturi', 'HR Officer', 'M1', '2014-12-15', 'Laki-Laki', 'Permanen', 'Palembang', '1978-10-16', 'Perum. Pondok Idaman - Batam Center', 'rodo_landro.sianturi@alcon365.com', '085272216320', '', 'admin');
 
 -- --------------------------------------------------------
 
