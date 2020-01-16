@@ -14,6 +14,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 
 //print_r($rows); 
 //rubah
+//tes rubah alan
 ?>
 
 <!DOCTYPE html>
