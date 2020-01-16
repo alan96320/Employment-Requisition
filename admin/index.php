@@ -5,9 +5,10 @@ if (!isset($_SESSION['username'])) {
   header("location: login.html");
 }
 
-$stm = $pdo_conn->prepare("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept 
-                           FROM `karyawan` 
-                           INNER JOIN departemen ON karyawan.id_dept = departemen.id_dept");
+$stm = $pdo_conn->prepare(
+                  "SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept 
+                   FROM `karyawan` 
+                   INNER JOIN departemen ON karyawan.id_dept = departemen.id_dept");
 
 $stm->execute();
 $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
@@ -44,47 +45,47 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-  <?php
-    include "../components/sidebar.php";
-  ?>
+      <?php
+        include "../components/sidebar.php";
+      ?>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-
     <!-- Main Content -->
     <div id="content">
 
-    <?php
-      include "../components/navbar.php";
-    ?>
+      <?php
+        include "../components/navbar.php";
+      ?>
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-          <center> <h2 <p class="text-primary"> Sistem Informasi Employment Requisition </h2>
-          <img src="../img/CVB.jpg"/>
-          </center>
-        </div>
-        <!-- /.container-fluid>
-
-      </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <!-- <div class="p-3 mb-2 bg-info text-white">.bg-info</div> -->
-        <footer class="sticky-footer bg-white">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>&copy; Sistem Informasi Employment Requisition 2019</span>
-            </div>
-          </div>
-        </footer>
-      <!-- End of Footer -->
-
-      </div>
-      <!-- End of Content Wrapper -->
-
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+      <center> <h2 <p class="text-primary"> PT. CIBA VISION Batam </h2>
+        <img src="../img/CVB.jpg" style="
+                    border-bottom-width: 10px;
+                    padding-bottom: 10px;
+                    padding-top: 10px;
+                    border-top-width: 10px;">      
+      </center>
     </div>
-    <!-- End of Page Wrapper -->
+      <container-fluid>
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>&copy; Sistem Informasi Employment Requisition 2019</span>
+          </div>
+        </div>
+      </footer>
+    <!-- End of Footer -->
+
+  </div>
+  <!-- End of Content Wrapper -->
+  </div>
+  <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
@@ -95,13 +96,13 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Log Out?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Log Out?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">x</span>
+                </button>
+              </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
             <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>
@@ -109,24 +110,19 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
         </div>
       </div>
     </div>
+    <!-- Logout Modal -->
 
     <!-- Bootstrap core JavaScript-->
     <script src="../assets/vendor/jquery/jquery.min.js"></script>
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="../assets/js/sb-admin-2.min.js"></script>
-
     <!-- Page level plugins -->
     <script src="../assets/vendor/chart.js/Chart.min.js"></script>
-
     <!-- Page level custom scripts -->
     <script src="../assets/js/demo/chart-area-demo.js"></script>
     <script src="../assets/js/demo/chart-pie-demo.js"></script>
-
 </body>
-
 </html>

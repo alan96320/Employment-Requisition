@@ -20,16 +20,15 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SIER : Admin Dashboard </title>
+  <title>SIER : Data Karyawan </title>
   <!-- Favicon-->
-  <link rel="icon" href="../img/alcon.jpg" type="image/x-icon">
+  <link rel="icon" href="../img/alcr.jpg" type="image/x-icon">
 
   <!-- Custom fonts for this template-->
   <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -41,91 +40,85 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body id="page-top">
-
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-  <?php
-    include "../components/sidebar.php";
-  ?>
+      <?php
+        include "../components/sidebar.php";
+      ?>
 
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-      <!-- Main Content -->
-      <div id="content">
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+  <!-- Main Content -->
+  <div id="content">
 
       <?php
         include "../components/navbar.php";
       ?>
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+  <!-- Begin Page Content -->
+  <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">WELCOME to SIER</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-          </div>
-
-          <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tabel Karyawan</h1>
-
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Karyawan CVB</h6>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Nama</th>
-                      <th>Departemen</th>
-                      <th>Jabatan</th>
-                      <th>Marital Status</th>
-                      <th>Tanggal Masuk</th>
-                      <th>Jenis Kelamin</th>
-                      <th>Status Karyawan</th>
-                      <th>Tempat Lahir</th>
-                      <th>Tanggal Lahir</th>
-                      <th>Alamat</th> 
-                      <th>&nbsp;</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php
-                    foreach ($rows as $row) {
-                      echo ('
-                      <tr>
-                      <td>' . $row['nama'] . '</td>
-                      <td>' . $row["nama_dept"] . '</td>
-                      <td>' . $row["jabatan"] . '</td>
-                      <td>' . $row["marital_status"] . '</td>
-                      <td>' . $row["tanggal_masuk"] . '</td>
-                      <td>' . $row["jenis_kelamin"] . '</td>
-                      <td>' . $row["status_karyawan"] . '</td>
-                      <td>' . $row["tempat_lahir"] . '</td>
-                      <td>' . $row["tanggal_lahir"] . '</td>
-                      <td>' . $row["alamat"] . '</td>
-                      <td> <a href="./detail-karyawan.php?id='.$row["id_karyawan"] .'">EDIT</a></td>
-                    </tr> 
-                      ');
-                    }
-                    ?>
-
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <!-- /.container-fluid>
-
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800"></h1>
+    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+  </div>
+ 
+    <!-- Data Tables  -->
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Data Karyawan PT. CIBA VISION Batam</h6>
       </div>
-      <!-- End of Main Content -->
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Nama</th>
+                  <th>Departemen</th>
+                  <th>Jabatan</th>
+                  <th>Marital Status</th>
+                  <th>Tanggal Masuk</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Status Karyawan</th>
+                  <th>Tempat Lahir</th>
+                  <th>Tanggal Lahir</th>
+                  <th>Alamat</th> 
+                  <th>&nbsp;</th>
+                  <th>&nbsp;</th>
+                </tr>
+              </thead>
+                <tbody>
+                    <?php
+                      foreach ($rows as $row) {
+                        echo ('
+                  <tr>
+                    <td>' . $row['nama'] . '</td>
+                    <td>' . $row["nama_dept"] . '</td>
+                    <td>' . $row["jabatan"] . '</td>
+                    <td>' . $row["marital_status"] . '</td>
+                    <td>' . $row["tanggal_masuk"] . '</td>
+                    <td>' . $row["jenis_kelamin"] . '</td>
+                    <td>' . $row["status_karyawan"] . '</td>
+                    <td>' . $row["tempat_lahir"] . '</td>
+                    <td>' . $row["tanggal_lahir"] . '</td>
+                    <td>' . $row["alamat"] . '</td>
+                    <td> <a href="./detail-karyawan.php?id='.$row["id_karyawan"] .'">EDIT</a></td>
+                    <td> <a href="./detail-karyawan.php?id='.$row["id_karyawan"] .'">HAPUS</a></td>
+                  </tr> '); }
+                    ?>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- End of Container Fluid -->
+
+    </div>
+    <!-- End of Main Content -->
 
         <!-- Footer -->
         <footer class="sticky-footer bg-white">
