@@ -12,9 +12,7 @@ $stm = $pdo_conn->prepare("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, 
 $stm->execute();
 $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 
-//print_r($rows); 
-//rubah
-//tes rubah alan
+//print_r($rows);
 ?>
 
 <!DOCTYPE html>

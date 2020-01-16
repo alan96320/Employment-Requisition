@@ -5,10 +5,13 @@ if (!isset($_SESSION['username'])) {
   header("location: login.html");
 }
 
-$stm = $pdo_conn->prepare("SELECT * FROM `karyawan` WHERE karyawan.id_karyawan = 1");
+$id = $_GET['id'];
+$stm = $pdo_conn->prepare("SELECT * FROM `karyawan` WHERE karyawan.id_karyawan = '$id'");
 
 $stm->execute();
 $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+$stm2 = $pdo_conn->query("SELECT * FROM `karyawan` WHERE karyawan.id_karyawan = '$id'");
 
 //print_r($rows);
 ?>
@@ -67,18 +70,30 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
         <img src="../img/CVB.jpg" style="
               width: 300px;
               height: 400px; "> 
-
+        <?php
+          
+        while ($row = $stm2->fetch()) {
+        ?>
         <form style=" 
               flex-grow: 1;
               margin-left: 49px;">
-              
+        
+        <div class="row">
+          <label class="col-md-2">NIK</label>
+          <label class="col-md-1">:</label>
+          <div class="col-md-2">
+          <label class="text-left"><?=$row['id_karyawan']?></label>
+
+          </div>
+          
+        </div>
         <div class="form-group">
-    <label for="Input">NIK</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <small id="emailHelp" class="form-text text-muted"><div class="form-group">
-    <label for="exampleInputEmail1">Nama</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    
+          <label for="Input">NIK</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nama</label>
+            <input type="email" class="form-control" id="exampleInputEmail1">  
           <div class="form-group">
             <label for="exampleInputEmail1">Departemen</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -91,7 +106,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
             <label for="exampleInputEmail1">Tanggal Masuk</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             
-          </div></div></div></small>
+          </div></div></div>
           <div class="form-group">
             <label for="exampleInputEmail1">Status</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -100,6 +115,9 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
             
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <?php
+        }
+        ?>
         </div>
         <!-- /.container-fluid>
 

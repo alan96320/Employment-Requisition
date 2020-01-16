@@ -1,51 +1,58 @@
-<!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-<!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="./">
-  <div class="sidebar-brand-icon rotate-n-15">
-    <i class="far fa-grin-beam"></i>
-  </div>
-  <div class="sidebar-brand-text mx-3">Dashboard <sup>Admin</sup></div>
-</a>
-
-<!-- Nav Item - Dashboard -->
-<li class="nav-item active">
-  <a class="nav-link" href="./">
-    <i class="fas fa-fw fa-tachometer-alt"></i>
-    <span>Dashboard</span></a>
-</li>
-
-<!-- Divider -->
-<hr class="sidebar-divider">
-
-<!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
-  <a class="nav-link collapsed" href="./" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-    <i class="fas fa-fw fa-folder"></i>
-    <span>Pages</span>
-  </a>
-  <div id="collapsePages" class="collapse show"  aria-labelledby="headingPages" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">
-      <h6 class="collapse-header">Pages:</h6>
-      <a class="collapse-item" href="./">Home Page</a>
-      <a class="collapse-item" href="./list-karyawan.php">Personal Data Karyawan </a>
-      <a class="collapse-item" href="#">Tabel Data Karyawan</a>
-      <a class="collapse-item" href="#">Formulir ER</a>
-      <div class="collapse-divider"></div>
-      <!-- <h6 class="collapse-header">Other Pages:</h6>
-      <a class="collapse-item" href="pages/404.html">404 Page</a>
-      <a class="collapse-item" href="pages/blank.html">Blank Page</a> -->
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="./">
+    <div class="sidebar-brand-icon rotate-n-15">
+      <i class="far fa-grin-beam"></i>
     </div>
+    <div class="sidebar-brand-text mx-3">Dashboard <sup>Admin</sup></div>
+  </a>
+  <li class="nav-item active">
+    <a class="nav-link" href="./">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Dashboard</span>
+    </a>
+  </li>
+
+  <hr class="sidebar-divider">
+
+  <div class="sidebar-heading">Interface</div>
+  
+  <!-- menu Personal data karyawan -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="./list-karyawan.php">
+      <i class="fas fa-fw fa-cog"></i>
+      <span>Personal Data Karyawan</span>
+    </a>
+  </li>
+  <!-- menu tabel data karyawan -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#">
+      <i class="fas fa-fw fa-cog"></i>
+      <span>Tabel Data Karyawan</span>
+    </a>
+  </li>
+  <!-- formulir ER -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#">
+      <i class="fas fa-fw fa-cog"></i>
+      <span>Formulir ER</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#">
+      <i class="fas fa-fw fa-cog"></i>
+      <span>Components</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#">
+      <i class="fas fa-fw fa-cog"></i>
+      <span>Components</span>
+    </a>
+  </li>
+
+  <!-- Button memperkecil sidebar -->
+  <div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle"></button>
   </div>
-</li>
-
-<!-- Divider -->
-
-<!-- Sidebar Toggler (Sidebar) -->
-<div class="text-center d-none d-md-inline">
-  <button class="rounded-circle border-0" id="sidebarToggle"></button>
-</div>
 
 </ul>
-<!-- End of Sidebar -->

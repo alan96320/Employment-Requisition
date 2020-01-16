@@ -99,7 +99,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($rows as $row) {
                       echo ('
                       <tr>
-                      <td>' . $row["nama"] . '</td>
+                      <td>' . $row['nama'] . '</td>
                       <td>' . $row["nama_dept"] . '</td>
                       <td>' . $row["jabatan"] . '</td>
                       <td>' . $row["marital_status"] . '</td>
