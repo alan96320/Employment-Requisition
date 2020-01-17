@@ -14,33 +14,33 @@
 
   <hr class="sidebar-divider">
 
-  <div class="sidebar-heading">Interface</div>
+  <div class="sidebar-heading">Menu</div>
   
   <!-- menu Data Karyawan -->
   <li class="nav-item">
     <a class="nav-link collapsed" href="./list-karyawan.php">
       <i class="fas fa-fw fa-archive"></i>
-      <span> Data Karyawan</span>
+      <span> Data Karyawan </span>
     </a>
   </li>
-  <!-- menu tabel data karyawan -->
+  <!-- menu Tabel data karyawan -->
   <li class="nav-item">
     <a class="nav-link collapsed" href="#">
       <i class="fas fa-fw fa-stream"></i>
-      <span>Tabel Data Karyawan</span>
+      <span> Tabel Data Karyawan </span>
     </a>
   </li>
   <!-- formulir ER -->
   <li class="nav-item">
     <a class="nav-link collapsed" href="#">
       <i class="fas fa-fw fa-file-alt"></i>
-      <span>Formulir Emp. Requisition</span>
+      <span> Formulir Emp. Requisition </span>
     </a>
   </li>
   <li class="nav-item">
     <a class="nav-link collapsed" href="#">
       <i class="fas fa-fw fa-file"></i>
-      <span>Formulir Persetujuan</span>
+      <span> Formulir Persetujuan </span>
     </a>
   </li>
   <li class="nav-item">

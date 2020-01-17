@@ -66,15 +66,30 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   </div>
  
     <!-- Data Tables  -->
-    <div class="card shadow mb-4">
+  <div class="card shadow mb-4">
       <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Data Karyawan PT. CIBA VISION Batam</h6>
       </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
+    <div class="card-body">
+          <div class=" table table-hover table-responsive">
+            <table class= "table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead class="thead-dark">  
+              <tr role="row">
+                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Nama: activate to sort column descending" style="width: 157px;">Nama</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Departemen: activate to sort column descending" style="width: 157px;">Departemen</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jabatan: activate to sort column descending" style="width: 157px;">Jabatan</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Marital Status: activate to sort column descending" style="width: 157px;">Marital Status</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tanggal Masuk: activate to sort column descending" style="width: 157px;">Tanggal Masuk</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jenis Kelamin: activate to sort column descending" style="width: 157px;">Jenis Kelamin</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Status Karyawan: activate to sort column descending" style="width: 157px;">Status Karyawan</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tempat Lahir: activate to sort column descending" style="width: 157px;">Tempat Lahir</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tanggal Lahir: activate to sort column descending" style="width: 157px;">Tanggal Lahir</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Alamat: activate to sort column descending" style="width: 157px;">Alamat</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label=" : # " style="width: 157px;">&nbsp</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label=" : # " style="width: 157px;">&nbsp</th>
+              </tr>
+
+                <!-- <tr>
                   <th>Nama</th>
                   <th>Departemen</th>
                   <th>Jabatan</th>
@@ -87,7 +102,8 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
                   <th>Alamat</th> 
                   <th>&nbsp;</th>
                   <th>&nbsp;</th>
-                </tr>
+                </tr>  -->
+
               </thead>
                 <tbody>
                     <?php
@@ -105,14 +121,14 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
                     <td>' . $row["tanggal_lahir"] . '</td>
                     <td>' . $row["alamat"] . '</td>
                     <td> <a href="./detail-karyawan.php?id='.$row["id_karyawan"] .'">EDIT</a></td>
-                    <td> <a href="./detail-karyawan.php?id='.$row["id_karyawan"] .'">HAPUS</a></td>
+                    <td> <a href="./detail-karyawan.php?id='.$row["id_karyawan"] .'">TAMBAH</a></td>
                   </tr> '); }
                     ?>
                 </tbody>
             </table>
           </div>
-        </div>
       </div>
+    </div>
 
     </div>
     <!-- End of Container Fluid -->
