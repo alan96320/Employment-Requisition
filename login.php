@@ -1,22 +1,19 @@
 <?php
 
 session_start();
-
-if ($_SESSION ["hak_akses"] == 'admin'){
-  header("location: ./admin/index.php");
-}elseif ($_SESSION ["hak_akses"] == 'pic') {
-  header("location: ./pic/index.php");
-}else {
-  header("location: ./manager/index.php");
-}
-
+      if ($_SESSION ["hak_akses"] == 'admin'){
+        header("location: ../admin/index.php");
+      }elseif ($_SESSION ["hak_akses"] == 'pic') {
+        header("location: ../pic/index.php");
+      }else {
+        header("location: ../manager/index.php");
+      }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -39,14 +36,11 @@ if ($_SESSION ["hak_akses"] == 'admin'){
 </head>
 
 <body class="bg-gradient-primary">
-
   <div class="container">
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
-
       <div class="col-xl-10 col-lg-12 col-md-9">
-
         <div class="card o-hidden border-0 shadow-lg my-5">
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
@@ -90,41 +84,34 @@ if ($_SESSION ["hak_akses"] == 'admin'){
                     <a class="small" href="forgot-password.html">Forgot Password?</a>
                   </div>
                     
-                  <!-- <div class="text-center">
-                    <a class="small" href="register.html">Create an Account!</a>
-                  </div> -->
-
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
 
   </div>
+  <!-- End of container -->
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Bootstrap core JavaScript-->
+      <script src="assets/vendor/jquery/jquery.min.js"></script>
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Core plugin JavaScript-->
+      <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Custom scripts for all pages-->
+      <script src="assets/js/sb-admin-2.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="assets/js/sb-admin-2.min.js"></script>
-
-  <!-- Footer -->
-  <footer class="sticky-footer bg-white">
-    <div class="container my-auto">
-      <div class="copyright text-center my-auto">
-        <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
-      </div>
-    </div>
-  </footer>
-  <!-- End of Footer -->
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
 
 </body>
 

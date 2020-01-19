@@ -1,9 +1,9 @@
 <?php
-include "../config/conn.php";
-session_start();
-if (!isset($_SESSION['username'])) {
-  header("location: login.html");
-}
+  include "../config/conn.php";
+    session_start();
+      if (!isset($_SESSION['username'])) {
+        header("location: login.php");
+      }
 
 $stm = $pdo_conn->prepare("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept 
                            FROM `karyawan` 
@@ -19,70 +19,66 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <title>SIER : PIC Dashboard </title>
+    <!-- Favicon-->
+    <link rel="icon" href="../img/alcr.jpg" type="image/x-icon">
 
-  <title>SIER : Admin Dashboard </title>
-  <!-- Favicon-->
-  <link rel="icon" href="../img/alcon.jpg" type="image/x-icon">
+    <!-- Custom fonts for this template-->
+    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
-  <!-- Custom fonts for this template-->
-  <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
-
-</head>
+  </head>
 
 <body id="page-top">
 
-  <!-- Page Wrapper -->
-  <div id="wrapper">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
-  <?php
-    include "../components/sidebar.php";
-  ?>
+          <?php
+            include "../components/sidebar.php";
+          ?>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-
     <!-- Main Content -->
     <div id="content">
 
-    <?php
-      include "../components/navbar.php";
-    ?>
+          <?php
+            include "../components/navbar.php";
+          ?>
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-          <center> <h2 <p class="text-primary"> Sistem Informasi Employment Requisition </h2>
-          <img src="../img/CVB.jpg"/>
-          </center>
-        </div>
-        <!-- /.container-fluid>
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+      <center> <h2 <p class="text-primary"> Sistem Informasi Employment Requisition </h2>
+      <img src="../img/CVB.jpg"/>
+      </center>
+    </div>
+    <!-- <div container-fluid></div> -->
 
-      </div>
-      <!-- End of Main Content -->
+    </div>
+    <!-- End of Main Content -->
 
-      <!-- Footer -->
-      <!-- <div class="p-3 mb-2 bg-info text-white">.bg-info</div> -->
-        <footer class="sticky-footer bg-white">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>&copy; Sistem Informasi Employment Requisition 2019</span>
-            </div>
+    <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>&copy; Sistem Informasi Employment Requisition 2019</span>
           </div>
-        </footer>
-      <!-- End of Footer -->
+        </div>
+      </footer>
+    <!-- End of Footer -->
 
-      </div>
-      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
@@ -110,20 +106,17 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
         </div>
       </div>
     </div>
+    <!-- End of Logout Modal-->
 
     <!-- Bootstrap core JavaScript-->
     <script src="../assets/vendor/jquery/jquery.min.js"></script>
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="../assets/js/sb-admin-2.min.js"></script>
-
     <!-- Page level plugins -->
     <script src="../assets/vendor/chart.js/Chart.min.js"></script>
-
     <!-- Page level custom scripts -->
     <script src="../assets/js/demo/chart-area-demo.js"></script>
     <script src="../assets/js/demo/chart-pie-demo.js"></script>
