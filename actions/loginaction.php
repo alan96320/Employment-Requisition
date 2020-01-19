@@ -13,6 +13,8 @@ $row = $stm->fetch(PDO::FETCH_ASSOC);
 if ($row != null) {
     session_start();
     $_SESSION ["username"] = $row ["username"];
+    $_SESSION ["hak_akses"] = $row ["hak_akses"];
+    
     if ($row ['hak_akses'] == 'admin'){
         header("location: ../admin/index.php");
     }elseif ($row ['hak_akses'] == 'pic') {

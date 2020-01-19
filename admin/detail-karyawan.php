@@ -6,13 +6,10 @@ if (!isset($_SESSION['username'])) {
 }
 
 $id = $_GET['id'];
-    /* $stm = $pdo_conn->prepare("SELECT * FROM `karyawan` WHERE karyawan.id_karyawan = '$id'");*/
-    /* $stm->execute();/*
-    /* $rows = $stm->fetchAll(PDO::FETCH_ASSOC);*/
 
 $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept 
                           FROM `karyawan` 
-                          INNER JOIN departemen ON karyawan.id_dept = departemen.id_dept 
+                          LEFT JOIN departemen ON karyawan.id_dept = departemen.id_dept 
                           WHERE karyawan.id_karyawan = '$id'");
 
     /* print_r($rows);*/
@@ -79,7 +76,7 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
         <input type="text" class="form-control"  value="<?=$row['nama']?>">  
       </div>
       <div class="form-group">
-        <label for="departemen">Departemen</label>
+        <label for="departemen required">Departemen</label>
         <input type="text" class="form-control" value="<?=$row['nama_dept']?>">
       </div>
       <div class="form-group">

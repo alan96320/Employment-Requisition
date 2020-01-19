@@ -16,8 +16,7 @@ $TanggalMasuk=$_POST['tanggal_masuk'];
 $Status=$_POST['status'];
 
 $stm = $pdo_conn->prepare($sql);
-$stm->execute([$NIK, $Nama, $Departemen, $Jabatan, $TanggalMasuk, $Status, null, null, null, null, null, null, null, null, null, null]);
+$stm->execute([$NIK, $Nama, $Departemen, $Jabatan, $TanggalMasuk, $Status, null, null, null, null, null, null, null, null, null, 1]);
 
-var_dump($NIK.'-'.$Nama.'-'.$Departemen.'-'.$Jabatan.'-'.$TanggalMasuk.'-'.$Status);
-
+header('location: ../admin/list-karyawan.php');
 ?>

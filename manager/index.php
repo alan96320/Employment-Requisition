@@ -27,7 +27,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SIER : Admin Dashboard </title>
+  <title>SIER : Manager Dashboard </title>
   <!-- Favicon-->
   <link rel="icon" href="../img/alcon.jpg" type="image/x-icon">
 
