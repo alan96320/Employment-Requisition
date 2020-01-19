@@ -13,7 +13,6 @@
   </li>
 
   <hr class="sidebar-divider">
-
   <div class="sidebar-heading">Menu</div>
   
   <!-- menu Data Karyawan -->
@@ -46,7 +45,7 @@
   <li class="nav-item">
     <a class="nav-link collapsed" href="#">
       <i class="fas fa-fw fa-file-alt"></i>
-      <span>Formulir</span>
+      <span>List Status</span>
     </a>
   </li>
 
