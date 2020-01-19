@@ -19,7 +19,7 @@
   <li class="nav-item">
     <a class="nav-link collapsed" href="./list-karyawan.php">
       <i class="fas fa-fw fa-archive"></i>
-      <span> Data Karyawan </span>
+      <span> List Data Karyawan </span>
     </a>
   </li>
   <!-- menu Tabel data karyawan -->
@@ -31,7 +31,7 @@
   </li>
   <!-- formulir ER -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="#">
+    <a class="nav-link collapsed" href="./formER.php">
       <i class="fas fa-fw fa-file-alt"></i>
       <span> Formulir Emp. Requisition </span>
     </a>
