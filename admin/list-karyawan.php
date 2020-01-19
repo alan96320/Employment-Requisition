@@ -62,7 +62,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800"></h1>
-    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Tambah Karyawan</a>
+    <a href="tambah-karyawan.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user-plus fa-sm text-white-50"></i>Tambah Karyawan</a>
   </div>
  
     <!-- Data Tables  -->
@@ -121,7 +121,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
                     <td>' . $row["tanggal_lahir"] . '</td>
                     <td>' . $row["alamat"] . '</td>
                     <td> <a href="./detail-karyawan.php?id='.$row["id_karyawan"] .'">EDIT</a></td>
-                    <td> <a href="./detail-karyawan.php?id='.$row["id_karyawan"] .'">TAMBAH</a></td>
+                    <td> <a href="./detail-karyawan.php?id='.$row["id_karyawan"] .'">HAPUS</a></td>
                   </tr> '); }
                     ?>
                 </tbody>

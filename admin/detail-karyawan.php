@@ -28,7 +28,7 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
   <meta name="description" content="">
   <meta name="author" content="">
 
-    <title>SIER : Admin Dashboard </title>
+    <title>SIER : Detail Karyawan </title>
     <!-- Favicon-->
     <link rel="icon" href="../img/alcr.jpg" type="image/x-icon">
 
