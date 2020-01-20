@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2020 at 08:45 PM
+-- Generation Time: Jan 20, 2020 at 05:07 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -88,6 +88,13 @@ CREATE TABLE `formulir` (
   `budget` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `formulir`
+--
+
+INSERT INTO `formulir` (`id_pic`, `id_formulir`, `id_departemen`, `requester`, `job_type`, `status_verif`, `status_approved`, `approved_by`, `verif_by`, `open_position`, `budget`) VALUES
+(1, 1, 1, 'Siantro', 'Operator', 'ok', 'ok', 'manager', 'hrbp', 'Operator', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -97,21 +104,21 @@ CREATE TABLE `formulir` (
 CREATE TABLE `karyawan` (
   `id_karyawan` int(11) NOT NULL,
   `id_dept` int(11) DEFAULT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `jabatan` varchar(50) NOT NULL,
-  `marital_status` varchar(50) NOT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `nama` varchar(50) DEFAULT NULL,
+  `jabatan` varchar(50) DEFAULT NULL,
+  `marital_status` int(10) DEFAULT NULL,
   `tanggal_masuk` date DEFAULT NULL,
-  `jenis_kelamin` varchar(20) NOT NULL,
-  `status_karyawan` varchar(50) NOT NULL,
-  `tempat_lahir` varchar(50) NOT NULL,
+  `jenis_kelamin` varchar(20) DEFAULT NULL,
+  `status_karyawan` varchar(50) DEFAULT NULL,
+  `tempat_lahir` varchar(50) DEFAULT NULL,
   `tanggal_lahir` date DEFAULT NULL,
-  `alamat` text NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `no_telepon` varchar(20) NOT NULL,
-  `foto` varchar(100) NOT NULL,
-  `hak_akses` enum('admin','pic','manager') NOT NULL
+  `alamat` text,
+  `email` varchar(50) DEFAULT NULL,
+  `no_telepon` varchar(20) DEFAULT NULL,
+  `foto` varchar(200) DEFAULT NULL,
+  `hak_akses` enum('admin','pic','manager') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -119,8 +126,8 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`id_karyawan`, `id_dept`, `username`, `password`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, `foto`, `hak_akses`) VALUES
-(1, 1, 'admin', '123', 'Rodo Landro Sianturi', 'L&D Officer', 'M1', '2018-01-17', 'Laki-laki', 'Permanen', 'Palembang', '2019-09-08', 'adcadcvad', 'rodo_landro.sianturi@alcon365.com', '085272216320', '', 'admin'),
-(2, 1, 'admin', '123', 'Rodo Sianturi', 'HR Officer', 'M1', '2014-12-15', 'Laki-Laki', 'Permanen', 'Palembang', '1978-10-16', 'Perum. Pondok Idaman - Batam Center', 'rodo_landro.sianturi@alcon365.com', '085272216320', '', 'admin');
+(3, 3, NULL, NULL, 'csdcsad', 'fesargsrth', 0, '1999-10-23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(12121, 1, NULL, NULL, 'nama', 'wefw', 1, '2020-01-20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin');
 
 -- --------------------------------------------------------
 
@@ -130,8 +137,31 @@ INSERT INTO `karyawan` (`id_karyawan`, `id_dept`, `username`, `password`, `nama`
 
 CREATE TABLE `manager` (
   `id_dept` int(11) NOT NULL,
-  `id_karyawan` int(11) NOT NULL
+  `id_karyawan` int(11) NOT NULL,
+  `nama_dept` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `marital_status`
+--
+
+CREATE TABLE `marital_status` (
+  `id_marital` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `marital_status`
+--
+
+INSERT INTO `marital_status` (`id_marital`, `nama`) VALUES
+(1, 'Single'),
+(2, 'Married'),
+(3, 'M1'),
+(4, 'M2'),
+(5, 'M3');
 
 -- --------------------------------------------------------
 
@@ -212,6 +242,12 @@ ALTER TABLE `manager`
   ADD UNIQUE KEY `id_karyawan` (`id_karyawan`);
 
 --
+-- Indexes for table `marital_status`
+--
+ALTER TABLE `marital_status`
+  ADD PRIMARY KEY (`id_marital`);
+
+--
 -- Indexes for table `pesan`
 --
 ALTER TABLE `pesan`
@@ -237,13 +273,19 @@ ALTER TABLE `departemen`
 -- AUTO_INCREMENT for table `formulir`
 --
 ALTER TABLE `formulir`
-  MODIFY `id_formulir` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_formulir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12122;
+
+--
+-- AUTO_INCREMENT for table `marital_status`
+--
+ALTER TABLE `marital_status`
+  MODIFY `id_marital` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
