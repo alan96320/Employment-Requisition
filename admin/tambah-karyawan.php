@@ -5,14 +5,13 @@ if (!isset($_SESSION['username'])) {
   header("location: index.php");
 }
 
-$stmDep = $pdo_conn->prepare("SELECT * FROM `departemen`");
-$stmDep->execute();
-$rowsDepartemen = $stmDep->fetchAll(PDO::FETCH_ASSOC);
+    $stmDep = $pdo_conn->prepare("SELECT * FROM `departemen`");
+    $stmDep->execute();
+    $rowsDepartemen = $stmDep->fetchAll(PDO::FETCH_ASSOC);
 
-$stmMar = $pdo_conn->prepare("SELECT * FROM `marital_status`");
-$stmMar->execute();
-$rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
-
+    $stmMar = $pdo_conn->prepare("SELECT * FROM `marital_status`");
+    $stmMar->execute();
+    $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -59,9 +58,7 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
     <!-- Begin Page Content -->
     <center><h2 style="margin-left: 20px" <p class="text-primary">Halaman Tambah Karyawan</h2></center>
         <div class="container-fluid" style=" display: flex; justify-content: center; align-items: center; ">
-          <img src="../img/CVB.jpg" style=
-          "width: 300px; 
-          height: 400px; "> 
+          <img src="../img/CVB.jpg" style= "width: 300px; height: 400px; "> 
 
     <form enctype="multipart/form-data" action="../actions/insert-karyawan-action.php" method = "post" style=" flex-grow: 1; margin-left: 49px;">
       <div class="form-group">
@@ -85,14 +82,14 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
       </div>
       <div class="form-group">
         <label>Marital Status</label>
-            <select  class="form-control" name='status'>
-          <option>Select a Marital Status</option>
-          <?php 
-              foreach($rowsMarital as $rowMarital){
-              echo('<option value="'.$rowMarital["id_marital"] .'">'. $rowMarital["nama"] .'</option>');
-            }
-          ?>
-        </select>
+          <select  class="form-control" name='status'>
+           <option>Pilih Marital Status</option>
+              <?php 
+                  foreach($rowsMarital as $rowMarital){
+                  echo('<option value="'.$rowMarital["id_marital"] .'">'. $rowMarital["nama"] .'</option>');
+                }
+              ?>
+          </select>
       </div>
 
       <div class="form-group">

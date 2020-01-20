@@ -1,9 +1,9 @@
 <?php
   include "../config/conn.php";
   session_start();
-if (!isset($_SESSION['username'])) {
-  header("location: index.php");
-}
+    if (!isset($_SESSION['username'])) {
+        header("location: index.php");
+        }
 
 $id = $_GET['id'];
 
@@ -12,7 +12,8 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
                           LEFT JOIN departemen ON karyawan.id_dept = departemen.id_dept 
                           WHERE karyawan.id_karyawan = '$id'");
 
-    /* print_r($rows);*/
+//print_r($rows);
+
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +39,7 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
 
 </head>
 
-<body id="page-top">
+  <body id="page-top">
     <!-- Page Wrapper -->
         <div id="wrapper">
 
@@ -58,9 +59,7 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
     <!-- Begin Page Content -->
     <center><h2 style="margin-left: 20px" <p class="text-primary">Halaman Detail Karyawan</h2></center>
         <div class="container-fluid" style=" display: flex; justify-content: center; align-items: center; ">
-          <img src="../img/CVB.jpg" style=
-          "width: 300px; 
-          height: 400px; "> 
+          <img src="../img/CVB.jpg" style= "width: 300px; height: 400px; "> 
 
         <?php
           while ($row = $stm2->fetch()) {
@@ -91,7 +90,7 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
         <label for="marital_status">Status</label>
         <input type="text" class="form-control" value="<?=$row['marital_status']?>">
       </div>
-      <button type="submit" class="btn btn-primary">Simpan</button>
+      <button type="submit" class="btn btn-primary" method="post" action="actions/update-karyawan-action.php">Simpan</button>
     </form>
         
         <?php
@@ -144,17 +143,19 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
     </div>
     <!-- End of Logout Modal -->
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="../assets/js/sb-admin-2.min.js"></script>
-    <!-- Page level plugins -->
-    <script src="../assets/vendor/chart.js/Chart.min.js"></script>
-    <!-- Page level custom scripts -->
-    <script src="../assets/js/demo/chart-area-demo.js"></script>
-    <script src="../assets/js/demo/chart-pie-demo.js"></script>
-</body>
+      <!-- Bootstrap core JavaScript-->
+      <script src="../assets/vendor/jquery/jquery.min.js"></script>
+      <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Core plugin JavaScript-->
+      <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Custom scripts for all pages-->
+      <script src="../assets/js/sb-admin-2.min.js"></script>
+      <!-- Page level plugins -->
+      <script src="../assets/vendor/chart.js/Chart.min.js"></script>
+      <!-- Page level custom scripts -->
+      <script src="../assets/js/demo/chart-area-demo.js"></script>
+      <script src="../assets/js/demo/chart-pie-demo.js"></script>
+
+  </body>
+
 </html>
