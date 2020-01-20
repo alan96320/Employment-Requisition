@@ -63,7 +63,7 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
           "width: 300px; 
           height: 400px; "> 
 
-    <form style=" flex-grow: 1; margin-left: 49px;" action="../actions/insert-karyawan-action.php" method = "post">
+    <form enctype="multipart/form-data" action="../actions/insert-karyawan-action.php" method = "post" style=" flex-grow: 1; margin-left: 49px;">
       <div class="form-group">
         <label for="id_karyawan">NIK</label>
         <input type="number" name="id_karyawan" class="form-control" >
@@ -85,7 +85,7 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
       </div>
       <div class="form-group">
         <label>Marital Status</label>
-            <select  class="form-control" name='marital_status'>
+            <select  class="form-control" name='status'>
           <option>Select a Marital Status</option>
           <?php 
               foreach($rowsMarital as $rowMarital){
@@ -104,8 +104,8 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
         <input type="date" name="tanggal_masuk"class="form-control" >                          
       </div>
       <div class="form-group">
-        <label for="marital_status">Status</label>
-        <input type="text" name="status"class="form-control" >
+        <label for="foto">Foto</label>
+        <input type="file" name="foto" class="form-control" >
       </div>
       <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
