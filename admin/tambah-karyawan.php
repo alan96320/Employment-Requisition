@@ -5,9 +5,14 @@ if (!isset($_SESSION['username'])) {
   header("location: index.php");
 }
 
-$stm = $pdo_conn->prepare("SELECT * FROM `departemen`");
-$stm->execute();
-$rowsDepartemen = $stm->fetchAll(PDO::FETCH_ASSOC);
+$stmDep = $pdo_conn->prepare("SELECT * FROM `departemen`");
+$stmDep->execute();
+$rowsDepartemen = $stmDep->fetchAll(PDO::FETCH_ASSOC);
+
+$stmMar = $pdo_conn->prepare("SELECT * FROM `marital_status`");
+$stmMar->execute();
+$rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
+
 
 ?>
 
@@ -69,18 +74,27 @@ $rowsDepartemen = $stm->fetchAll(PDO::FETCH_ASSOC);
       </div>
       <div class="form-group">
         <label for="departemen">Departemen</label>
-        <!-- <input type="number" name="departemen"class="form-control" > -->
-        <select  class="form-control">
-          <option>Select a departmen</option>
+        <select  class="form-control" name='departemen'>
+          <option>Pilih Departemen</option>
           <?php 
-          print_r($rowsDepartemen);
-            foreach($rowsDepartemen as $rowDepartemen){
-
+              foreach($rowsDepartemen as $rowDepartemen){
               echo('<option value="'.$rowDepartemen["id_dept"] .'">'. $rowDepartemen["nama_dept"] .' - '.$rowDepartemen["cost_center"]  .'</option>');
             }
           ?>
         </select>
       </div>
+      <div class="form-group">
+        <label>Marital Status</label>
+            <select  class="form-control" name='marital_status'>
+          <option>Select a Marital Status</option>
+          <?php 
+              foreach($rowsMarital as $rowMarital){
+              echo('<option value="'.$rowMarital["id_marital"] .'">'. $rowMarital["nama"] .'</option>');
+            }
+          ?>
+        </select>
+      </div>
+
       <div class="form-group">
         <label for="jabatan">Jabatan</label>
         <input type="text" name="jabatan"class="form-control" >
