@@ -5,6 +5,10 @@ if (!isset($_SESSION['username'])) {
   header("location: index.php");
 }
 
+$stm = $pdo_conn->prepare("SELECT * FROM `departemen`");
+$stm->execute();
+$rowsDepartemen = $stm->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +69,17 @@ if (!isset($_SESSION['username'])) {
       </div>
       <div class="form-group">
         <label for="departemen">Departemen</label>
-        <input type="number" name="departemen"class="form-control" >
+        <!-- <input type="number" name="departemen"class="form-control" > -->
+        <select  class="form-control">
+          <option>Select a departmen</option>
+          <?php 
+          print_r($rowsDepartemen);
+            foreach($rowsDepartemen as $rowDepartemen){
+
+              echo('<option value="'.$rowDepartemen["id_dept"] .'">'. $rowDepartemen["nama_dept"] .' - '.$rowDepartemen["cost_center"]  .'</option>');
+            }
+          ?>
+        </select>
       </div>
       <div class="form-group">
         <label for="jabatan">Jabatan</label>
