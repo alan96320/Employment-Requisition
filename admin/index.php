@@ -1,8 +1,8 @@
 <?php
     include "../config/conn.php";
       session_start();
-        if (!isset($_SESSION['username'])) {
-         header("location: ../login.php");
+        if (!isset($_SESSION['hak_akses'])) {
+         header("location: ../index.php");
         }
 
 $stm = $pdo_conn->prepare(

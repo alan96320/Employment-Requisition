@@ -2,7 +2,7 @@
 include "../config/conn.php";
 session_start();
 if (!isset($_SESSION['username'])) {
-  header("location: login.html");
+  header("location: index.php");
 }
 
 $sql= "INSERT INTO karyawan (`id_karyawan`, `nama`, `id_dept`, `jabatan`, `tanggal_masuk`, `marital_status`, `username`, `password`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, `hak_akses`) 

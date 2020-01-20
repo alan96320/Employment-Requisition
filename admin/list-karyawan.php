@@ -2,7 +2,7 @@
 include "../config/conn.php";
 session_start();
 if (!isset($_SESSION['username'])) {
-  header("location: login.html");
+  header("location: index.php");
 }
 
 $stm = $pdo_conn->prepare("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept 
