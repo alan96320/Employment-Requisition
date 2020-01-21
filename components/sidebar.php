@@ -13,9 +13,10 @@
   </li>
 
   <hr class="sidebar-divider">
-  <div class="sidebar-heading">Menu</div>
+
+  <div class="sidebar-heading" a class="nav-link collapsed">Menu</div>
   
-  <!-- menu Data Karyawan -->
+  <!-- menu List Data Karyawan -->
   <li class="nav-item">
     <a class="nav-link collapsed" href="./list-karyawan.php">
       <i class="fas fa-fw fa-archive"></i>

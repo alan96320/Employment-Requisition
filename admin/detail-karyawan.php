@@ -5,15 +5,14 @@
         header("location: index.php");
         }
 
-$id = $_GET['id'];
+$id = isset($_GET['id']) ? $_GET['id'] : '';
 
 $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept 
                           FROM `karyawan` 
-                          LEFT JOIN departemen ON karyawan.id_dept = departemen.id_dept 
+                          LEFT JOIN departemen ON karyawan.id_karyawan = departemen.id_dept 
                           WHERE karyawan.id_karyawan = '$id'");
 
 //print_r($rows);
-
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +32,6 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
   <!-- Custom fonts for this template-->
   <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
   <!-- Custom styles for this template-->
   <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -90,7 +88,7 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
         <label for="marital_status">Status</label>
         <input type="text" class="form-control" value="<?=$row['marital_status']?>">
       </div>
-      <button type="submit" class="btn btn-primary" method="post" action="actions/update-karyawan-action.php">Simpan</button>
+      <button type="submit" class="btn btn-primary" method="post" action="./actions/update-karyawan-action.php">Simpan</button>
     </form>
         
         <?php
@@ -128,12 +126,12 @@ $stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Log Out?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Admin Ready to Log Out?</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <!-- <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
             <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>

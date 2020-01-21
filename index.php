@@ -1,15 +1,15 @@
 <?php
 
 session_start();
-if(isset($_SESSION ["hak_akses"])){
-  if ($_SESSION ["hak_akses"] == 'admin'){
-    header("location: ./admin/index.php");
-  }elseif ($_SESSION ["hak_akses"] == 'pic') {
-    header("location: ./pic/index.php");
-  }elseif ($_SESSION ["hak_akses"] == 'manager') {
-    header("location: ./manager/index.php");
+  if(isset($_SESSION ["hak_akses"])){
+    if ($_SESSION ["hak_akses"] == 'admin'){
+      header("location: ./admin/index.php");
+    }elseif ($_SESSION ["hak_akses"] == 'pic') {
+      header("location: ./pic/index.php");
+    }elseif ($_SESSION ["hak_akses"] == 'manager') {
+      header("location: ./manager/index.php");
+    }
   }
-}
       
 ?>
 

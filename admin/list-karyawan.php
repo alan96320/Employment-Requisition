@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])) {
 $stm = $pdo_conn->prepare("SELECT `id_karyawan`, `username`, karyawan.`nama`, `jabatan`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept , marital_status.nama as name_marital_status
                            FROM `karyawan` 
                            LEFT JOIN departemen ON karyawan.id_dept = departemen.id_dept
-						   LEFT JOIN marital_status ON karyawan.marital_status = marital_status.id_marital");
+						               LEFT JOIN marital_status ON karyawan.marital_status = marital_status.id_marital");
 
 $stm->execute();
 $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
@@ -69,7 +69,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     <!-- Data Tables  -->
   <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Data Karyawan PT. CIBA VISION Batam</h6>
+        <h6 class="m-0 font-weight-bold text-primary">List Data Karyawan PT. CIBA VISION Batam</h6>
       </div>
     <div class="card-body">
           <div class=" table table-hover table-responsive">

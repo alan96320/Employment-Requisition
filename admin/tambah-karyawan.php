@@ -29,12 +29,11 @@ if (!isset($_SESSION['username'])) {
     <!-- Favicon-->
     <link rel="icon" href="../img/alcr.jpg" type="image/x-icon">
 
-  <!-- Custom fonts for this template-->
-  <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -42,55 +41,55 @@ if (!isset($_SESSION['username'])) {
     <!-- Page Wrapper -->
         <div id="wrapper">
 
-        <?php
-          include "../components/sidebar.php";
-        ?>
+          <?php
+            include "../components/sidebar.php";
+          ?>
         
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
     <!-- Main Content -->
     <div id="content">
 
-        <?php
-          include "../components/navbar.php";
-        ?>
+          <?php
+            include "../components/navbar.php";
+          ?>
 
     <!-- Begin Page Content -->
     <center><h2 style="margin-left: 20px" <p class="text-primary">Halaman Tambah Karyawan</h2></center>
-        <div class="container-fluid" style=" display: flex; justify-content: center; align-items: center; ">
-          <img src="../img/CVB.jpg" style= "width: 300px; height: 400px; "> 
+    <div class="container-fluid" style=" display: flex; justify-content: center; align-items: center; ">
+        <img src="../img/CVB.jpg" style= "width: 300px; height: 400px; "> 
 
-    <form enctype="multipart/form-data" action="../actions/insert-karyawan-action.php" method = "post" style=" flex-grow: 1; margin-left: 49px;">
-      <div class="form-group">
-        <label for="id_karyawan">NIK</label>
-        <input type="number" name="id_karyawan" class="form-control" >
-      </div>
-      <div class="form-group">
-        <label for="nama">Nama</label>
-        <input type="text" name="nama" class="form-control"  >  
-      </div>
-      <div class="form-group">
-        <label for="departemen">Departemen</label>
-        <select  class="form-control" name='departemen'>
-          <option>Pilih Departemen</option>
-          <?php 
-              foreach($rowsDepartemen as $rowDepartemen){
-              echo('<option value="'.$rowDepartemen["id_dept"] .'">'. $rowDepartemen["nama_dept"] .' - '.$rowDepartemen["cost_center"]  .'</option>');
-            }
-          ?>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Marital Status</label>
-          <select  class="form-control" name='status'>
-           <option>Pilih Marital Status</option>
-              <?php 
-                  foreach($rowsMarital as $rowMarital){
-                  echo('<option value="'.$rowMarital["id_marital"] .'">'. $rowMarital["nama"] .'</option>');
-                }
-              ?>
+      <form enctype="multipart/form-data" action="../actions/insert-karyawan-action.php" method = "post" style=" flex-grow: 1; margin-left: 49px;">
+        <div class="form-group">
+          <label for="id_karyawan">NIK</label>
+          <input type="number" name="id_karyawan" class="form-control" >
+        </div>
+        <div class="form-group">
+          <label for="nama">Nama</label>
+          <input type="text" name="nama" class="form-control"  >  
+        </div>
+        <div class="form-group">
+          <label for="departemen">Departemen</label>
+          <select  class="form-control" name='departemen'>
+            <option>Pilih Departemen</option>
+            <?php 
+                foreach($rowsDepartemen as $rowDepartemen){
+                echo('<option value="'.$rowDepartemen["id_dept"] .'">'. $rowDepartemen["nama_dept"] .' - '.$rowDepartemen["cost_center"]  .'</option>');
+              }
+            ?>
           </select>
-      </div>
+        </div>
+        <div class="form-group">
+          <label for="maritalstatus">Marital Status</label>
+            <select  class="form-control" name='status'>
+            <option>Pilih Marital Status</option>
+                <?php 
+                    foreach($rowsMarital as $rowMarital){
+                    echo('<option value="'.$rowMarital["id_marital"] .'">'. $rowMarital["nama"] .'</option>');
+                  }
+                ?>
+            </select>
+        </div>
 
       <div class="form-group">
         <label for="jabatan">Jabatan</label>
@@ -138,12 +137,12 @@ if (!isset($_SESSION['username'])) {
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Log Out?</h5>
+            <h5 class="modal-title" id="exampleModalLabel"> Ready Log Out?</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <!-- <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
             <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>
