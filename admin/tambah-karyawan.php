@@ -41,7 +41,8 @@
 
 </head>
 
-<body id="page-top">
+  <body id="page-top">
+
     <!-- Page Wrapper -->
         <div id="wrapper">
 
@@ -51,6 +52,7 @@
         
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
+
     <!-- Main Content -->
     <div id="content">
 
@@ -59,9 +61,12 @@
           ?>
 
     <!-- Begin Page Content -->
-    <center><h2 style="margin-left: 20px" <p class="text-primary">Halaman Tambah Karyawan</h2></center>
+    <center>
+      <h2 style="margin-left: 20px" class="text-primary"> Halaman Tambah Karyawan </h2>
+    </center>
+
     <div class="container-fluid" style=" display: flex; justify-content: center; align-items: center; ">
-        <img src="../img/CVB.jpg" style= "width: 300px; height: 400px; "> 
+      <img src="../img/CVB.jpg" style= "width: 300px; height: 400px; "> 
 
       <form enctype="multipart/form-data" action="../actions/insert-karyawan-action.php" method = "post" style=" flex-grow: 1; margin-left: 49px;">
         <div class="form-group">
@@ -72,51 +77,62 @@
           <label for="nama">Nama</label>
           <input type="text" name="nama" class="form-control"  >  
         </div>
+
         <div class="form-group">
           <label for="departemen">Departemen</label>
           <select class="form-control" name='departemen'>
             <option>Pilih Departemen</option>
+
             <?php 
                 foreach($rowsDepartemen as $rowDepartemen){
                 echo('<option value="'.$rowDepartemen["id_dept"] .'">'. $rowDepartemen["nama_dept"] .' - '.$rowDepartemen["cost_center"]  .'</option>');
               }
             ?>
+
           </select>
         </div>
+
         <div class="form-group">
           <label for="maritalstatus">Marital Status</label>
             <select class="form-control" name='status'>
             <option>Pilih Marital Status</option>
+
                 <?php 
                     foreach($rowsMarital as $rowMarital){
                     echo('<option values="'.$rowMarital["id_marital"] .'">'. $rowMarital["nama"] .'</option>');
                   }
                 ?>
+
             </select>
         </div>
-      <div class="form-group">
-        <label for="jabat">Jabatan</label>
-          <select class="form-control" name='jabatan'>
-          <option>Pilih Jabatan</option> 
-                <?php 
-                    foreach($rowsJabatan as $rowJabatan){
-                    echo('<option value="'.$rowJabatan["id_jabatan"] .'">'. $rowJabatan["nama"] .'</option>');
-                  }
-                ?>
-            </select>        
-      </div>
+
+        <div class="form-group">
+          <label for="jabat">Jabatan</label>
+            <select class="form-control" name='jabatan'>
+            <option>Pilih Jabatan</option> 
+
+                  <?php 
+                      foreach($rowsJabatan as $rowJabatan){
+                      echo('<option value="'.$rowJabatan["id_jabatan"] .'">'. $rowJabatan["nama"] .'</option>');
+                    }
+                  ?>
+              </select>        
+        </div>
+
       <div class="form-group">
         <label for="tanggal_masuk">Tanggal Masuk</label>
-        <input type="date" name="tanggal_masuk"class="form-control" >                          
+        <input type="date" name="tanggal_masuk"class="form-control">                          
       </div>
+
       <div class="form-group">
         <label for="foto" type="file" name="foto">Foto</label>
-        <!-- <input type="file" name="foto" class="form-control" > -->
+        <input type="file" name="foto" class="form-control" >
       </div>
-      <button type="submit" class="btn btn-primary">Simpan</button>
+    <button type="submit" class="btn btn-primary">Simpan</button>
+
     </form>
 
-      </div>
+    </div>
 
     </div>
     <!-- End of Main Content -->
@@ -174,5 +190,7 @@
     <!-- Page level custom scripts -->
     <script src="../assets/js/demo/chart-area-demo.js"></script>
     <script src="../assets/js/demo/chart-pie-demo.js"></script>
+
 </body>
+
 </html>

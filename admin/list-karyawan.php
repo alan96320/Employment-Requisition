@@ -5,7 +5,7 @@ if (!isset($_SESSION['username'])) {
   header("location: index.php");
 }
 
-$stm = $pdo_conn->prepare("SELECT `id_karyawan`, `username`, karyawan.`nama`, `jabatan`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept , marital_status.nama as name_marital_status
+$stm = $pdo_conn->prepare("SELECT `id_karyawan`, `username`, karyawan.`nama`, `jabatan`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept , marital_status.nama as nama_marital_status
                            FROM `karyawan` 
                            LEFT JOIN departemen ON karyawan.id_dept = departemen.id_dept
 						               LEFT JOIN marital_status ON karyawan.marital_status = marital_status.id_marital");
@@ -72,62 +72,63 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
         <h6 class="m-0 font-weight-bold text-primary">List Data Karyawan PT. CIBA VISION Batam</h6>
       </div>
     <div class="card-body">
-          <div class=" table table-hover table-responsive">
-            <table class= "table table-bordered" id="dataTable" width="100%" cellspacing="0">
-            <thead class="thead-dark">  
-              <tr role="row">
-                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Nama: activate to sort column descending" style="width: 157px;">Nama</th>
-                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Departemen: activate to sort column descending" style="width: 157px;">Departemen</th>
-                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jabatan: activate to sort column descending" style="width: 157px;">Jabatan</th>
-                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Marital Status: activate to sort column descending" style="width: 157px;">Marital Status</th>
-                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tanggal Masuk: activate to sort column descending" style="width: 157px;">Tanggal Masuk</th>
-                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jenis Kelamin: activate to sort column descending" style="width: 157px;">Jenis Kelamin</th>
-                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Status Karyawan: activate to sort column descending" style="width: 157px;">Status Karyawan</th>
-                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tempat Lahir: activate to sort column descending" style="width: 157px;">Tempat Lahir</th>
-                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tanggal Lahir: activate to sort column descending" style="width: 157px;">Tanggal Lahir</th>
-                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Alamat: activate to sort column descending" style="width: 157px;">Alamat</th>
-                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label=" : # " style="width: 157px;">&nbsp</th>
-                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label=" : # " style="width: 157px;">&nbsp</th>
-              </tr>
+            <div class=" table table-hover table-responsive">
+              <table class= "table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead class="thead-dark">  
+                <tr role="row">
+                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Nama: activate to sort column descending" style="width: 157px;">Nama</th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Departemen: activate to sort column descending" style="width: 157px;">Departemen</th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jabatan: activate to sort column descending" style="width: 157px;">Jabatan</th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Marital Status: activate to sort column descending" style="width: 157px;">Marital Status</th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tanggal Masuk: activate to sort column descending" style="width: 157px;">Tanggal Masuk</th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jenis Kelamin: activate to sort column descending" style="width: 157px;">Jenis Kelamin</th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Status Karyawan: activate to sort column descending" style="width: 157px;">Status Karyawan</th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tempat Lahir: activate to sort column descending" style="width: 157px;">Tempat Lahir</th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tanggal Lahir: activate to sort column descending" style="width: 157px;">Tanggal Lahir</th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Alamat: activate to sort column descending" style="width: 157px;">Alamat</th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label=" : # " style="width: 157px;">&nbsp</th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label=" : # " style="width: 157px;">&nbsp</th>
+                </tr>
 
-                <!-- <tr>
-                  <th>Nama</th>
-                  <th>Departemen</th>
-                  <th>Jabatan</th>
-                  <th>Marital Status</th>
-                  <th>Tanggal Masuk</th>
-                  <th>Jenis Kelamin</th>
-                  <th>Status Karyawan</th>
-                  <th>Tempat Lahir</th>
-                  <th>Tanggal Lahir</th>
-                  <th>Alamat</th> 
-                  <th>&nbsp;</th>
-                  <th>&nbsp;</th>
-                </tr>  -->
+                  <!-- <tr>
+                    <th>Nama</th>
+                    <th>Departemen</th>
+                    <th>Jabatan</th>
+                    <th>Marital Status</th>
+                    <th>Tanggal Masuk</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Status Karyawan</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Alamat</th> 
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                  </tr>  -->
 
-              </thead>
-                <tbody>
-                    <?php
-                      foreach ($rows as $row) {
-                        echo ('
-                  <tr>
-                    <td>' . $row['nama'] . '</td>
-                    <td>' . $row["nama_dept"] . '</td>
-                    <td>' . $row["jabatan"] . '</td>
-                    <td>' . $row["name_marital_status"] . '</td>
-                    <td>' . $row["tanggal_masuk"] . '</td>
-                    <td>' . $row["jenis_kelamin"] . '</td>
-                    <td>' . $row["status_karyawan"] . '</td>
-                    <td>' . $row["tempat_lahir"] . '</td>
-                    <td>' . $row["tanggal_lahir"] . '</td>
-                    <td>' . $row["alamat"] . '</td>
-                    <td> <a href="./detail-karyawan.php?id='.$row["id_karyawan"] .'">EDIT</a></td>
-                    <td> <a href="../actions/delete-karyawan-action.php?id_karyawan='.$row["id_karyawan"] .'">HAPUS</a></td>
-                  </tr> '); }
-                    ?>
-                </tbody>
-            </table>
-          </div>
+                </thead>
+                  <tbody>
+                      <?php
+                        foreach ($rows as $row) {
+                          echo ('
+                    <tr>
+                      <td>' . $row['nama'] . '</td>
+                      <td>' . $row["nama_dept"] . '</td>
+                      <td>' . $row["jabatan"] . '</td>
+                      <td>' . $row["nama_marital_status"] . '</td>
+                      <td>' . $row["tanggal_masuk"] . '</td>
+                      <td>' . $row["jenis_kelamin"] . '</td>
+                      <td>' . $row["status_karyawan"] . '</td>
+                      <td>' . $row["tempat_lahir"] . '</td>
+                      <td>' . $row["tanggal_lahir"] . '</td>
+                      <td>' . $row["alamat"] . '</td>
+                      <td> <a href="./detail-karyawan.php?id='.$row["id_karyawan"] .'">EDIT</a></td>
+                      <td> <a href="../actions/delete-karyawan-action.php?id_karyawan='.$row["id_karyawan"] 
+                      .'">HAPUS</a></td>
+                    </tr> '); }
+                      ?>
+                  </tbody>
+              </table>
+            </div>
       </div>
     </div>
 
@@ -147,50 +148,46 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
         </footer>
         <!-- End of Footer -->
 
-      </div>
-      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+          <i class="fas fa-angle-up"></i>
+        </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Log Out?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Log Out?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <!-- <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- End of Logout Modal-->
+        <!-- End of Logout Modal-->
 
     <!-- Bootstrap core JavaScript-->
     <script src="../assets/vendor/jquery/jquery.min.js"></script>
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="../assets/js/sb-admin-2.min.js"></script>
-
     <!-- Page level plugins -->
     <script src="../assets/vendor/chart.js/Chart.min.js"></script>
-
     <!-- Page level custom scripts -->
     <script src="../assets/js/demo/chart-area-demo.js"></script>
     <script src="../assets/js/demo/chart-pie-demo.js"></script>
