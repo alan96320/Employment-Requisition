@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2020 at 05:07 PM
+-- Generation Time: Jan 22, 2020 at 05:36 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `activity_log` (
   `log_id` int(11) NOT NULL,
-  `id_user` char(10) NOT NULL,
+  `user_id` char(10) NOT NULL,
   `activity` varchar(250) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -98,6 +98,31 @@ INSERT INTO `formulir` (`id_pic`, `id_formulir`, `id_departemen`, `requester`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jabatan`
+--
+
+CREATE TABLE `jabatan` (
+  `id_jabatan` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jabatan`
+--
+
+INSERT INTO `jabatan` (`id_jabatan`, `nama`) VALUES
+(1, 'Operator'),
+(2, 'Line Leader '),
+(3, 'Officer'),
+(4, 'Senior Assistant'),
+(5, 'Executive'),
+(6, 'Senior Executive'),
+(7, 'Manager'),
+(8, 'Senior Manager');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `karyawan`
 --
 
@@ -126,8 +151,13 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`id_karyawan`, `id_dept`, `username`, `password`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, `foto`, `hak_akses`) VALUES
-(3, 3, NULL, NULL, 'csdcsad', 'fesargsrth', 0, '1999-10-23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(12121, 1, NULL, NULL, 'nama', 'wefw', 1, '2020-01-20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin');
+(1000, 1, NULL, NULL, 'Suparyono', 'Technician', 3, '2014-04-29', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin'),
+(1234, 1, NULL, NULL, 'Tonna', '2', 0, '2002-10-29', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin'),
+(10300, 1, NULL, NULL, 'Tanyalah', '1', 0, '2002-09-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin'),
+(10301, 1, NULL, NULL, 'Rodo Sianturi', 'Officer', NULL, '2014-11-15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin'),
+(10303, 2, NULL, NULL, 'abc', '2', 0, '2010-12-31', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin'),
+(12121, 1, NULL, NULL, 'nama', 'wefw', 1, '2020-01-20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin'),
+(12345, 2, NULL, NULL, 'Sapasih', '6', 5, '2015-04-26', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin');
 
 -- --------------------------------------------------------
 
@@ -229,6 +259,12 @@ ALTER TABLE `formulir`
   ADD PRIMARY KEY (`id_formulir`);
 
 --
+-- Indexes for table `jabatan`
+--
+ALTER TABLE `jabatan`
+  ADD PRIMARY KEY (`id_jabatan`);
+
+--
 -- Indexes for table `karyawan`
 --
 ALTER TABLE `karyawan`
@@ -264,6 +300,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `activity_log`
+--
+ALTER TABLE `activity_log`
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `departemen`
 --
 ALTER TABLE `departemen`
@@ -276,10 +318,16 @@ ALTER TABLE `formulir`
   MODIFY `id_formulir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `jabatan`
+--
+ALTER TABLE `jabatan`
+  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12122;
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12346;
 
 --
 -- AUTO_INCREMENT for table `marital_status`
