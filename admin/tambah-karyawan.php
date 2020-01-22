@@ -1,9 +1,9 @@
 <?php
   include "../config/conn.php";
   session_start();
-if (!isset($_SESSION['username'])) {
-  header("location: index.php");
-}
+    if (!isset($_SESSION['username'])) {
+    header("location: index.php");
+    }
 
     $stmDep = $pdo_conn->prepare("SELECT * FROM `departemen`");
     $stmDep->execute();
@@ -12,6 +12,10 @@ if (!isset($_SESSION['username'])) {
     $stmMar = $pdo_conn->prepare("SELECT * FROM `marital_status`");
     $stmMar->execute();
     $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
+
+    $stmJab = $pdo_conn->prepare("SELECT * FROM `jabatan`"); 
+    $stmJab->execute();
+    $rowsJabatan = $stmJab->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -70,7 +74,7 @@ if (!isset($_SESSION['username'])) {
         </div>
         <div class="form-group">
           <label for="departemen">Departemen</label>
-          <select  class="form-control" name='departemen'>
+          <select class="form-control" name='departemen'>
             <option>Pilih Departemen</option>
             <?php 
                 foreach($rowsDepartemen as $rowDepartemen){
@@ -81,27 +85,33 @@ if (!isset($_SESSION['username'])) {
         </div>
         <div class="form-group">
           <label for="maritalstatus">Marital Status</label>
-            <select  class="form-control" name='status'>
+            <select class="form-control" name='status'>
             <option>Pilih Marital Status</option>
                 <?php 
                     foreach($rowsMarital as $rowMarital){
-                    echo('<option value="'.$rowMarital["id_marital"] .'">'. $rowMarital["nama"] .'</option>');
+                    echo('<option values="'.$rowMarital["id_marital"] .'">'. $rowMarital["nama"] .'</option>');
                   }
                 ?>
             </select>
         </div>
-
       <div class="form-group">
-        <label for="jabatan">Jabatan</label>
-        <input type="text" name="jabatan"class="form-control" >
+        <label for="jabat">Jabatan</label>
+          <select class="form-control" name='jabatan'>
+          <option>Pilih Jabatan</option> 
+                <?php 
+                    foreach($rowsJabatan as $rowJabatan){
+                    echo('<option value="'.$rowJabatan["id_jabatan"] .'">'. $rowJabatan["nama"] .'</option>');
+                  }
+                ?>
+            </select>        
       </div>
       <div class="form-group">
         <label for="tanggal_masuk">Tanggal Masuk</label>
         <input type="date" name="tanggal_masuk"class="form-control" >                          
       </div>
       <div class="form-group">
-        <label for="foto">Foto</label>
-        <input type="file" name="foto" class="form-control" >
+        <label for="foto" type="file" name="foto">Foto</label>
+        <!-- <input type="file" name="foto" class="form-control" > -->
       </div>
       <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
