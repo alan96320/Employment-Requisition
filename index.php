@@ -38,9 +38,14 @@ session_start();
 
 </head>
 
-<body class="bg-gradient-primary">
+<body style="" background-image: url('img/CVB.jpg');>
   <div class="container">
-
+<!-- <img src="img/CVB.jpg" style="
+                        width: 885px;
+                        height: 10%;
+                        margin-left: 11px;
+                        margin-right: 11px;
+                "> -->
     <!-- Outer Row -->
     <div class="row justify-content-center">
       <div class="col-xl-10 col-lg-12 col-md-9">
@@ -50,12 +55,7 @@ session_start();
             <div class="row">
               <!-- menampilkan images Ciba -->
               <div class="col-lg-1 d-none d-lg-block"> 
-                <img src="img/CVB.jpg" style="
-                        width: 885px;
-                        height: 450px;
-                        margin-left: 11px;
-                        margin-right: 11px;
-                ">
+                
               </div>
               <div class="col-lg-4">
                 <div class="p-5">
@@ -84,7 +84,7 @@ session_start();
 
                   <!-- <hr> -->
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                    <!-- <a class="small" href="forgot-password.html">Forgot Password?</a> -->
                   </div>
                     
                 </div>

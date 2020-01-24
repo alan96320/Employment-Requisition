@@ -12,7 +12,7 @@
   $stm->execute();
   $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 
-  print_r($rows);
+  // print_r($rows);
 
 ?>
 
