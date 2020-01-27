@@ -38,14 +38,18 @@ session_start();
 
 </head>
 
-<body style="" background-image: url('img/CVB.jpg');>
-  <div class="container">
-<!-- <img src="img/CVB.jpg" style="
-                        width: 885px;
-                        height: 10%;
+<body class = "bg-gradient-primary"> 
+  <!-- <body background-image: url("img/CVB.jpg")>; -->
+  <!-- <div class="container"> -->
+    <div class="bg-img">
+      
+    </div>
+<img src="img/CVB.jpg" style="
+                        width: 80%;
+                        height: 80%;
                         margin-left: 11px;
                         margin-right: 11px;
-                "> -->
+                ">    
     <!-- Outer Row -->
     <div class="row justify-content-center">
       <div class="col-xl-10 col-lg-12 col-md-9">
@@ -53,14 +57,13 @@ session_start();
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <!-- menampilkan images Ciba -->
-              <div class="col-lg-1 d-none d-lg-block"> 
-                
-              </div>
-              <div class="col-lg-4">
+                <!-- menampilkan images Ciba -->
+              <div class="col-lg-2 d-none d-lg-block"> 
+                </div>
+              <div class="col-lg-5">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h2 text-gray-900 mb-4">Welcome</h1>
+                    <h1 class="h2 mb-4">Welcome</h1>
                   </div>
                   <form class="user" method="post" action="actions/loginaction.php">
                     <div class="form-group">
@@ -68,7 +71,7 @@ session_start();
                         aria-describedby="text" placeholder="Enter Username" required>
                     </div>
                     <div class="form-group">
-                      <input name = "password"type="password" class="form-control form-control-user"
+                      <input name = "password" type="password" class="form-control form-control-user"
                         placeholder="Enter Password" required>
                     </div>
                     <div class="form-group">
