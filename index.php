@@ -108,7 +108,7 @@ session_start();
 	<h2>Sistem Informasi Employment Requisition</h2>
 
 	<div class="bg-img">
-	  <form  method="post"action="actions/loginaction.php" class="container">
+	  <form  action="actions/loginaction.php" method="post" class="container">
 	    <h1>Login</h1>
 
 	    <label for="username"><b>Username</b></label>
@@ -117,25 +117,24 @@ session_start();
 	    <label for="password"><b>Password</b></label>
 	    <input type="password" placeholder="Enter Password" name="password" required>
 
-	    <button type="submit" class="btn btn-primary">Login</button>
+	    <button class="btn btn-primary" type="submit" >Login</button>
 	  </form>
 	</div>
 
-
-<!-- Bootstrap core JavaScript-->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Core plugin JavaScript-->
-  <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <!-- Custom scripts for all pages-->
-  <script src="assets/js/sb-admin-2.min.js"></script>
+	<!-- Bootstrap core JavaScript-->
+	<script src="assets/vendor/jquery/jquery.min.js"></script>
+	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Core plugin JavaScript-->
+	<script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<!-- Custom scripts for all pages-->
+	<script src="assets/js/sb-admin-2.min.js"></script>
 
   <!-- Footer -->
       <div class="footer">
-      <div class="copyright text-center my-auto">
-        <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
+		<div class="copyright text-center my-auto">
+			<span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
+		</div>
       </div>
-    </div>
   </footer>
   <!-- End of Footer -->
 

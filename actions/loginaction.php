@@ -23,10 +23,10 @@ include ("../config/conn.php");
             }else {
                 header("location: ../manager/index.php");
             }
-        }else {
-            echo "user tidak ditemukan"; 
-        }
-
+        }elseif ($username = "empty") {
+            } echo "<p class='error'> You did not fill in all fields!</p>";  
+            exit(); 
+            
 //var_dump($row ['username']);
 ?>
 
@@ -51,3 +51,5 @@ include ("../config/conn.php");
   <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
+
+</html>
