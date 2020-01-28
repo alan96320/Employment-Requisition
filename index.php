@@ -17,92 +17,112 @@ session_start();
 <html lang="en">
 
 <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+  	<meta name="author" content="">
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+ 	<title>SIER : Login</title>
+  	<!-- Favicon-->
+  	<link rel="icon" href="img/alcr.jpg" type="image/x-icon">
 
-  <title>SIER : Login</title>
-  <!-- Favicon-->
-  <link rel="icon" href="img/alcr.jpg" type="image/x-icon">
+<style>
+	body, html {
+	  height: 100%;
+	  font-family: Arial, Helvetica, sans-serif;
+	}
 
-    <!-- Custom fonts for this template-->
-    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=
-               Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i:" rel="stylesheet">
-               
-    <!-- Custom styles for this template-->
-    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+	* {
+	  box-sizing: border-box;
+	}
+
+	.bg-img {
+	  /* The image used */
+	  background-image: url("img/CVB.jpg");
+
+	  min-height: 70%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	  position: relative;
+	}
+
+	/* Add styles to the form container */
+	.container {
+	  position: absolute;
+	  right: 0;
+	  margin: 20px;
+	  max-width: 300px;
+	  padding: 16px;
+	  background-color: white;
+	}
+
+	/* Full-width input fields */
+	input[type=text], input[type=password] {
+	  width: 100%;
+	  padding: 15px;
+	  margin: 5px 0 22px 0;
+	  border: none;
+	  background: #f1f1f1;
+	}
+
+	input[type=text]:focus, input[type=password]:focus {
+	  background-color: #ddd;
+	  outline: none;
+	}
+
+	/* Set a style for the submit button */
+	.btn {
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 16px 20px;
+	  border: none;
+	  cursor: pointer;
+	  width: 100%;
+	  opacity: 0.9;
+	}
+
+	.btn:hover {
+	  opacity: 1;
+	}
+
+	.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: blue;
+   color: white;
+   text-align: center;
+   }
+
+</style>
 
 </head>
 
-<body class = "bg-gradient-primary"> 
-  
-  <div class="container">
-    <div class="bg-img">
-      
-    </div>
-<!-- <img src="img/CVB.jpg" style="
-                        width: 80%;
-                        height: 80%;
-                        margin-left: 11px;
-                        margin-right: 11px;
-                ">     -->
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
-      <div class="col-xl-10 col-lg-12 col-md-9">
-        <div class="card o-hidden border-0 shadow-lg my-5">
-          <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-                <!-- menampilkan images Ciba -->
-              <div class="col-lg-2 d-none d-lg-block"> 
-                <body background-image: url("img/CVB.jpg")>;
-                </div>
-              <div class="col-lg-5">
-                <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h2 mb-4">Welcome</h1>
-                  </div>
-                  <form class="user" method="post" action="actions/loginaction.php">
-                    <div class="form-group">
-                      <input name = "username" type="text" class="form-control form-control-user"
-                        aria-describedby="text" placeholder="Enter Username" required>
-                    </div>
-                    <div class="form-group">
-                      <input name = "password" type="password" class="form-control form-control-user"
-                        placeholder="Enter Password" required>
-                    </div>
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-user btn-block">
-                      Login
-                    </button>
-                  </form>
+<body>
 
-                  <!-- <hr> -->
-                  <div class="text-center">
-                    <!-- <a class="small" href="forgot-password.html">Forgot Password?</a> -->
-                  </div>
-                    
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+	<h2>Sistem Informasi Employment Requisition</h2>
 
-  </div>
-  <!-- End of container -->
+	<div class="bg-img">
+	  <form  method="post"action="actions/loginaction.php" class="container">
+	    <h1>Login</h1>
 
-  <!-- Bootstrap core JavaScript-->
+	    <label for="username"><b>Username</b></label>
+	    <input type="text" placeholder="Enter Username" name="username" required>
+
+	    <label for="password"><b>Password</b></label>
+	    <input type="password" placeholder="Enter Password" name="password" required>
+
+	    <button type="submit" class="btn btn-primary">Login</button>
+	  </form>
+	</div>
+
+
+<!-- Bootstrap core JavaScript-->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Core plugin JavaScript-->
@@ -111,8 +131,7 @@ session_start();
   <script src="assets/js/sb-admin-2.min.js"></script>
 
   <!-- Footer -->
-  <footer class="sticky-footer bg-white">
-    <div class="container my-auto">
+      <div class="footer">
       <div class="copyright text-center my-auto">
         <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
       </div>
