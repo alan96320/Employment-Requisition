@@ -39,17 +39,17 @@ session_start();
 </head>
 
 <body class = "bg-gradient-primary"> 
-  <!-- <body background-image: url("img/CVB.jpg")>; -->
-  <!-- <div class="container"> -->
+  
+  <div class="container">
     <div class="bg-img">
       
     </div>
-<img src="img/CVB.jpg" style="
+<!-- <img src="img/CVB.jpg" style="
                         width: 80%;
                         height: 80%;
                         margin-left: 11px;
                         margin-right: 11px;
-                ">    
+                ">     -->
     <!-- Outer Row -->
     <div class="row justify-content-center">
       <div class="col-xl-10 col-lg-12 col-md-9">
@@ -59,6 +59,7 @@ session_start();
             <div class="row">
                 <!-- menampilkan images Ciba -->
               <div class="col-lg-2 d-none d-lg-block"> 
+                <body background-image: url("img/CVB.jpg")>;
                 </div>
               <div class="col-lg-5">
                 <div class="p-5">
