@@ -131,7 +131,7 @@ session_start();
 
   <!-- Footer -->
       <div class="footer">
-		<div class="copyright text-center my-auto">
+		<div class="copyright text-center py-3">
 			<span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
 		</div>
       </div>

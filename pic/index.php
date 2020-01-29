@@ -13,7 +13,6 @@ $stm->execute();
 $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 
 //print_r($rows);
-
 ?>
 
 <!DOCTYPE html>
@@ -68,10 +67,16 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     <!-- End of Main Content -->
 
     <!-- Footer -->
-      <footer class="sticky-footer bg-white">
+      <!-- <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>&copy; Sistem Informasi Employment Requisition 2019</span>
+          </div>
+        </div> -->
+
+        <div class="footer" >
+          <div class="copyright text-center my-auto">
+          <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
           </div>
         </div>
       </footer>
