@@ -3,7 +3,7 @@
     <div class="sidebar-brand-icon rotate-n-15">
       <i class="far fa-grin-beam"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">Dashboard<sup>PIC</sup></div>
+    <div class="sidebar-brand-text mx-3">Dashboard <sup>PIC</sup></div>
   </a>
   <li class="nav-item active">
     <a class="nav-link" href="./">
