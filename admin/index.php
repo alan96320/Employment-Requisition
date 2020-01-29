@@ -71,21 +71,12 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     <!-- End of Main Content -->
 
     <!-- Footer -->
-      <!-- <footer class="sticky-footer bg-dark">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>&copy; Sistem Informasi Employment Requisition 2019</span>
-          </div>
+       <div class="footer bg-blue">
+		      <div class="copyright text-center">
+			     <span>copyright &copy; SIER 2019</span>
+		      </div>
         </div>
-      </footer> -->
-
-      <div class="footer bg-blue">
-		    <div class="copyright text-center py-3">
-			    <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
-		    </div>
-      </div>
-  </footer>
-
+      </footer>
     <!-- End of Footer -->
 
   </div>

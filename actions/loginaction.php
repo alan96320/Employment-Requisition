@@ -25,7 +25,7 @@ include ("../config/conn.php");
             }
         }elseif ($username = "empty") {
             } echo "<p class='error'> You did not fill in all fields!</p>";  
-            exit(); 
+                        exit(); 
             
 //var_dump($row ['username']);
 ?>
@@ -51,5 +51,9 @@ include ("../config/conn.php");
   <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
-
+<body>
+            <div class="alert alert-danger" role="alert">;
+                This is a danger alert—check it out!
+            </div>
+</body>
 </html>
