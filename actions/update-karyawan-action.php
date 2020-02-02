@@ -8,9 +8,9 @@ if (!isset($_SESSION['username'])) {
 // $sql= "UPDATE karyawan SET (`id_karyawan`, `nama`, `id_dept`, `jabatan`, `tanggal_masuk`, `marital_status`, `username`, `password`, `jenis_kelamin`, 
 //                         `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, `hak_akses`) 
 //        SET (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
 $id = $_GET['id'];
 $sql = "UPDATE karyawan SET nama=?, username=? WHERE id=?";
-
 $stm = $pdo_conn->prepare($sql); //prepare statement
 // $stm->execute([$nama, $username, $id]);
 $stm->execute();

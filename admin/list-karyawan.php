@@ -15,7 +15,6 @@ $stm->execute();
 $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 
 //print_r($rows);
-
 ?>
 
 <!DOCTYPE html>
