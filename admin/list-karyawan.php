@@ -45,53 +45,53 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-      <?php
-        include "../components/sidebar.php";
-      ?>
+    <?php
+    include "../components/sidebar.php";
+    ?>
 
-  <!-- Content Wrapper -->
-  <div id="content-wrapper" class="d-flex flex-column">
-  <!-- Main Content -->
-  <div id="content">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
 
-      <?php
+        <?php
         include "../components/navbar.php";
-      ?>
+        ?>
 
-  <!-- Begin Page Content -->
-  <div class="container-fluid">
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
 
-  <!-- Page Heading -->
-  <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800"></h1>
-    <a href="tambah-karyawan.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user-plus fa-sm text-white-50"></i>Tambah Karyawan</a>
-  </div>
- 
-    <!-- Data Tables  -->
-  <div class="card shadow mb-4">
-      <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">List Data Karyawan PT. CIBA VISION Batam</h6>
-      </div>
-    <div class="card-body">
-            <div class=" table table-hover table-responsive">
-              <table class= "table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead class="thead-dark">  
-                <tr role="row">
-                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Nama: activate to sort column descending" style="width: 157px;">Nama</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Departemen: activate to sort column descending" style="width: 157px;">Departemen</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jabatan: activate to sort column descending" style="width: 157px;">Jabatan</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Marital Status: activate to sort column descending" style="width: 157px;">Marital Status</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tanggal Masuk: activate to sort column descending" style="width: 157px;">Tanggal Masuk</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jenis Kelamin: activate to sort column descending" style="width: 157px;">Jenis Kelamin</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Status Karyawan: activate to sort column descending" style="width: 157px;">Status Karyawan</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tempat Lahir: activate to sort column descending" style="width: 157px;">Tempat Lahir</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tanggal Lahir: activate to sort column descending" style="width: 157px;">Tanggal Lahir</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Alamat: activate to sort column descending" style="width: 157px;">Alamat</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label=" : # " style="width: 157px;">&nbsp</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label=" : # " style="width: 157px;">&nbsp</th>
-                </tr>
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800"></h1>
+            <a href="tambah-karyawan.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user-plus fa-sm text-white-50"></i>Tambah Karyawan</a>
+          </div>
 
-                  <!-- <tr>
+          <!-- Data Tables  -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">List Data Karyawan PT. CIBA VISION Batam</h6>
+            </div>
+            <div class="card-body">
+              <div class=" table table-hover table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="thead-dark">
+                    <tr role="row">
+                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Nama: activate to sort column descending" style="width: 157px;">Nama</th>
+                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Departemen: activate to sort column descending" style="width: 157px;">Departemen</th>
+                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jabatan: activate to sort column descending" style="width: 157px;">Jabatan</th>
+                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Marital Status: activate to sort column descending" style="width: 157px;">Marital Status</th>
+                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tanggal Masuk: activate to sort column descending" style="width: 157px;">Tanggal Masuk</th>
+                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jenis Kelamin: activate to sort column descending" style="width: 157px;">Jenis Kelamin</th>
+                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Status Karyawan: activate to sort column descending" style="width: 157px;">Status Karyawan</th>
+                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tempat Lahir: activate to sort column descending" style="width: 157px;">Tempat Lahir</th>
+                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tanggal Lahir: activate to sort column descending" style="width: 157px;">Tanggal Lahir</th>
+                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Alamat: activate to sort column descending" style="width: 157px;">Alamat</th>
+                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label=" : # " style="width: 157px;">&nbsp</th>
+                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label=" : # " style="width: 157px;">&nbsp</th>
+                    </tr>
+
+                    <!-- <tr>
                     <th>Nama</th>
                     <th>Departemen</th>
                     <th>Jabatan</th>
@@ -106,11 +106,11 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
                     <th>&nbsp;</th>
                   </tr>  -->
 
-                </thead>
+                  </thead>
                   <tbody>
-                      <?php
-                        foreach ($rows as $row) {
-                          echo ('
+                    <?php
+                    foreach ($rows as $row) {
+                      echo ('
                     <tr>
                       <td>' . $row['nama'] . '</td>
                       <td>' . $row["nama_dept"] . '</td>
@@ -122,76 +122,77 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
                       <td>' . $row["tempat_lahir"] . '</td>
                       <td>' . $row["tanggal_lahir"] . '</td>
                       <td>' . $row["alamat"] . '</td>
-                      <td> <a href="./detail-karyawan.php?id='.$row["id_karyawan"] .'">EDIT</a></td>
-                      <td> <a href="../actions/delete-karyawan-action.php?id_karyawan='.$row["id_karyawan"] 
-                      .'">HAPUS</a></td>
-                    </tr> '); }
-                      ?>
+                      <td> <a href="./detail-karyawan.php?id=' . $row["id_karyawan"] . '">EDIT</a></td>
+                      <td> <a href="../actions/delete-karyawan-action.php?id_karyawan=' . $row["id_karyawan"]
+                        . '">HAPUS</a></td>
+                    </tr> ');
+                    }
+                    ?>
                   </tbody>
-              </table>
-            </div>
-      </div>
-    </div>
-
-    </div>
-    <!-- End of Container Fluid -->
-
-    </div>
-    <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
+                </table>
+              </div>
             </div>
           </div>
-        </footer>
-        <!-- End of Footer -->
+
+        </div>
+        <!-- End of Container Fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
 
     </div>
     <!-- End of Content Wrapper -->
 
-    </div>
-    <!-- End of Page Wrapper -->
+  </div>
+  <!-- End of Page Wrapper -->
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-          <i class="fas fa-angle-up"></i>
-        </a>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Log Out?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                </button>
-              </div>
-              <!-- <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
-              <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>
-              </div>
-            </div>
-          </div>
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Log Out?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
         </div>
-        <!-- End of Logout Modal-->
+        <!-- <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Logout Modal-->
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="../assets/js/sb-admin-2.min.js"></script>
-    <!-- Page level plugins -->
-    <script src="../assets/vendor/chart.js/Chart.min.js"></script>
-    <!-- Page level custom scripts -->
-    <script src="../assets/js/demo/chart-area-demo.js"></script>
-    <script src="../assets/js/demo/chart-pie-demo.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="../assets/js/sb-admin-2.min.js"></script>
+  <!-- Page level plugins -->
+  <script src="../assets/vendor/chart.js/Chart.min.js"></script>
+  <!-- Page level custom scripts -->
+  <script src="../assets/js/demo/chart-area-demo.js"></script>
+  <script src="../assets/js/demo/chart-pie-demo.js"></script>
 
 </body>
 
