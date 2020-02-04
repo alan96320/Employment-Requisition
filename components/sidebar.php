@@ -1,5 +1,6 @@
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="./">
     <div class="sidebar-brand-icon rotate-n-15">
@@ -35,15 +36,15 @@
 
   <!-- Heading -->
   <div class="sidebar-heading" a class="nav-link collapsed">Profile</div>
-  
+
   <!-- User -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="#">
-    <i class="fas fa-user"></i>
-      <span> User </span>
+    <a class="nav-link collapsed" href="profile.php">
+      <i class="fas fa-user"></i>
+      <span> Profile Saya</span>
     </a>
   </li>
-  
+
   <!-- menu Tabel Karyawan -->
   <li class="nav-item">
     <a class="nav-link collapsed" href="#">
