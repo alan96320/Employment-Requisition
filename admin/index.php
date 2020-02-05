@@ -33,6 +33,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   <!-- Custom fonts for this template-->
   <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
   <!-- Custom styles for this template-->
   <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -57,13 +58,15 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       ?>
 
     <!-- Begin Page Content -->
-    <div class="container-fluid">
-      <center> <h2 <p class="text-primary"> PT. CIBA VISION Batam </h2>
+    <div class="container">
+      <center> 
+        <h2 class="text-primary"> PT. CIBA VISION Batam </h2>
         <img src="../img/CVB.jpg" style="
-                    border-bottom-width: 10px;
-                    padding-bottom: 10px;
-                    padding-top: 10px;
-                    border-top-width: 10px;">      
+                    width: all; 
+                    height: 400px;
+                    padding-bottom: 5px;
+                    padding-top: 5px;
+                    ">      
       </center>
     </div>
       <container-fluid>
@@ -73,7 +76,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     <!-- Footer -->
        <div class="footer bg-blue">
 		      <div class="copyright text-center">
-			     <span>copyright &copy; SIER 2019</span>
+			     <span>copyright &copy; Sistem Informasi Employment Requisition 2019</span>
 		      </div>
         </div>
       </footer>
@@ -94,12 +97,11 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       <div class="modal-dialog" role="document">
         <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Admin Ready to Log Out?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Admin ready to Log Out?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">x</span>
                 </button>
               </div>
-            <!-- <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
             <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>

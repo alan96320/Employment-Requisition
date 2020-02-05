@@ -7,9 +7,9 @@ if (!isset($_SESSION['username'])) {
 
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 
-$stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept 
+$stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept
                           FROM `karyawan` 
-                          LEFT JOIN departemen ON karyawan.id_karyawan = departemen.id_dept 
+                          LEFT JOIN departemen ON karyawan.id_dept = departemen.id_dept 
                           WHERE karyawan.id_karyawan = '$id'");
 
 $stmDep = $pdo_conn->prepare("SELECT * FROM `departemen`");
