@@ -111,7 +111,7 @@ if (isset($_SESSION["hak_akses"])) {
 
 	<div class="bg-img">
 		<form action="actions/loginaction.php" method="post" class="container">
-			<h1>Login</h1>
+			<h1 style="color: aliceblue">Login</h1>
 
 			<label for="username"><b>Username</b></label>
 			<input type="text" placeholder="Enter Username" name="username" required>
