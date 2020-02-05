@@ -5,7 +5,7 @@ if (!isset($_SESSION['username'])) {
   header("location: index.php");
 }
 
-$stm = $pdo_conn->prepare("SELECT `id_karyawan`, `username`, karyawan.`nama`, jabatan.nama as `jabatan`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept , marital_status.nama as nama_marital_status
+$stm = $pdo_conn->prepare("SELECT `id_karyawan`, `username`, karyawan.`nama`, jabatan.nama as `jabatan`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept , marital_status.nama as marital_status
                            FROM `karyawan` 
                            LEFT JOIN departemen ON karyawan.id_dept = departemen.id_dept
                            LEFT JOIN jabatan ON karyawan.jabatan = jabatan.id_jabatan
@@ -116,7 +116,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
                       <td>' . $row['nama'] . '</td>
                       <td>' . $row["nama_dept"] . '</td>
                       <td>' . $row["jabatan"] . '</td>
-                      <td>' . $row["nama_marital_status"] . '</td>
+                      <td>' . $row["marital_status"] . '</td>
                       <td>' . $row["tanggal_masuk"] . '</td>
                       <td>' . $row["jenis_kelamin"] . '</td>
                       <td>' . $row["status_karyawan"] . '</td>

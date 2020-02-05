@@ -92,19 +92,18 @@ $rowsJabatan = $stmJab->fetchAll(PDO::FETCH_ASSOC);
               </select>
             </div>
 
-            <div class="form-group">
-              <label for="maritalstatus" required>Marital Status (required)</label>
-              <select class="form-control" name='status'>
-                <option>Pilih Marital Status</option>
+              <div class="form-group">
+                <label for="maritalstatus">Marital Status (required)</label>
+                <select class="form-control" name='status'>
+                  <option>Pilih Marital Status</option>
 
-                <?php
-                foreach ($rowsMarital as $rowMarital) {
-                  echo ('<option values="' . $rowMarital["id_marital"] . '">' . $rowMarital["nama"] . '</option>');
-                }
-                ?>
-
-              </select>
-            </div>
+                  <?php
+                  foreach ($rowsMarital as $rowsMarital) {
+                    echo ('<option value="' . $rowsMarital["id_marital"] . '">' . $rowsMarital["nama"] . '</option>');
+                  }
+                  ?>
+                </select>
+              </div>
 
             <div class="form-group">
               <label for="jabat">Jabatan</label>
