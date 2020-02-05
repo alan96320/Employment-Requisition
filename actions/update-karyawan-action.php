@@ -13,7 +13,7 @@ $id = $_GET['id'];
 $sql = "UPDATE karyawan SET nama=?, username=? WHERE id=?";
 
 $stm = $pdo_conn->prepare($sql); //prepare statement
-$stm->execute([$nama, $username, $id]);
+// $stm->execute([$nama, $username, $id]);
 $stm->execute();
 echo $stm->rowCount() . "data berhasil di update";
 

@@ -133,7 +133,7 @@ if (isset($_SESSION["hak_akses"])) {
 
 	<!-- Footer -->
 	<div class="footer">
-		<div class="copyright text-center py-3">
+		<div class="copyright text-center my-auto">
 			<span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
 		</div>
 	</div>

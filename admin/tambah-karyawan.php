@@ -75,7 +75,7 @@ $rowsJabatan = $stmJab->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="form-group">
               <label for="nama">Nama</label>
-              <input type="text" name="nama" class="form-control">
+              <input type="text" name="nama" class="form-control" required>
             </div>
 
             <div class="form-group">
@@ -92,9 +92,9 @@ $rowsJabatan = $stmJab->fetchAll(PDO::FETCH_ASSOC);
               </select>
             </div>
 
-              <div class="form-group">
-                <label for="maritalstatus">Marital Status (required)</label>
-                <select class="form-control" name='status'>
+              <div class="form-group" required>
+                <label for="maritalstatus">Marital Status</label>
+                <select class="form-control" name='status' >
                   <option>Pilih Marital Status</option>
 
                   <?php

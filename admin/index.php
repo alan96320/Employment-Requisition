@@ -13,7 +13,7 @@ $stm = $pdo_conn->prepare(
 $stm->execute();
 $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 
-//print_r($rows);
+// print_r($rows);
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +50,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
+
     <!-- Main Content -->
     <div id="content">
 
@@ -58,32 +59,48 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       ?>
 
     <!-- Begin Page Content -->
-    <div class="container">
-      <center> 
-        <h2 class="text-primary"> PT. CIBA VISION Batam </h2>
-        <img src="../img/CVB.jpg" style="
-                    width: all; 
-                    height: 400px;
-                    padding-bottom: 5px;
-                    padding-top: 5px;
-                    ">      
-      </center>
+    <div class="container-fluid">
+
+      <!-- Page Heading -->
+      <div class="align-items-center justify-content-between mb-0">
+          <center> 
+            <h1 class="text-primary"> PT. CIBA VISION Batam </h1>
+            <img src="../img/CVB.jpg" style="
+                        width: all; 
+                        height: 400px;
+                        padding-bottom: 5px;
+                        padding-top: 5px;
+                        ">      
+          </center>
+      </div>
+
     </div>
-      <container-fluid>
+    <!-- End of container-fluid -->
+
+
     </div>
     <!-- End of Main Content -->
 
     <!-- Footer -->
-       <div class="footer bg-blue">
-		      <div class="copyright text-center">
-			     <span>copyright &copy; Sistem Informasi Employment Requisition 2019</span>
-		      </div>
-        </div>
-      </footer>
+      <div class="container my-auto" style= "
+            position: fixed;
+            left: 10;
+            bottom: 0;
+            width: 100%;
+            background-color: #4080f7;
+            color: white;
+            text-align: center;
+             ">
+  	      <div class="copyright text-center my-auto ">
+  		      <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
+  	      </div>
+      </div>
+    </footer>
     <!-- End of Footer -->
 
   </div>
   <!-- End of Content Wrapper -->
+
   </div>
   <!-- End of Page Wrapper -->
 
@@ -123,5 +140,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     <!-- Page level custom scripts -->
     <script src="../assets/js/demo/chart-area-demo.js"></script>
     <script src="../assets/js/demo/chart-pie-demo.js"></script>
+
 </body>
+
 </html>

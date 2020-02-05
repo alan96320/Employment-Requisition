@@ -7,10 +7,11 @@ if (!isset($_SESSION['username'])) {
 
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 
-$stm2 = $pdo_conn->query("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept
-                          FROM `karyawan` 
-                          LEFT JOIN departemen ON karyawan.id_dept = departemen.id_dept 
-                          WHERE karyawan.id_karyawan = '$id'");
+$stm2 = $pdo_conn->query(
+                  "SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`,     `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`,    `no_telepon`, departemen.nama_dept
+                  FROM `karyawan` 
+                  LEFT JOIN departemen ON karyawan.id_dept = departemen.id_dept 
+                  WHERE karyawan.id_karyawan = '$id'");
 
 $stmDep = $pdo_conn->prepare("SELECT * FROM `departemen`");
 $stmDep->execute();
@@ -72,7 +73,7 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
           <h2 style="margin-left: 20px" <p class="text-primary">Halaman Detail Karyawan</h2>
         </center>
         <div class="container-fluid" style=" display: flex; justify-content: center; align-items: center; ">
-          <img src="../img/CVB.jpg" style="width: 300px; height: 400px; ">
+          <!-- <img src="../img/CVB.jpg" style="width: 300px; height: 400px; "> -->
 
           <?php
           while ($row = $stm2->fetch()) {
@@ -80,7 +81,7 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
 
             <form style=" flex-grow: 1; margin-left: 49px;" method="post" action="../actions/update-karyawan-action.php?id=1000">
               <div class=" form-group">
-                <label for="id_karyawan">NIK</label>
+                <label for="id_karyawan" required>NIK</label>
                 <input type="text" class="form-control" value="<?= $row['id_karyawan'] ?>">
               </div>
               <div class="form-group">
@@ -92,6 +93,7 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
                 <select class="form-control" name='departemen'>
                   <option>Pilih Departemen</option>
                   <!-- <input type="text" class="form-control" value="<?= $row['nama_dept'] ?>"> -->
+
                   <?php
                   foreach ($rowsDepartemen as $rowDepartemen) {
                     echo ('<option value="' . $rowDepartemen["id_dept"] . '">' . $rowDepartemen["nama_dept"] . ' - ' . $rowDepartemen["cost_center"]  . '</option>');
@@ -113,7 +115,7 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
                 </select>
               </div>
               <div class="form-group">
-                <label for="tanggal_masuk">Tanggal Masuk</label>
+                <label for="tanggal_masuk" required>Tanggal Masuk</label>
                 <input type="date" class="form-control" value="<?= $row['tanggal_masuk'] ?>">
               </div>
               <div class="form-group">
@@ -170,7 +172,7 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Admin Ready to Log Out?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Admin ready to Log Out?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
