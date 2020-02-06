@@ -38,7 +38,7 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SIER : Profile </title>
+  <title>SIER : Manager Profile </title>
   <!-- Favicon-->
   <link rel="icon" href="../img/alcr.jpg" type="image/x-icon">
 
@@ -56,7 +56,7 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
   <div id="wrapper">
 
     <?php
-    include "../components/sidebar.php";
+    include "../components/sidebar-mngr.php";
     ?>
 
     <!-- Content Wrapper -->
@@ -66,7 +66,7 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
       <div id="content">
 
         <?php
-        include "../components/navbar.php";
+        include "../components/navbar-mngr.php";
         ?>
 
         <!-- Begin Page Content -->
@@ -80,17 +80,17 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
           <!-- Content Row -->
           <div class="row">
 
-            <div class="card mb-3" style="max-width: 60%;">
+            <div class="card mb-5" style="max-width: 60%;">
               <div class="row no-gutters">
                 <div class="col-md-4">
-                  <img src="../img/mnger.png" class="card-img" alt="...">
+                  <img src="../img/mnger.png" class="card-img">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h5 class="card-title">Rodo</h5>
-                    <p class="card-text">PT. CIBA VISION Batam</p>
-                    <p class="card-text">Human Resource Departemen</p>
-                    <p class="card-text"><small class="text-muted">LnD Officer</small></p>
+                    <h5 class="card-title"><?= ('Manager'); ?></h5>
+                    <p class="card-text"><?= ('PT. CIBA VISION Batam'); ?></p>
+                    <p class="card-text"><?= ('Human Resource Departemen'); ?></p>
+                    <p class="card-text"><?= ('Learning & Development'); ?></p>
                   </div>
                 </div>
               </div>
@@ -134,9 +134,8 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Admin ready to Log Out?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Manager ready to Log Out?</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-
             </button>
           </div>
           <div class="modal-footer">

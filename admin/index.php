@@ -1,14 +1,15 @@
 <?php
-    include "../config/conn.php";
-      session_start();
-        if (!isset($_SESSION['hak_akses'])) {
-         header("location: ../index.php");
-        }
+include "../config/conn.php";
+session_start();
+if (!isset($_SESSION['hak_akses'])) {
+  header("location: ../index.php");
+}
 
 $stm = $pdo_conn->prepare(
-                  "SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept 
+  "SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept 
                    FROM `karyawan` 
-                   INNER JOIN departemen ON karyawan.id_dept = departemen.id_dept");
+                   INNER JOIN departemen ON karyawan.id_dept = departemen.id_dept"
+);
 
 $stm->execute();
 $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
@@ -44,45 +45,44 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-      <?php
-        include "../components/sidebar.php";
-      ?>
+    <?php
+    include "../components/sidebar.php";
+    ?>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
-    <!-- Main Content -->
-    <div id="content">
+      <!-- Main Content -->
+      <div id="content">
 
-      <?php
+        <?php
         include "../components/navbar.php";
-      ?>
+        ?>
 
-    <!-- Begin Page Content -->
-    <div class="container-fluid">
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
 
-      <!-- Page Heading -->
-      <div class="align-items-center justify-content-between mb-0">
-          <center> 
-            <h1 class="text-primary"> PT. CIBA VISION Batam </h1>
-            <img src="../img/CVB.jpg" style="
+          <!-- Page Heading -->
+          <div class="align-items-center justify-content-between mb-0">
+            <center>
+              <h1 class="text-primary"> PT. CIBA VISION Batam </h1>
+              <img src="../img/CVB.jpg" style="
                         width: all; 
                         height: 400px;
                         padding-bottom: 5px;
                         padding-top: 5px;
-                        ">      
-          </center>
+                        ">
+            </center>
+          </div>
+
+        </div>
+        <!-- End of container-fluid -->
+
       </div>
+      <!-- End of Main Content -->
 
-    </div>
-    <!-- End of container-fluid -->
-
-
-    </div>
-    <!-- End of Main Content -->
-
-    <!-- Footer -->
-      <div class="container my-auto" style= "
+      <!-- Footer -->
+      <div class="container my-auto" style="
             position: fixed;
             left: 10;
             bottom: 0;
@@ -91,55 +91,55 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
             color: white;
             text-align: center;
              ">
-  	      <div class="copyright text-center my-auto ">
-  		      <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
-  	      </div>
+        <div class="copyright text-center my-auto ">
+          <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
+        </div>
       </div>
-    </footer>
-    <!-- End of Footer -->
+      </footer>
+      <!-- End of Footer -->
 
-  </div>
-  <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Content Wrapper -->
 
   </div>
   <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Admin ready to Log Out?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">x</span>
-                </button>
-              </div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>
-          </div>
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Admin ready to Log Out?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>
         </div>
       </div>
     </div>
-    <!-- End of Logout Modal -->
+  </div>
+  <!-- End of Logout Modal -->
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="../assets/js/sb-admin-2.min.js"></script>
-    <!-- Page level plugins -->
-    <script src="../assets/vendor/chart.js/Chart.min.js"></script>
-    <!-- Page level custom scripts -->
-    <script src="../assets/js/demo/chart-area-demo.js"></script>
-    <script src="../assets/js/demo/chart-pie-demo.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="../assets/js/sb-admin-2.min.js"></script>
+  <!-- Page level plugins -->
+  <script src="../assets/vendor/chart.js/Chart.min.js"></script>
+  <!-- Page level custom scripts -->
+  <script src="../assets/js/demo/chart-area-demo.js"></script>
+  <script src="../assets/js/demo/chart-pie-demo.js"></script>
 
 </body>
 

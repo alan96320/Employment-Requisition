@@ -13,7 +13,6 @@ $stm->execute();
 $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 
 // print_r($rows);
-
 ?>
 
 <!DOCTYPE html>
@@ -59,12 +58,22 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-          <center>
-            <h2 <p class="text-primary"> Selamat Datang Manager </h2>
-            <img src="../img/CVB.jpg" />
-          </center>
+
+          <!-- Page Heading -->
+          <div class="align-items-center justify-content-between mb-0">
+            <center>
+              <h2 <p class="text-primary"> Selamat Datang Manager </h2>
+              <img src="../img/CVB.jpg" style="
+                        width: all; 
+                        height: 400px;
+                        padding-bottom: 5px;
+                        padding-top: 5px;
+                        ">
+            </center>
+          </div>
+
         </div>
-        <!-- <div container-fluid></div> -->
+        <!-- End of container-fluid -->
 
       </div>
       <!-- End of Main Content -->

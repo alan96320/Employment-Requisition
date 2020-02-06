@@ -6,7 +6,7 @@
     <div class="sidebar-brand-icon rotate-n">
       <i class="fas fa-user-tie"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">Dashboard <sup>Manager</sup></div>
+    <div class="sidebar-brand-text mx-3">Dashboard <sup> Manager</sup></div>
   </a>
 
   <!-- Divider -->
@@ -52,7 +52,7 @@
 
   <!-- User -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="profile.php">
+    <a class="nav-link collapsed" href="./profile-mngr.php">
       <i class="fas fa-user"></i>
       <span> Profile Saya</span>
     </a>
