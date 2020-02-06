@@ -1,10 +1,22 @@
+<!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+  <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="./">
     <div class="sidebar-brand-icon rotate-n-15">
       <i class="far fa-grin-beam"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">Dashboard <sup>PIC</sup></div>
+    <div class="sidebar-brand-text mx-3">Dashboard <sup>PIC Dept.</sup></div>
   </a>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    PIC
+  </div>
+
   <li class="nav-item active">
     <a class="nav-link" href="./">
       <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -12,32 +24,44 @@
     </a>
   </li>
 
+  <!-- formulir ER -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="./formER.php">
+      <i class="fas fa-fw fa-file-alt"></i>
+      <span> Formulir Emp. Requisition </span>
+    </a>
+  </li>
+
+  <!-- formulir ER -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#">
+      <i class="fas fa-fw fa-file"></i>
+      <span> Formulir Persetujuan </span>
+    </a>
+  </li>
+
+  <!-- List Status -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#">
+      <i class="fas fa-fw fa-file-alt"></i>
+      <span>List Status</span>
+    </a>
+  </li>
+
+  <!-- Divider -->
   <hr class="sidebar-divider">
-  <div class="sidebar-heading" a class="nav-link collapsed">Menu</div>
-  
-    <!-- formulir ER -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="./formER.php">
-        <i class="fas fa-fw fa-file-alt"></i>
-        <span> Formulir Emp. Requisition </span>
-      </a>
-    </li>
 
-    <!-- formulir ER -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#">
-        <i class="fas fa-fw fa-file"></i>
-        <span> Formulir Persetujuan </span>
-      </a>
-    </li>
+  <!-- Heading -->
+  <div class="sidebar-heading" a class="nav-link collapsed">Profile</div>
 
-    <!-- List Status -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#">
-        <i class="fas fa-fw fa-file-alt"></i>
-        <span>List Status</span>
-      </a>
-    </li>
+  <!-- User -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="./profile-pic.php">
+      <i class="fas fa-user"></i>
+      <span> Profile Saya</span>
+    </a>
+  </li>
+
 
   <!-- Button memperkecil sidebar -->
   <div class="text-center d-none d-md-inline">
