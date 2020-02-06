@@ -1,35 +1,39 @@
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column">
 
-<!-- Topbar -->
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-<p class="font-weight-bold" 
-    style="margin-top: 10px"> SISTEM INFORMASI EMPLOYMENT REQUISITION </p>
-  
-<!-- Sidebar Toggle (Topbar) -->
-<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-  <i class="fa fa-bars"></i>
-</button>
+  <!-- Main Content -->
+  <div id="content">
 
-  <!-- Topbar Navbar -->
-  <ul class="navbar-nav ml-auto">
-    <div class="topbar-divider d-none d-sm-block"></div>
+    <!-- Topbar -->
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+      <p class="font-weight-bold" style="margin-top: 10px"> SISTEM INFORMASI EMPLOYMENT REQUISITION </p>
 
-    <!-- Nav Item - Admin Information -->
-    <li class="nav-item dropdown no-arrow">
-      <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Manager</span>
-        <img class="img-profile rounded-circle" src="../img/mngr.png">
-      </a>
+      <!-- Sidebar Toggle (Topbar) -->
+      <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+      </button>
 
-    <!-- Dropdown - Log Out Information -->
-    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-        Logout
-      </a>
-    </div>
-    <!-- End of Dropdown - Log Out Information -->
+      <!-- Topbar Navbar -->
+      <ul class="navbar-nav ml-auto">
+        <div class="topbar-divider d-none d-sm-block"></div>
 
-    </li>
-  </ul>
-</nav>
-<!-- End of Topbar -->
+        <!-- Nav Item - Manager Information -->
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Manager</span>
+            <img class="img-profile rounded-circle" src="../img/mnger.png">
+          </a>
+
+          <!-- Dropdown - Log Out Information -->
+          <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+              <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+              Logout
+            </a>
+          </div>
+          <!-- End of Dropdown - Log Out Information -->
+
+        </li>
+      </ul>
+    </nav>
+    <!-- End of Topbar -->

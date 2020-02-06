@@ -6,11 +6,12 @@ if (!isset($_SESSION['username'])) {
 }
 
 $stm = $pdo_conn->prepare(
-                  "SELECT `id_karyawan`, `username`, karyawan.`nama`, jabatan.nama as `jabatan`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept , marital_status.nama as marital_status
+  "SELECT `id_karyawan`, `username`, karyawan.`nama`, jabatan.nama as `jabatan`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept , marital_status.nama as marital_status
                            FROM `karyawan` 
                            LEFT JOIN departemen ON karyawan.id_dept = departemen.id_dept
                            LEFT JOIN jabatan ON karyawan.jabatan = jabatan.id_jabatan
-						               LEFT JOIN marital_status ON karyawan.marital_status = marital_status.id_marital");
+						               LEFT JOIN marital_status ON karyawan.marital_status = marital_status.id_marital"
+);
 
 $stm->execute();
 $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
@@ -168,7 +169,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">ready to Log Out?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Admin ready to Log Out?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>

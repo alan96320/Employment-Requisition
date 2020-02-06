@@ -31,6 +31,7 @@
       <span> Data Karyawan </span>
     </a>
   </li>
+  
   <!-- Divider -->
   <hr class="sidebar-divider">
 
