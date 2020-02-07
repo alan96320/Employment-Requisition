@@ -17,7 +17,6 @@ $stm = $pdo_conn->prepare($sql); //prepare statement
 $stm->execute();
 echo $stm->rowCount() . "data berhasil di update";
 
-header('location: ../admin/detail-karyawan.php?id=' . $id);
+header('location: ../admin/list-karyawan.php?id=' . $id);
 
 // print_r($rows);
-?>

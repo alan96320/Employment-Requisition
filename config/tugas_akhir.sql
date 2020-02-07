@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2020 at 02:13 PM
+-- Generation Time: Feb 07, 2020 at 02:28 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -160,10 +160,10 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`id_karyawan`, `id_dept`, `username`, `password`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, `foto`, `hak_akses`) VALUES
-(1000, 1, NULL, NULL, 'Test1', '1', 1, '2000-01-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin'),
-(1001, 1, NULL, NULL, 'Test2', '2', 3, '1999-01-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin'),
-(1002, 1, NULL, NULL, 'Test3', '4', 2, '1998-02-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin'),
-(2222, 2, NULL, NULL, 'Rodo1', '3', 2, '2014-01-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin');
+(1000, 1, NULL, NULL, 'Test1', '1', 1, '2000-01-01', 'Laki-laki', 'Permanen', 'Solo', '1990-09-03', 'Solo', NULL, NULL, NULL, 'admin'),
+(1001, 1, NULL, NULL, 'Test2', '2', 3, '1999-01-01', 'Perempuan', 'Kontrak', 'Medan', '2000-09-08', 'Piayu', NULL, NULL, NULL, 'admin'),
+(1002, 1, NULL, NULL, 'Test3', '4', 2, '1998-02-01', 'Laki-laki', 'Harian', 'Jakarta', '1999-10-01', 'Legenda', NULL, NULL, NULL, 'admin'),
+(2222, 2, NULL, NULL, 'Rodo1', '3', 2, '2014-01-05', 'Laki-laki', 'Permanen', 'Palembang', '1978-10-16', 'BatCen', NULL, NULL, NULL, 'admin');
 
 -- --------------------------------------------------------
 
