@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2020 at 03:00 PM
+-- Generation Time: Feb 07, 2020 at 02:13 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -65,8 +65,16 @@ CREATE TABLE `departemen` (
 --
 
 INSERT INTO `departemen` (`id_dept`, `nama_dept`, `cost_center`) VALUES
-(1, 'HRD', '81264'),
-(2, 'LnD', '81265');
+(1, 'HRD', 'ID8642'),
+(2, 'LnD', 'ID8644'),
+(3, 'Compliance', 'ID8550'),
+(4, 'Engineering', 'ID8230'),
+(5, 'EQE', 'ID8211'),
+(6, 'Facility', 'ID8240'),
+(7, 'Finance', 'ID8660'),
+(8, 'Laboratory', 'ID8510'),
+(9, 'MS&T', 'ID8760'),
+(10, 'Planning', 'ID8610');
 
 -- --------------------------------------------------------
 
@@ -118,7 +126,8 @@ INSERT INTO `jabatan` (`id_jabatan`, `nama`) VALUES
 (5, 'Executive'),
 (6, 'Senior Executive'),
 (7, 'Manager'),
-(8, 'Senior Manager');
+(8, 'Senior Manager'),
+(9, 'SLT');
 
 -- --------------------------------------------------------
 
@@ -153,7 +162,8 @@ CREATE TABLE `karyawan` (
 INSERT INTO `karyawan` (`id_karyawan`, `id_dept`, `username`, `password`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, `foto`, `hak_akses`) VALUES
 (1000, 1, NULL, NULL, 'Test1', '1', 1, '2000-01-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin'),
 (1001, 1, NULL, NULL, 'Test2', '2', 3, '1999-01-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin'),
-(1002, 1, NULL, NULL, 'Test3', '4', 2, '1998-02-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin');
+(1002, 1, NULL, NULL, 'Test3', '4', 2, '1998-02-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin'),
+(2222, 2, NULL, NULL, 'Rodo1', '3', 2, '2014-01-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin');
 
 -- --------------------------------------------------------
 
@@ -307,7 +317,7 @@ ALTER TABLE `activity_log`
 -- AUTO_INCREMENT for table `departemen`
 --
 ALTER TABLE `departemen`
-  MODIFY `id_dept` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_dept` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `formulir`
@@ -319,7 +329,7 @@ ALTER TABLE `formulir`
 -- AUTO_INCREMENT for table `jabatan`
 --
 ALTER TABLE `jabatan`
-  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `karyawan`
