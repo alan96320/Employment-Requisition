@@ -5,6 +5,7 @@ if (!isset($_SESSION['username'])) {
   header("location: index.php");
 }
 
+
 $stmDep = $pdo_conn->prepare("SELECT * FROM `departemen`");
 $stmDep->execute();
 $rowsDepartemen = $stmDep->fetchAll(PDO::FETCH_ASSOC);
