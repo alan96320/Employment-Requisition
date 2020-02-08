@@ -79,7 +79,7 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
           while ($row = $stm2->fetch()) {
           ?>
 
-            <form style=" flex-grow: 1; margin-left: 49px;" method="post" action="../actions/update-karyawan-action.php?id=1000">
+            <form style=" flex-grow: 1; margin-left: 49px;" method="post" action="../actions/update-karyawan-action-copy.php?id=">
               <div class=" form-group">
                 <label for="id_karyawan" required>NIK</label>
                 <input type="text" class="form-control" value="<?= $row['id_karyawan'] ?>">
