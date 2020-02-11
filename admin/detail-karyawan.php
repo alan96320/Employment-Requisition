@@ -70,7 +70,7 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
 
         <!-- Begin Page Content -->
         <center>
-          <h2 style="margin-left: 20px" <p class="text-primary">Halaman Detail Karyawan</h2>
+          <h2 style="margin-left: 20px" class="text-primary">Halaman Detail Karyawan</h2>
         </center>
         <div class="container-fluid" style=" display: flex; justify-content: center; align-items: center; ">
           <!-- <img src="../img/CVB.jpg" style="width: 300px; height: 400px; "> -->
