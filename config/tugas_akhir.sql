@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2020 at 02:28 PM
+-- Generation Time: Feb 11, 2020 at 02:20 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -101,7 +101,7 @@ CREATE TABLE `formulir` (
 --
 
 INSERT INTO `formulir` (`id_pic`, `id_formulir`, `id_departemen`, `requester`, `job_type`, `status_verif`, `status_approved`, `approved_by`, `verif_by`, `open_position`, `budget`) VALUES
-(1, 1, 1, 'Siantro', 'Operator', 'ok', 'ok', 'manager', 'hrbp', 'Operator', 5);
+(1, 1, 1, 'Siantro', 'Officer', 'Disetujui', 'Ok', 'manager', 'Admin', 'Operator', 5);
 
 -- --------------------------------------------------------
 
@@ -163,7 +163,9 @@ INSERT INTO `karyawan` (`id_karyawan`, `id_dept`, `username`, `password`, `nama`
 (1000, 1, NULL, NULL, 'Test1', '1', 1, '2000-01-01', 'Laki-laki', 'Permanen', 'Solo', '1990-09-03', 'Solo', NULL, NULL, NULL, 'admin'),
 (1001, 1, NULL, NULL, 'Test2', '2', 3, '1999-01-01', 'Perempuan', 'Kontrak', 'Medan', '2000-09-08', 'Piayu', NULL, NULL, NULL, 'admin'),
 (1002, 1, NULL, NULL, 'Test3', '4', 2, '1998-02-01', 'Laki-laki', 'Harian', 'Jakarta', '1999-10-01', 'Legenda', NULL, NULL, NULL, 'admin'),
-(2222, 2, NULL, NULL, 'Rodo1', '3', 2, '2014-01-05', 'Laki-laki', 'Permanen', 'Palembang', '1978-10-16', 'BatCen', NULL, NULL, NULL, 'admin');
+(2222, 2, NULL, NULL, 'Rodo1', '3', 2, '2014-01-05', 'Laki-laki', 'Permanen', 'Palembang', '1978-10-16', 'BatCen', NULL, NULL, NULL, 'admin'),
+(5555, 4, NULL, NULL, 'Rodo2', '4', 3, '1998-01-24', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin'),
+(6666, 1, NULL, NULL, 'Rodo4', '1', 1, '2004-12-29', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin');
 
 -- --------------------------------------------------------
 
@@ -207,9 +209,17 @@ INSERT INTO `marital_status` (`id_marital`, `nama`) VALUES
 
 CREATE TABLE `pesan` (
   `id_pesan` int(11) NOT NULL,
-  `pengirim` int(11) NOT NULL,
+  `pengirim` varchar(50) NOT NULL,
   `detail` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pesan`
+--
+
+INSERT INTO `pesan` (`id_pesan`, `pengirim`, `detail`) VALUES
+(1, 'Manager', 'Pengajuan anda disetujui'),
+(2, 'Admin', 'Pengajuan anda ditolak');
 
 -- --------------------------------------------------------
 
@@ -295,6 +305,7 @@ ALTER TABLE `marital_status`
 -- Indexes for table `pesan`
 --
 ALTER TABLE `pesan`
+  ADD PRIMARY KEY (`id_pesan`),
   ADD KEY `pengirim` (`pengirim`);
 
 --
@@ -335,7 +346,7 @@ ALTER TABLE `jabatan`
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12346;
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6667;
 
 --
 -- AUTO_INCREMENT for table `marital_status`
@@ -344,34 +355,16 @@ ALTER TABLE `marital_status`
   MODIFY `id_marital` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `pesan`
+--
+ALTER TABLE `pesan`
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `approval`
---
-ALTER TABLE `approval`
-  ADD CONSTRAINT `approval_ibfk_1` FOREIGN KEY (`id_formulir`) REFERENCES `formulir` (`id_formulir`),
-  ADD CONSTRAINT `approval_ibfk_2` FOREIGN KEY (`verif_by`) REFERENCES `karyawan` (`id_karyawan`);
-
---
--- Constraints for table `manager`
---
-ALTER TABLE `manager`
-  ADD CONSTRAINT `manager_ibfk_1` FOREIGN KEY (`id_dept`) REFERENCES `departemen` (`id_dept`) ON DELETE CASCADE,
-  ADD CONSTRAINT `manager_ibfk_2` FOREIGN KEY (`id_karyawan`) REFERENCES `karyawan` (`id_karyawan`) ON DELETE CASCADE;
-
---
--- Constraints for table `pesan`
---
-ALTER TABLE `pesan`
-  ADD CONSTRAINT `pesan_ibfk_1` FOREIGN KEY (`pengirim`) REFERENCES `karyawan` (`id_karyawan`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
