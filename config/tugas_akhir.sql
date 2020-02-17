@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2020 at 02:20 PM
+-- Generation Time: Feb 17, 2020 at 04:47 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -21,19 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `tugas_akhir`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `activity_log`
---
-
-CREATE TABLE `activity_log` (
-  `log_id` int(11) NOT NULL,
-  `user_id` char(10) NOT NULL,
-  `activity` varchar(250) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -142,7 +129,7 @@ CREATE TABLE `karyawan` (
   `password` varchar(50) DEFAULT NULL,
   `nama` varchar(50) DEFAULT NULL,
   `jabatan` varchar(50) DEFAULT NULL,
-  `marital_status` int(11) DEFAULT NULL,
+  `marital_status` varchar(50) DEFAULT NULL,
   `tanggal_masuk` date DEFAULT NULL,
   `jenis_kelamin` varchar(20) DEFAULT NULL,
   `status_karyawan` varchar(50) DEFAULT NULL,
@@ -152,7 +139,7 @@ CREATE TABLE `karyawan` (
   `email` varchar(50) DEFAULT NULL,
   `no_telepon` varchar(20) DEFAULT NULL,
   `foto` varchar(200) DEFAULT NULL,
-  `hak_akses` enum('admin','pic','manager') DEFAULT NULL
+  `hak_akses` enum('admin','pic','manager','karyawan') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -160,12 +147,9 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`id_karyawan`, `id_dept`, `username`, `password`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, `foto`, `hak_akses`) VALUES
-(1000, 1, NULL, NULL, 'Test1', '1', 1, '2000-01-01', 'Laki-laki', 'Permanen', 'Solo', '1990-09-03', 'Solo', NULL, NULL, NULL, 'admin'),
-(1001, 1, NULL, NULL, 'Test2', '2', 3, '1999-01-01', 'Perempuan', 'Kontrak', 'Medan', '2000-09-08', 'Piayu', NULL, NULL, NULL, 'admin'),
-(1002, 1, NULL, NULL, 'Test3', '4', 2, '1998-02-01', 'Laki-laki', 'Harian', 'Jakarta', '1999-10-01', 'Legenda', NULL, NULL, NULL, 'admin'),
-(2222, 2, NULL, NULL, 'Rodo1', '3', 2, '2014-01-05', 'Laki-laki', 'Permanen', 'Palembang', '1978-10-16', 'BatCen', NULL, NULL, NULL, 'admin'),
-(5555, 4, NULL, NULL, 'Rodo2', '4', 3, '1998-01-24', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin'),
-(6666, 1, NULL, NULL, 'Rodo4', '1', 1, '2004-12-29', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin');
+(10301, 1, NULL, NULL, 'Rodo1', '3', '2', '2015-11-14', 'Laki-laki', 'Permanen', 'Palembang', '1978-10-16', 'Batam', NULL, NULL, NULL, 'karyawan'),
+(12344, 1, NULL, NULL, 'pipaku', '4', 'Single', '2020-02-11', 'Perempuan', 'Permanen', 'Batam Island', '2020-02-21', 'Piayu', NULL, NULL, NULL, 'karyawan'),
+(88888, 1, NULL, NULL, 'Rodo1', '5', 'Married', '2020-02-11', 'Perempuan', 'Permanen', 'Batam Island', '2020-02-19', 'asd', NULL, NULL, NULL, 'karyawan');
 
 -- --------------------------------------------------------
 
@@ -252,12 +236,6 @@ INSERT INTO `users` (`user_id`, `nama`, `username`, `password`, `departemen`, `h
 --
 
 --
--- Indexes for table `activity_log`
---
-ALTER TABLE `activity_log`
-  ADD PRIMARY KEY (`log_id`);
-
---
 -- Indexes for table `approval`
 --
 ALTER TABLE `approval`
@@ -319,12 +297,6 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `activity_log`
---
-ALTER TABLE `activity_log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `departemen`
 --
 ALTER TABLE `departemen`
@@ -346,7 +318,7 @@ ALTER TABLE `jabatan`
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6667;
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88889;
 
 --
 -- AUTO_INCREMENT for table `marital_status`

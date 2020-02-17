@@ -29,6 +29,6 @@ include ("../config/conn.php");
 ?>
 
 <script type="text/javascript">
-  alert("login gagal");
+  alert("user/password salah");
   history.back();
 </script>
