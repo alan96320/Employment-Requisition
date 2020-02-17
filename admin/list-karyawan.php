@@ -7,10 +7,10 @@ if (!isset($_SESSION['username'])) {
 
 $stm = $pdo_conn->prepare(
   "SELECT `id_karyawan`, `username`, karyawan.`nama`, jabatan.nama as `jabatan`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept , marital_status.nama as marital_status
-                           FROM `karyawan` 
-                           JOIN departemen ON karyawan.id_dept = departemen.id_dept
-                           JOIN jabatan ON karyawan.jabatan = jabatan.id_jabatan
-						               JOIN marital_status ON karyawan.marital_status = marital_status.id_marital"
+     FROM `karyawan` 
+     JOIN departemen ON karyawan.id_dept = departemen.id_dept
+     JOIN jabatan ON karyawan.jabatan = jabatan.id_jabatan
+     JOIN marital_status ON karyawan.marital_status = marital_status.id_marital"
 );
 
 $stm->execute();
@@ -47,116 +47,113 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <?php
-    include "../components/sidebar.php";
-    ?>
+      <?php
+      include "../components/sidebar.php";
+      ?>
 
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-      <!-- Main Content -->
-      <div id="content">
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
 
-        <?php
-        include "../components/navbar.php";
-        ?>
+  <!-- Main Content -->
+  <div id="content">
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+      <?php
+      include "../components/navbar.php";
+      ?>
 
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800"></h1>
-            <a href="tambah-karyawan.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-              <i class="fas  fa-user-plus fa-sm text-white-50"></i> Tambah Karyawan </a>
-          </div>
+  <!-- Begin Page Content -->
+  <div class="container-fluid">
 
-          <!-- Data Tables  -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Karyawan PT. CIBA VISION Batam</h6>
-            </div>
-            <div class="card-body">
-              <div class=" table table-hover table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead class="thead-dark">
-                    <tr role="row">
-                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Nama: activate to sort column descending" style="width: 157px;">ID Karyawan</th>
-                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Nama: activate to sort column descending" style="width: 157px;">Nama</th>
-                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Departemen: activate to sort column descending" style="width: 157px;">Departemen</th>
-                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jabatan: activate to sort column descending" style="width: 157px;">Jabatan</th>
-                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Marital Status: activate to sort column descending" style="width: 157px;">Marital Status</th>
-                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tanggal Masuk: activate to sort column descending" style="width: 157px;">Tanggal Masuk</th>
-                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jenis Kelamin: activate to sort column descending" style="width: 157px;">Jenis Kelamin</th>
-                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Status Karyawan: activate to sort column descending" style="width: 157px;">Status Karyawan</th>
-                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tempat Lahir: activate to sort column descending" style="width: 157px;">Tempat Lahir</th>
-                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tanggal Lahir: activate to sort column descending" style="width: 157px;">Tanggal Lahir</th>
-                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Alamat: activate to sort column descending" style="width: 157px;">Alamat</th>
-                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label=" : # " style="width: 157px;">&nbsp</th>
-                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label=" : # " style="width: 157px;">&nbsp</th>
-                    </tr>
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800"></h1>
+    <a href="tambah-karyawan.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+      <i class="fas  fa-user-plus fa-sm text-white-50"></i> Tambah Karyawan </a>
+  </div>
 
-                    <!-- <tr>
-                    <th>Nama</th>
-                    <th>Departemen</th>
-                    <th>Jabatan</th>
-                    <th>Marital Status</th>
-                    <th>Tanggal Masuk</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Status Karyawan</th>
-                    <th>Tempat Lahir</th>
-                    <th>Tanggal Lahir</th>
-                    <th>Alamat</th> 
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
-                  </tr>  -->
-
-                  </thead>
-                  <tbody>
-                    <?php
-                    foreach ($rows as $row) {
-                      echo ('
-                    <tr>
-                      <td>' . $row['id_karyawan'] . '</td>
-                      <td>' . $row['nama'] . '</td>
-                      <td>' . $row["nama_dept"] . '</td>
-                      <td>' . $row["jabatan"] . '</td>
-                      <td>' . $row["marital_status"] . '</td>
-                      <td>' . $row["tanggal_masuk"] . '</td>
-                      <td>' . $row["jenis_kelamin"] . '</td>
-                      <td>' . $row["status_karyawan"] . '</td>
-                      <td>' . $row["tempat_lahir"] . '</td>
-                      <td>' . $row["tanggal_lahir"] . '</td>
-                      <td>' . $row["alamat"] . '</td>
-                      <td> <a class="btn btn-info" href="./detail-karyawan.php?id=' . $row["id_karyawan"] . '">EDIT</a></td>
-                      <td> <a class="btn btn-danger" href="../actions/delete-karyawan-action.php?id_karyawan=' . $row["id_karyawan"]
-                        . '">HAPUS</Tambah></td>
-                    </tr> ');
-                    }
-                    ?>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <!-- End of Container Fluid -->
-
-      </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
-
+  <!-- Data Tables  -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Data Karyawan PT. CIBA VISION Batam</h6>
     </div>
-    <!-- End of Content Wrapper -->
+      <div class="card-body">
+        <div class="table table-hover table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+      <thead class="thead-dark">
+          <tr role="row">
+            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Nama: activate to sort column descending" style="width: 157px;">ID Karyawan</th>
+
+            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Nama: activate to sort column descending" style="width: 157px;">Nama</th>
+
+            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Departemen: activate to sort column descending" style="width: 157px;">Departemen</th>
+
+            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jabatan: activate to sort column descending" style="width: 157px;">Jabatan</th>
+
+            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Marital Status: activate to sort column descending" style="width: 157px;">Marital Status</th>
+
+            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tanggal Masuk: activate to sort column descending" style="width: 157px;">Tanggal Masuk</th>
+
+            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jenis Kelamin: activate to sort column descending" style="width: 157px;">Jenis Kelamin</th>
+
+            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Status Karyawan: activate to sort column descending" style="width: 157px;">Status Karyawan</th>
+
+            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tempat Lahir: activate to sort column descending" style="width: 157px;">Tempat Lahir</th>
+
+            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tanggal Lahir: activate to sort column descending" style="width: 157px;">Tanggal Lahir</th>
+
+            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Alamat: activate to sort column descending" style="width: 157px;">Alamat</th>
+
+            <th class="col align-self-center" colspan="2" style="width: 157px;">Aksi</th>         
+          </tr>
+        </thead>
+          <tbody>
+            <?php
+            foreach ($rows as $row) {
+            echo ('
+            <tr>
+            <td>' . $row['id_karyawan'] . '</td>
+            <td>' . $row['nama'] . '</td>
+            <td>' . $row["nama_dept"] . '</td>
+            <td>' . $row["jabatan"] . '</td>
+            <td>' . $row["marital_status"] . '</td>
+            <td>' . $row["tanggal_masuk"] . '</td>
+            <td>' . $row["jenis_kelamin"] . '</td>
+            <td>' . $row["status_karyawan"] . '</td>
+            <td>' . $row["tempat_lahir"] . '</td>
+            <td>' . $row["tanggal_lahir"] . '</td>
+            <td>' . $row["alamat"] . '</td>
+            <td> <a class="btn btn-info" href="./detail-karyawan.php?id=' . 
+                    $row["id_karyawan"] . '">EDIT</a></td>
+            <td> <a class="btn btn-danger" href="../actions/delete-karyawan-action.php?id_karyawan=
+                ' . $row["id_karyawan"] . '">HAPUS</Tambah></td>
+            </tr> ');
+            }
+            ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <!-- End of Container Fluid -->
+
+  </div>
+  <!-- End of Main Content -->
+
+  <!-- Footer -->
+  <footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
+      </div>
+    </div>
+  </footer>
+  <!-- End of Footer -->
+
+  </div>
+  <!-- End of Content Wrapper -->
 
   </div>
   <!-- End of Page Wrapper -->

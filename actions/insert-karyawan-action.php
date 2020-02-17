@@ -5,7 +5,10 @@ if (!isset($_SESSION['username'])) {
   header("location: index.php");
 }
 
-$sql= "INSERT INTO karyawan (`id_karyawan`, `nama`, `id_dept`, `jabatan`, `tanggal_masuk`, `marital_status`,  `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`,`hak_akses`)  VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+$sql= "INSERT INTO karyawan (`id_karyawan`, `nama`, `id_dept`, `jabatan`, `tanggal_masuk`, 
+		`marital_status`,`jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, 
+		`alamat`,`hak_akses`)  
+	   VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
 $NIK=$_POST['id_karyawan'];
 $Nama=$_POST['nama'];
@@ -22,7 +25,8 @@ $alamat=$_POST['alamat'];
 
 
 $stm = $pdo_conn->prepare($sql);
-$stm->execute([$NIK, $Nama, $Departemen, $Jabatan, $TanggalMasuk, $MaritalStatus, $jkelamin, $Status,  $tmpt_lahir, $tgl_lahir, $alamat, "karyawan"]);
+$stm->execute([$NIK, $Nama, $Departemen, $Jabatan, $TanggalMasuk, $MaritalStatus, $jkelamin, 
+				$Status, $tmpt_lahir, $tgl_lahir, $alamat, "karyawan"]);
 
 //echo $stm->debugDumpParams();
 header('location: ../admin/list-karyawan.php');

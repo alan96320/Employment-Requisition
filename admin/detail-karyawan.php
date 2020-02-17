@@ -14,7 +14,9 @@ function selected($a1,$a2){
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 
 $stm2 = $pdo_conn->query(
-                  "SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`,     `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`,    `no_telepon`, departemen.nama_dept, departemen.id_dept 
+                  "SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, 
+                  `tanggal_masuk`,`jenis_kelamin`,`status_karyawan`,`tempat_lahir`,`tanggal_lahir`, 
+                  `alamat`,`email`,`no_telepon`,departemen.nama_dept,departemen.id_dept 
                   FROM `karyawan` 
                   LEFT JOIN departemen ON karyawan.id_dept = departemen.id_dept 
                   WHERE karyawan.id_karyawan = '$id'");
@@ -62,110 +64,111 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <?php
-    include "../components/sidebar.php";
-    ?>
+        <?php
+        include "../components/sidebar.php";
+        ?>
 
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-      <!-- Main Content -->
-      <div id="content">
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+   
+  <!-- Main Content -->
+  <div id="content">
 
         <?php
         include "../components/navbar.php";
         ?>
 
-        <!-- Begin Page Content -->
-        <center>
-          <h2 style="margin-left: 20px" class="text-primary">Halaman Detail Karyawan</h2>
-        </center>
-        <div class="container-fluid" style=" display: flex; justify-content: center; align-items: center; ">
-          <!-- <img src="../img/CVB.jpg" style="width: 300px; height: 400px; "> -->
+  <!-- Begin Page Content -->
+  <center>
+    <h2 style="margin-left: 20px" class="text-primary">Halaman Detail Karyawan</h2>
+  </center>
 
-          <?php
-          while ($row = $stm2->fetch()) {
-          ?>
+  <div class="container-fluid" 
+       style=" display: flex; justify-content: center; align-items: center; ">
 
-            <form style=" flex-grow: 1; margin-left: 49px;" method="post" action="../actions/update-karyawan-action-copyy.php?id=">
-              <div class=" form-group">
-                <label  required>NIK</label>
-                <input readonly="" name="nik" type="text" class="form-control" value="<?= $row['id_karyawan'] ?>">
-              </div>
-              <div class="form-group">
-                <label>Nama</label>
-                <input name="nama" type="text" class="form-control" value="<?= $row['nama'] ?>">
-              </div>
-              <div class="form-group">
-                <label for="departemen">Departemen</label>
-                <select class="form-control" name='departemen'>
-                  <option>Pilih Departemen</option>
-                  <!-- <input type="text" class="form-control" value="<?= $row['nama_dept'] ?>"> -->
+        <?php
+        while ($row = $stm2->fetch()) {
+        ?>
 
-                  <?php
-                  foreach ($rowsDepartemen as $rowDepartemen) {
-                    echo '<option '.selected($row['id_dept'],$rowDepartemen["id_dept"]).' value="' . $rowDepartemen["id_dept"] . '">' . $rowDepartemen["nama_dept"] . ' - ' . $rowDepartemen["cost_center"]  . '</option>';
-                  }
-                  ?>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="jabatan">Jabatan</label>
-                <!-- <input type="text" class="form-control" value="<?= $row['jabatan'] ?>"> -->
-                <select class="form-control" name='jabatan'>
-                  <option>Pilih Jabatan</option>
+  <form style=" flex-grow: 1; margin-left: 49px;" method="post" action="../actions/update-karyawan-action-copyy.php?id=">
+              
+      <div class=" form-group">
+        <label  required>NIK</label>
+          <input readonly="" name="nik" type="text" class="form-control" value="<?= $row['id_karyawan'] ?>">
+      </div>
+              
+      <div class="form-group">
+        <label>Nama</label>
+        <input name="nama" type="text" class="form-control" value="<?= $row['nama'] ?>">
+      </div>
+              
+      <div class="form-group">
+        <label for="departemen">Departemen</label>
+        <select class="form-control" name='departemen'>
+          <option>Pilih Departemen</option>   
+            <?php
+              foreach ($rowsDepartemen as $rowDepartemen) {
+                echo '<option '.selected($row['id_dept'],$rowDepartemen["id_dept"]).' value="' . 
+                $rowDepartemen["id_dept"] . '">' . $rowDepartemen["nama_dept"] . ' - ' . 
+                $rowDepartemen["cost_center"]  . '</option>'; 
+              }
+            ?>
+        </select>
+      </div>
 
-                  <?php
-                  foreach ($rowsJabatan as $rowJabatan) {
-                    echo '<option '.selected($row['jabatan'],$rowJabatan['id_jabatan']).' value="' . $rowJabatan["id_jabatan"] . '">' . $rowJabatan["nama"] . '</option>';
-                  }
-                  ?>  
-                </select>
-              </div>
-              <div class="form-group">
-                <label required>Tanggal Masuk</label>
-                <input name="tgl_masuk" type="date" class="form-control" value="<?= $row['tanggal_masuk'] ?>">
-              </div>
-              <div class="form-group">
-                <label for="marital_status">Marital Status</label>
-                <!-- <input type="text" class="form-control" value="<?= $row['marital_status'] ?>"> -->
+      <div class="form-group">
+        <label for="jabatan">Jabatan</label>
+          <select class="form-control" name='jabatan'>
+            <option>Pilih Jabatan</option>
+              <?php
+                foreach ($rowsJabatan as $rowJabatan) {
+                echo '<option '.selected($row['jabatan'],$rowJabatan['id_jabatan']).' value="' . 
+                $rowJabatan["id_jabatan"] . '">' . $rowJabatan["nama"] . '</option>';
+                }
+              ?>  
+          </select>
+      </div>
 
-                <select class="form-control" name='status'>
-                  <option>Pilih Marital Status</option>
+      <div class="form-group">
+        <label required>Tanggal Masuk</label>
+        <input name="tgl_masuk" type="date" class="form-control" value="<?= $row['tanggal_masuk'] ?>">
+      </div>
 
-                  <?php
-                  foreach ($rowsMarital as $rowMarital) {
-                    echo '<option '.selected($row['marital_status'],$rowMarital["id_marital"]).' values="' . $rowMarital["id_marital"] . '">' . $rowMarital["nama"] . '</option>';
-                  }
-                  ?>
-
-                </select>
-
-              </div>
-              <button type="submit" class="btn btn-primary">Simpan</button>
-            </form>
-
+      <div class="form-group">
+        <label for="marital_status">Marital Status</label>
+        <select class="form-control" name='status'>
+          <option>Pilih Marital Status</option>
+            <?php
+            foreach ($rowsMarital as $rowMarital) {
+              echo '<option '.selected($row['marital_status'],$rowMarital["id_marital"]).' value="' . $rowMarital["id_marital"] . '">' . $rowMarital["nama"] . '</option>';
+            }
+            ?>
+        </select>
+      </div>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+  </form>
           <?php
           }
           ?>
-
-        </div>
-
-      </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
   </div>
+
+  </div>
+  <!-- End of Main Content -->
+
+  <!-- Footer -->
+  <footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
+      </div>
+    </div>
+  </footer>
+  <!-- End of Footer -->
+
+  </div>
+  <!-- End of Content Wrapper -->
+
+  </div>S
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
@@ -184,7 +187,7 @@ $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <!-- <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
+        
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>

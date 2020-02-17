@@ -47,143 +47,138 @@ $rowsJabatan = $stmJab->fetchAll(PDO::FETCH_ASSOC);
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <?php
-    include "../components/sidebar.php";
-    ?>
+        <?php
+        include "../components/sidebar.php";
+        ?>
 
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
 
-      <!-- Main Content -->
-      <div id="content">
+  <!-- Main Content -->
+  <div id="content">
 
         <?php
         include "../components/navbar.php";
         ?>
 
-        <!-- Begin Page Content -->
-        <center>
-          <h2 style="margin-left: 20px" class="text-primary"> Halaman Tambah Karyawan </h2>
-        </center>
+  <!-- Begin Page Content -->
+  <center>
+    <h2 style="margin-left: 20px" class="text-primary"> Halaman Tambah Karyawan </h2>
+  </center>
 
-        <div class="container-fluid" style=" display: flex; justify-content: center; align-items: center; ">
+  <div class="container-fluid" 
+        style=" display: flex; justify-content: center; align-items: center; ">
           <img src="../img/CVB.jpg" style="width: 300px; height: 400px; ">
 
-          <form enctype="multipart/form-data" action="../actions/insert-karyawan-action.php" method="post" style=" flex-grow: 1; margin-left: 49px;">
-            <div class="form-group">
-              <label for="id_karyawan">NIK</label>
-              <input type="number" name="id_karyawan" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="nama">Nama</label>
-              <input type="text" name="nama" class="form-control" required>
-            </div>
+  <form enctype="multipart/form-data" action="../actions/insert-karyawan-action.php" method="post" style=" flex-grow: 1; margin-left: 49px;">
 
-            <div class="form-group">
-              <label for="departemen">Departemen</label>
-                <select class="form-control" name='departemen'>
-                  <option>Pilih Departemen</option>
-
-                <?php
-                foreach ($rowsDepartemen as $rowDepartemen) {
-                  echo ('<option value="' . $rowDepartemen["id_dept"] . '">' . $rowDepartemen["nama_dept"] . ' - ' . $rowDepartemen["cost_center"]  . '</option>');
-                }
-                ?>
-
-              </select>
-            </div>
-
-              <div class="form-group" required>
-                <label for="maritalstatus">Marital Status</label>
-                <select class="form-control" name='status' >
-                  <option>Pilih Marital Status</option>
-
-                  <?php
-                  foreach ($rowsMarital as $rowsMarital) {
-                    echo ('<option value="' . $rowsMarital["id_marital"] . '">' . $rowsMarital["nama"] . '</option>');
-                  }
-                  ?>
-                </select>
-              </div>
-
-            <div class="form-group">
-              <label for="jabat">Jabatan</label>
-              <select class="form-control" name='jabatan'>
-                <option>Pilih Jabatan</option>
-
-                <?php
-                foreach ($rowsJabatan as $rowJabatan) {
-                  echo ('<option value="' . $rowJabatan["id_jabatan"] . '">' . $rowJabatan["nama"] . '</option>');
-                }
-                ?>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="tanggal_masuk">Tanggal Masuk</label>
-              <input type="date" name="tanggal_masuk" class="form-control"required>
-            </div>
-
-            <div class="form-group">
-              <label for="jenis_kelamin">Jenis Kelamin</label>
-              <select class="form-control" name='jenis_kelamin'>
-                <option value="">Jenis Kelamin</option>
-                <option value="Laki-laki">Laki-laki</option>
-                <option value="Perempuan">Perempuan</option>             
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="statuskar">Status Karyawan</label>
-              <select class="form-control" name='status_karyawan'>
-                <option value="">Status Karyawan</option>
-                <option value="Permanen">Permanen</option>
-                <option value="Kontrak">Kontrak</option>             
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label>Tempat Lahir</label>
-              <input type="text" name="tempat_lahir" class="form-control"required>
-            </div>
-
-
-            <div class="form-group">
-              <label for="tanggal_masuk">Tanggal Lahir</label>
-              <input type="date" name="tanggal_lahir" class="form-control" required>
-            </div> 
-
-             <div class="form-group">
-              <label>Alamat</label>
-              <input type="text" name="alamat" class="form-control"required>
-            </div>
-
-
-            <div class="form-group">
-              <label for="foto" type="file" name="foto">Foto</label>
-              <input type="file" name="foto" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-primary">Simpan</button>
-
-          </form>
-
-        </div>
-
-      </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
-
+    <div class="form-group">
+      <label for="id_karyawan">NIK</label>
+      <input type="number" name="id_karyawan" class="form-control" required>
     </div>
-    <!-- End of Content Wrapper -->
+
+    <div class="form-group">
+      <label for="nama">Nama</label>
+      <input type="text" name="nama" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="departemen">Departemen</label>
+      <select class="form-control" name='departemen'>
+          <option>Pilih Departemen</option>
+            <?php
+            foreach ($rowsDepartemen as $rowDepartemen) {
+              echo ('<option value="' . $rowDepartemen["id_dept"] . '">' . $rowDepartemen["nama_dept"] . ' - ' . $rowDepartemen["cost_center"]  . '</option>');
+            }
+            ?>
+      </select>
+    </div>
+
+    <div class="form-group" required>
+      <label for="maritalstatus">Marital Status</label>
+      <select class="form-control" name='status' >
+        <option>Pilih Marital Status</option>
+          <?php
+          foreach ($rowsMarital as $rowsMarital) {
+            echo ('<option value="' . $rowsMarital["id_marital"] . '">' . $rowsMarital["nama"] . 
+              '</option>');
+          }
+          ?>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="jabat">Jabatan</label>
+      <select class="form-control" name='jabatan'>
+        <option>Pilih Jabatan</option>
+          <?php
+          foreach ($rowsJabatan as $rowJabatan) {
+            echo ('<option value="' . $rowJabatan["id_jabatan"] . '">' . $rowJabatan["nama"] . '</option>');
+          }
+          ?>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="tanggal_masuk">Tanggal Masuk</label>
+      <input type="date" name="tanggal_masuk" class="form-control"required>
+    </div>
+
+    <div class="form-group">
+      <label for="jenis_kelamin">Jenis Kelamin</label>
+      <select class="form-control" name='jenis_kelamin'>
+        <option value="">Jenis Kelamin</option>
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>             
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="statuskar">Status Karyawan</label>
+      <select class="form-control" name='status_karyawan'>
+        <option value="">Status Karyawan</option>
+        <option value="Permanen">Permanen</option>
+        <option value="Kontrak">Kontrak</option>             
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Tempat Lahir</label>
+      <input type="text" name="tempat_lahir" class="form-control"required>
+    </div>
+
+
+    <div class="form-group">
+      <label for="tanggal_masuk">Tanggal Lahir</label>
+      <input type="date" name="tanggal_lahir" class="form-control" required>
+    </div> 
+
+    <div class="form-group">
+      <label>Alamat</label>
+      <input type="text" name="alamat" class="form-control"required>
+    </div>
+
+      <button type="submit" class="btn btn-primary">Simpan</button>
+
+  </form>
+
+  </div>
+
+  </div>
+  <!-- End of Main Content -->
+
+  <!-- Footer -->
+  <footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
+      </div>
+    </div>
+  </footer>
+  <!-- End of Footer -->
+
+  </div>
+  <!-- End of Content Wrapper -->
   </div>
   <!-- End of Page Wrapper -->
 
@@ -198,12 +193,12 @@ $rowsJabatan = $stmJab->fetchAll(PDO::FETCH_ASSOC);
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"> Ready Log Out?</h5>
+          <h5 class="modal-title" id="exampleModalLabel"> Admin ready Log Out?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <!-- <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
+      
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>
