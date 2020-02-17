@@ -8,9 +8,9 @@ if (!isset($_SESSION['username'])) {
 $stm = $pdo_conn->prepare(
   "SELECT `id_karyawan`, `username`, karyawan.`nama`, jabatan.nama as `jabatan`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept , marital_status.nama as marital_status
                            FROM `karyawan` 
-                           LEFT JOIN departemen ON karyawan.id_dept = departemen.id_dept
-                           LEFT JOIN jabatan ON karyawan.jabatan = jabatan.id_jabatan
-						               LEFT JOIN marital_status ON karyawan.marital_status = marital_status.id_marital"
+                           JOIN departemen ON karyawan.id_dept = departemen.id_dept
+                           JOIN jabatan ON karyawan.jabatan = jabatan.id_jabatan
+						               JOIN marital_status ON karyawan.marital_status = marital_status.id_marital"
 );
 
 $stm->execute();
@@ -80,6 +80,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead class="thead-dark">
                     <tr role="row">
+                      <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Nama: activate to sort column descending" style="width: 157px;">ID Karyawan</th>
                       <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Nama: activate to sort column descending" style="width: 157px;">Nama</th>
                       <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Departemen: activate to sort column descending" style="width: 157px;">Departemen</th>
                       <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Jabatan: activate to sort column descending" style="width: 157px;">Jabatan</th>
@@ -115,6 +116,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($rows as $row) {
                       echo ('
                     <tr>
+                      <td>' . $row['id_karyawan'] . '</td>
                       <td>' . $row['nama'] . '</td>
                       <td>' . $row["nama_dept"] . '</td>
                       <td>' . $row["jabatan"] . '</td>
@@ -125,8 +127,8 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
                       <td>' . $row["tempat_lahir"] . '</td>
                       <td>' . $row["tanggal_lahir"] . '</td>
                       <td>' . $row["alamat"] . '</td>
-                      <td> <a href="./detail-karyawan.php?id=' . $row["id_karyawan"] . '">EDIT</a></td>
-                      <td> <a href="../actions/delete-karyawan-action.php?id_karyawan=' . $row["id_karyawan"]
+                      <td> <a class="btn btn-info" href="./detail-karyawan.php?id=' . $row["id_karyawan"] . '">EDIT</a></td>
+                      <td> <a class="btn btn-danger" href="../actions/delete-karyawan-action.php?id_karyawan=' . $row["id_karyawan"]
                         . '">HAPUS</Tambah></td>
                     </tr> ');
                     }

@@ -125,6 +125,41 @@ $rowsJabatan = $stmJab->fetchAll(PDO::FETCH_ASSOC);
             </div>
 
             <div class="form-group">
+              <label for="jenis_kelamin">Jenis Kelamin</label>
+              <select class="form-control" name='jenis_kelamin'>
+                <option value="">Jenis Kelamin</option>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>             
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="statuskar">Status Karyawan</label>
+              <select class="form-control" name='status_karyawan'>
+                <option value="">Status Karyawan</option>
+                <option value="Permanen">Permanen</option>
+                <option value="Kontrak">Kontrak</option>             
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Tempat Lahir</label>
+              <input type="text" name="tempat_lahir" class="form-control"required>
+            </div>
+
+
+            <div class="form-group">
+              <label for="tanggal_masuk">Tanggal Lahir</label>
+              <input type="date" name="tanggal_lahir" class="form-control" required>
+            </div> 
+
+             <div class="form-group">
+              <label>Alamat</label>
+              <input type="text" name="alamat" class="form-control"required>
+            </div>
+
+
+            <div class="form-group">
               <label for="foto" type="file" name="foto">Foto</label>
               <input type="file" name="foto" class="form-control">
             </div>
