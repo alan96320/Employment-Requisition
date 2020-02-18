@@ -46,15 +46,6 @@
     </a>
   </li>
 
-  <!-- menu Tabel Karyawan -->
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="#">
-      <i class="fas fa-fw fa-database"></i>
-      <span> Tabel Data Karyawan </span>
-    </a>
-  </li>
-
-
   <!-- Button memperkecil sidebar -->
   <div class="text-center d-none d-md-inline">
     <button class="rounded-circle border-0" id="sidebarToggle"></button>

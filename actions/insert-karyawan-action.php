@@ -6,7 +6,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 $sql= "INSERT INTO karyawan (`id_karyawan`, `nama`, `id_dept`, `jabatan`, `tanggal_masuk`, 
-		`marital_status`,`jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, 
+		`marital_status`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, 
 		`alamat`,`hak_akses`)  
 	   VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -21,8 +21,6 @@ $jkelamin=$_POST['jenis_kelamin'];
 $tgl_lahir=$_POST['tanggal_lahir'];
 $tmpt_lahir=$_POST['tempat_lahir'];
 $alamat=$_POST['alamat'];
-
-
 
 $stm = $pdo_conn->prepare($sql);
 $stm->execute([$NIK, $Nama, $Departemen, $Jabatan, $TanggalMasuk, $MaritalStatus, $jkelamin, 

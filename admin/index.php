@@ -52,34 +52,33 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
-      <!-- Main Content -->
-      <div id="content">
+    <!-- Main Content -->
+    <div id="content">
 
         <?php
         include "../components/navbar.php";
         ?>
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <div class="align-items-center justify-content-between mb-0">
-            <center>
-              <h1 class="text-primary"> PT. CIBA VISION Batam </h1>
-              <img src="../img/CVB.jpg" style="
-                        width: all; 
-                        height: 400px;
-                        padding-bottom: 5px;
-                        padding-top: 5px;
-                        ">
-            </center>
-          </div>
-
-        </div>
-        <!-- End of container-fluid -->
+      <!-- Page Heading -->
+      <div class="align-items-center justify-content-between mb-0">
+        <center>
+          <h1 class="text-primary"> PT. CIBA VISION Batam </h1>
+          <img src="../img/CVB.jpg" style="
+                    width: all; 
+                    height: 400px;
+                    padding-bottom: 5px;
+                    padding-top: 5px; ">
+        </center>
+      </div>
 
       </div>
-      <!-- End of Main Content -->
+        <!-- End of container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
 
       <!-- Footer -->
       <div class="container my-auto" style="

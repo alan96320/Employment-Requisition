@@ -107,6 +107,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
             <th class="col align-self-center" colspan="2" style="width: 157px;">Aksi</th>         
           </tr>
         </thead>
+          
           <tbody>
             <?php
             foreach ($rows as $row) {
@@ -123,9 +124,9 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
             <td>' . $row["tempat_lahir"] . '</td>
             <td>' . $row["tanggal_lahir"] . '</td>
             <td>' . $row["alamat"] . '</td>
-            <td> <a class="btn btn-info" href="./detail-karyawan.php?id=' . 
+            <td> <a class="btn btn-outline-primary btn-sm" href="./detail-karyawan.php?id=' . 
                     $row["id_karyawan"] . '">EDIT</a></td>
-            <td> <a class="btn btn-danger" href="../actions/delete-karyawan-action.php?id_karyawan=
+            <td> <a class="btn btn-outline-danger btn-sm" href="../actions/delete-karyawan-action.php?id_karyawan=
                 ' . $row["id_karyawan"] . '">HAPUS</Tambah></td>
             </tr> ');
             }

@@ -90,6 +90,22 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
 
                   </thead>
+
+                  <!-- <tr>
+                  <th>Nama</th>
+                  <th>Departemen</th>
+                  <th>Jabatan</th>
+                  <th>Marital Status</th>
+                  <th>Tanggal Masuk</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Status Karyawan</th>
+                  <th>Tempat Lahir</th>
+                  <th>Tanggal Lahir</th>
+                  <th>Alamat</th> 
+                  <th>&nbsp;</th>
+                  <th>&nbsp;</th>
+                </tr>  -->
+
                   <tbody>
                     <?php
                     foreach ($rows as $row) {
