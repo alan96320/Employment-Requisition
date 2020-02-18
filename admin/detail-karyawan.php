@@ -18,7 +18,7 @@ $stm2 = $pdo_conn->query(
                   `tanggal_masuk`,`jenis_kelamin`,`status_karyawan`,`tempat_lahir`,`tanggal_lahir`, 
                   `alamat`,`email`,`no_telepon`,departemen.nama_dept,departemen.id_dept 
                   FROM `karyawan` 
-                  LEFT JOIN departemen ON karyawan.id_dept = departemen.id_dept 
+                  JOIN departemen ON karyawan.id_dept = departemen.id_dept 
                   WHERE karyawan.id_karyawan = '$id'");
 
 $stmDep = $pdo_conn->prepare("SELECT * FROM `departemen`");

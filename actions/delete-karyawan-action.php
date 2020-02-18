@@ -5,13 +5,23 @@ if (!isset($_SESSION['username'])) {
   header("location: index.php");
 }
 
-$sql= "DELETE FROM `karyawan` WHERE `id_karyawan`=?";
+try{
+	$sql= "DELETE FROM `karyawan` WHERE `id_karyawan`=?";
+	$stm = $pdo_conn->prepare($sql);
+	$NIK=$_GET['id_karyawan'];
+	if($stm->execute([$NIK]))
+	{
+		echo "<script> alert('Data Karyawan berhasil dihapus');
+		window.location = '../admin/list-karyawan.php'</script>";
+	}else{
+		echo "<script> alert('Data Karyawan tidak berhasil dihapus.'); 
+        history.back() </script>";
+    	}
+    } 
+    // show errors
+	catch(PDOException $e){
+		die('ERROR: ' . $exception->getMessage());
+    }
 
-$NIK=$_GET['id_karyawan'];
-
-$stm = $pdo_conn->prepare($sql);
-$stm->execute([$NIK]);
-header('location: ../admin/list-karyawan.php');
-
-
+// header('location: ../admin/list-karyawan.php');
 ?>

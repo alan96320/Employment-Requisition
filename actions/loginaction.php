@@ -29,6 +29,6 @@ include ("../config/conn.php");
 ?>
 
 <script type="text/javascript">
-  alert("user/password salah");
+  alert("upss... user/password salah");
   history.back();
 </script>
