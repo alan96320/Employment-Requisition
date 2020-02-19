@@ -78,39 +78,21 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 <!-- Page container Formulir ER -->
     <div class="container">
       <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label>Nama</label>
-            <input type="text" name="nama" class="form-control" required>
-          </div>
-        </div>
-          <div class="col">
-          <div class="form-group">
-            <label>Departemen</label>
-            <input type="text" name="nama" class="form-control" required>
-          </div>
-          </div>
-        </div>
-     </div>
-
-      <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label>asda</label>
-            <input type="text" name="nama" class="form-control" required>
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-group">
-            <label>svfsbsgs</label>
-            <input type="text" name="nama" class="form-control" required>
-          </div>
-        </div>
+      <div class="col">
+        <label>Nama</label>
+        <input type="text" name="nama" class="form-control" required>
+    </div>
+    <div class="col">
+        <label>Nama</label>
+        <input type="text" name="nama" class="form-control" required>
       </div>
     </div>
+  </div>
+  
+    </div>
+      
 
-    
+
 
             
 
