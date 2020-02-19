@@ -5,9 +5,12 @@ if (!isset($_SESSION['username'])) {
   header("location: ../index.php");
 }
 
-$stm = $pdo_conn->prepare("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept 
-                           FROM `karyawan` 
-                           INNER JOIN departemen ON karyawan.id_dept = departemen.id_dept");
+$stm = $pdo_conn->prepare("
+        SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, 
+                `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, 
+                `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept
+          FROM `karyawan`
+          INNER JOIN departemen ON karyawan.id_dept = departemen.id_dept");
 
 $stm->execute();
 $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
