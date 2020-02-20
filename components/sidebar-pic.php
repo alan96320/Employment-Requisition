@@ -28,7 +28,7 @@
   <li class="nav-item">
     <a class="nav-link collapsed" href="./formER.php">
       <i class="fas fa-fw fa-file-alt"></i>
-      <span> Formulir Emp. Requisition </span>
+      <span> Formulir ER </span>
     </a>
   </li>
 

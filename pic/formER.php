@@ -71,7 +71,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   <!-- Data Tables  -->
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Formulir Employee Requisition (ER)</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Formulir Employment Requisition (ER)</h6>
     </div>
   </div>
 
