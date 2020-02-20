@@ -98,7 +98,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <div class="col">
       <label>ID</label>
-      <input type="" name="id_karyawan" class="form-control" required>
+      <input type="number" name="id_karyawan" class="form-control" required>
     </div>
   </div>
   <div class="row">

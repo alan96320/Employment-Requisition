@@ -42,7 +42,7 @@
   <li class="nav-item">
     <a class="nav-link collapsed" href="profile.php">
       <i class="fas fa-user"></i>
-      <span> Profile Saya</span>
+      <span> Profil Admin</span>
     </a>
   </li>
 
