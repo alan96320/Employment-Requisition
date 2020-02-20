@@ -5,12 +5,12 @@ if (!isset($_SESSION['username'])) {
   header("location: index.php");
 }
 
-$stm = $pdo_conn->prepare("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept 
-                           FROM `karyawan` 
-                           INNER JOIN departemen ON karyawan.id_dept = departemen.id_dept");
+// $stm = $pdo_conn->prepare("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept 
+//                            FROM `karyawan` 
+//                            INNER JOIN departemen ON karyawan.id_dept = departemen.id_dept");
 
-$stm->execute();
-$rows = $stm->fetchAll(PDO::FETCH_ASSOC);
+// $stm->execute();
+// $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 
 //print_r($rows);
 
@@ -62,85 +62,23 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 <div class="container-fluid">
 
   <!-- Page Heading -->
-  <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800"></h1>
-    <a href="#" class="d-none d-sm-inline-block shadow-sm">
-      <i class="fas fa-check fa-sm text-white-50"></i>
-  </div>
-
-  <!-- Data Tables  -->
+  <div class="row">
+  
+  <!-- card models  -->
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Formulir Employee Requisition (ER)</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Status Formulir</h6>
     </div>
-  </div>
 
-<!-- Page container Formulir ER -->
+<!-- Page container Komentar -->
     <div class="container">
-      <div class="row">
-    <div class="col">
-      <div class="form">
-        <label>Nomor Formulir</label>
-        <input type="text" name="id_karyawan" class="form-control" required>
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control" rows="5" id="comment"></textarea>
       </div>
     </div>
-    <div class="col">
-      <label>Date</label>
-      <input type="" name="id_karyawan" class="form-control" required>
-    </div>
-  </div>
-<div class="row">
-    <div class="col">
-      <div class="form">
-        <label>Requester</label>
-        <input type="text" name="id_karyawan" class="form-control" required>
-      </div>
-    </div>
-    <div class="col">
-      <label>ID</label>
-      <input type="" name="id_karyawan" class="form-control" required>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <div class="form">
-        <label>Departemen</label>
-        <input type="text" name="id_karyawan" class="form-control" required>
-      </div>
-    </div>
-    <div class="col">
-      <label>Job Type</label>
-      <input type="" name="id_karyawan" class="form-control" required>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <div class="form">
-        <label>Open Posisi</label>
-        <input type="text" name="id_karyawan" class="form-control" required>
-      </div>
-    </div>
-    <div class="col">
-      <label>No.of request</label>
-      <input type="" name="id_karyawan" class="form-control" required>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <div class="form">
-        <label>Join date</label>
-        <input type="text" name="id_karyawan" class="form-control" required>
-      </div>
-    </div>
-    <div class="col">
-      <label>Supporting Document</label>
-      <input type="" name="id_karyawan" class="form-control" required>
-    </div>
-  </div>
+      
 
-
-    
-  </div>         
 
   <!-- Footer -->
   <footer class="sticky-footer bg-white">

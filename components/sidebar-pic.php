@@ -32,21 +32,21 @@
     </a>
   </li>
 
-  <!-- formulir ER -->
+  <!-- List Status -->
   <li class="nav-item">
+    <a class="nav-link collapsed" href="./liststatus.php">
+      <i class="fas fa-fw fa-file-alt"></i>
+      <span>Status Formulir</span>
+    </a>
+  </li>
+
+   <!-- formulir ER -->
+  <!-- <li class="nav-item">
     <a class="nav-link collapsed" href="#">
       <i class="fas fa-fw fa-file"></i>
       <span> Formulir Persetujuan </span>
     </a>
-  </li>
-
-  <!-- List Status -->
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="#">
-      <i class="fas fa-fw fa-file-alt"></i>
-      <span>List Status</span>
-    </a>
-  </li>
+  </li> -->
 
   <!-- Divider -->
   <hr class="sidebar-divider">
@@ -58,7 +58,7 @@
   <li class="nav-item">
     <a class="nav-link collapsed" href="./profile-pic.php">
       <i class="fas fa-user"></i>
-      <span> Profile Saya</span>
+      <span> Profile PIC</span>
     </a>
   </li>
 

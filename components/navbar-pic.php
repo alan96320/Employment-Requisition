@@ -28,7 +28,6 @@
       </a>
     </div>
     <!-- End of Dropdown - Log Out Information -->
-
     </li>
   </ul>
 </nav>
