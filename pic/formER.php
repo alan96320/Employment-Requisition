@@ -137,6 +137,23 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       <input type="" name="id_karyawan" class="form-control" required>
     </div>
   </div>
+  <div class="row">
+  <div class="col">
+    <label>Supporting Document</label>
+      <input type="" name="id_karyawan" class="form-control" required></div>
+  <div class="col">
+<label>Supporting Document</label>
+      <input type="" name="id_karyawan" class="form-control" required>
+  </div>
+  <div class="col">
+    <label>Supporting Document</label>
+      <input type="" name="id_karyawan" class="form-control" required>
+  </div>
+  <div class="col">
+    <label>Supporting Document</label>
+      <input type="" name="id_karyawan" class="form-control" required>
+  </div>
+</div>
 
 
     
