@@ -68,8 +68,8 @@ $rowsJabatan = $stmJab->fetchAll(PDO::FETCH_ASSOC);
 
   <div class="container-fluid" 
         style=" display: flex; justify-content: center; align-items: center; ">
-          <img src="../img/CVB.jpg" style="width: 300px; height: 400px; ">
-
+          <!-- <img src="../img/CVB.jpg" style="width: 300px; height: 400px; ">
+ -->
 <form enctype="multipart/form-data" action="../actions/insert-karyawan-action.php" method="post" style=" flex-grow: 1; margin-left: 49px;">
 
     <div class="form-group">
