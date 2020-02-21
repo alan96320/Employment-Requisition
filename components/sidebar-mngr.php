@@ -40,7 +40,7 @@
   <li class="nav-item">
     <a class="nav-link collapsed" href="#">
       <i class="fas fa-fw fa-file-alt"></i>
-      <span>List Status</span>
+      <span>List Persetujuan</span>
     </a>
   </li>
 
