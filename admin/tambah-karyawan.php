@@ -70,8 +70,9 @@ $rowsJabatan = $stmJab->fetchAll(PDO::FETCH_ASSOC);
         style=" display: flex; justify-content: center; align-items: center; ">
           <!-- <img src="../img/CVB.jpg" style="width: 300px; height: 400px; ">
  -->
-<form enctype="multipart/form-data" action="../actions/insert-karyawan-action.php" method="post" style=" flex-grow: 1; margin-left: 49px;">
+<form enctype="multipart/form-data" action="../actions/insert-karyawan-action.php" method="post" style=" flex-grow: 2; margin-left: 50px;">
 
+  <div class="col-11">
     <div class="form-group">
       <label for="id_karyawan">NIK</label>
       <input type="number" name="id_karyawan" class="form-control" required>
@@ -159,6 +160,7 @@ $rowsJabatan = $stmJab->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
       <button type="submit" class="btn btn-primary">Simpan</button>
+  </div>
 </form>
 
   </div>
