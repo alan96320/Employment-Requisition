@@ -33,7 +33,6 @@ $stmMar = $pdo_conn->prepare("SELECT * FROM `marital_status`");
 $stmMar->execute();
 $rowsMarital = $stmMar->fetchAll(PDO::FETCH_ASSOC);
 
-
 //print_r($rows);
 ?>
 

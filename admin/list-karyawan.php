@@ -8,9 +8,9 @@ if (!isset($_SESSION['username'])) {
 $stm = $pdo_conn->prepare(
   "SELECT `id_karyawan`, `username`, karyawan.`nama`, jabatan.nama as `jabatan`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept , marital_status.nama as marital_status
      FROM `karyawan` 
-     JOIN departemen ON karyawan.id_dept = departemen.id_dept
-     JOIN jabatan ON karyawan.jabatan = jabatan.id_jabatan
-     JOIN marital_status ON karyawan.marital_status = marital_status.id_marital"
+     LEFT JOIN departemen ON karyawan.id_dept = departemen.id_dept
+     LEFT JOIN jabatan ON karyawan.jabatan = jabatan.id_jabatan
+     LEFT JOIN marital_status ON karyawan.marital_status = marital_status.id_marital"
 );
 
 $stm->execute();
