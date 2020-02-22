@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2020 at 04:47 PM
+-- Generation Time: Feb 22, 2020 at 08:56 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -30,9 +30,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `approval` (
   `id_formulir` int(11) NOT NULL,
-  `verif_by` int(11) NOT NULL,
   `date` date NOT NULL,
-  `approval` varchar(50) NOT NULL
+  `approved_by` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -147,9 +146,11 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`id_karyawan`, `id_dept`, `username`, `password`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, `foto`, `hak_akses`) VALUES
-(10301, 1, NULL, NULL, 'Rodo1', '3', '2', '2015-11-14', 'Laki-laki', 'Permanen', 'Palembang', '1978-10-16', 'Batam', NULL, NULL, NULL, 'karyawan'),
-(12344, 1, NULL, NULL, 'pipaku', '4', 'Single', '2020-02-11', 'Perempuan', 'Permanen', 'Batam Island', '2020-02-21', 'Piayu', NULL, NULL, NULL, 'karyawan'),
-(88888, 1, NULL, NULL, 'Rodo1', '5', 'Married', '2020-02-11', 'Perempuan', 'Permanen', 'Batam Island', '2020-02-19', 'asd', NULL, NULL, NULL, 'karyawan');
+(1260, 6, NULL, NULL, 'Ivan5', '5', '2', '2012-11-30', 'Laki-laki', 'Permanen', 'Medan', '1997-11-27', 'Piayu', NULL, NULL, NULL, 'karyawan'),
+(10301, 9, NULL, NULL, 'Rodo Sianturi', '2', '3', '1994-01-03', 'Laki-laki', 'Kontrak', 'Batam ', '1991-01-01', 'Batam', NULL, NULL, NULL, 'karyawan'),
+(10302, 1, NULL, NULL, 'Dong Herti', '5', '4', '2018-10-25', 'Laki-laki', 'Permanen', 'Medan', '2006-07-25', 'Plamo Garden', NULL, NULL, NULL, 'karyawan'),
+(44444, 5, NULL, NULL, 'Suparyono', '4', '4', '2007-11-29', 'Laki-laki', 'Permanen', 'Solo', '1987-02-09', 'Piayu', NULL, NULL, NULL, 'karyawan'),
+(123456, 3, NULL, NULL, 'Rodo', '4', '3', '2013-10-29', 'Perempuan', 'Permanen', 'Padang', '1993-12-31', 'Batu Aji - Batam Center', NULL, NULL, NULL, 'karyawan');
 
 -- --------------------------------------------------------
 
@@ -160,8 +161,16 @@ INSERT INTO `karyawan` (`id_karyawan`, `id_dept`, `username`, `password`, `nama`
 CREATE TABLE `manager` (
   `id_dept` int(11) NOT NULL,
   `id_karyawan` int(11) NOT NULL,
-  `nama_dept` varchar(50) NOT NULL
+  `nama` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `manager`
+--
+
+INSERT INTO `manager` (`id_dept`, `id_karyawan`, `nama`) VALUES
+(1, 10301, 'Rodo1'),
+(2, 10302, 'Rodo2');
 
 -- --------------------------------------------------------
 
@@ -239,8 +248,7 @@ INSERT INTO `users` (`user_id`, `nama`, `username`, `password`, `departemen`, `h
 -- Indexes for table `approval`
 --
 ALTER TABLE `approval`
-  ADD PRIMARY KEY (`id_formulir`,`verif_by`),
-  ADD KEY `verif_by` (`verif_by`);
+  ADD PRIMARY KEY (`id_formulir`);
 
 --
 -- Indexes for table `departemen`
@@ -297,6 +305,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `approval`
+--
+ALTER TABLE `approval`
+  MODIFY `id_formulir` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `departemen`
 --
 ALTER TABLE `departemen`
@@ -318,7 +332,13 @@ ALTER TABLE `jabatan`
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88889;
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123458;
+
+--
+-- AUTO_INCREMENT for table `manager`
+--
+ALTER TABLE `manager`
+  MODIFY `id_dept` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `marital_status`
