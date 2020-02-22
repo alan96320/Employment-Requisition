@@ -43,7 +43,7 @@ if($_POST){
                  
         // Execute the query
         if($stmt->execute()){
-            echo "<script> alert('Record was updated'); 
+            echo "<script> alert('Data berhasil di edit'); 
                     window.location = '../admin/list-karyawan.php'</script>";
         }else{
             echo "<script> alert('Unable to update record. Please try again.'); history.back()
