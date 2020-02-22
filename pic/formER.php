@@ -26,7 +26,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SIER : Form Employment Requisition </title>
+  <title>SIER : Formulir ER </title>
   <!-- Favicon-->
   <link rel="icon" href="../img/alcr.jpg" type="image/x-icon">
 
@@ -77,16 +77,16 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 
 <!-- Page container Formulir ER -->
     <div class="container">
-      <div class="row">
-    <div class="col">
+      <div class="row justify-content-between">
+    <div class="col-3">
       <div class="form">
         <label>Nomor Formulir</label>
-        <input type="text" name="id_karyawan" class="form-control" required>
+        <input type="number" name="id_karyawan" class="form-control" required>
       </div>
     </div>
-    <div class="col">
+    <div class="col-3" right>
       <label>Date</label>
-      <input type="" name="id_karyawan" class="form-control" required>
+      <input type="date" name="id_karyawan" class="form-control" required>
     </div>
   </div>
 <div class="row">

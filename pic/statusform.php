@@ -26,7 +26,7 @@ if (!isset($_SESSION['username'])) {
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SIER : Form Employment Requisition </title>
+  <title>SIER : List Pengajuan </title>
   <!-- Favicon-->
   <link rel="icon" href="../img/alcr.jpg" type="image/x-icon">
 
