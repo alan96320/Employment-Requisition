@@ -85,7 +85,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
         <input type="number" name="id_karyawan" class="form-control" required>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-3">
       <label>Date</label>
       <input type="date" name="id_karyawan" class="form-control" required>
     </div>
@@ -155,23 +155,65 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       <input type="text" name="id_karyawan" class="form-control" required>
     </div>
   </div>
+</br>
   
   <div class="row">
   <div class="col">
     <div class="form">
-      <label>Supporting Document</label>
+      <label>Education Requirement</label>
       <input type="" name="id_karyawan" class="form-control" required>
   </div>
+</br>
 
- 
+<div class="row">
+  <div class="col">
+    <div class="form">
+      <label>Major Function</label>
+      <input type="" name="id_karyawan" class="form-control" required>
+  </div>
+</br>
+
+  <div class="row">
+    <div class="col">
+      <div class="form">
+        <label>Experience & Background Requirement</label>
+        <input type="" name="id_karyawan" class="form-control" required>
+    </div>
+</br>
+
+  <div class="row">
+      <div class="col-3">
+        <div class="form">
+          <label>Verified</label>
+            <input type="number" name="id_karyawan" class="form-control" required>
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="form">
+          <label>Approved  by</label>
+            <input type="number" name="id_karyawan" class="form-control" required>
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="form">
+          <label>PIC HRD</label>
+            <input type="number" name="id_karyawan" class="form-control" required>
+        </div>
+      </div>
+  </div>
+</br>
 
 
 
-
-
+      </div>
+      </div>
+     </div>
     </div>
    </div>     
-</form>    
+  </form>    
+</div>
 
 <!--   Footer -->
   <footer class="sticky-footer bg-white">
@@ -204,7 +246,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        
+
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>
