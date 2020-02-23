@@ -69,8 +69,8 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   </div>
 
   <!-- Form  -->
-<form class="form-horizontal"> 
-  <div class="card shadow mb-">
+<form class="form-horizontal-sm"> 
+  <div class="card shadow mb-4">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Formulir Employment Requisition</h6>
     </div>
@@ -91,78 +91,74 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </div> 
 </br>
-<div class="form-row">
-    <div class="col-3">
-      <div class="form">
-        <label>Requester</label>
-        <input type="text" name="id_karyawan" class="form-control" required>
+  <div class="form-row">
+      <div class="col-3">
+        <div class="form">
+          <label>Requester</label>
+          <input type="text" name="id_karyawan" class="form-control" required>
+        </div>
       </div>
-    </div>
-    <div class="col-3">
-      <label>ID#</label>
-      <input type="number" name="id_karyawan" class="form-control" required>
-    </div>
-    <div class="col-3">
-      <label>Departemen</label>
-      <input type="text" name="id_karyawan" class="form-control" required>
-    </div>
-    <div class="col-3">
-      <label>Job Type</label>
-      <!-- <input type="text" name="id_karyawan" class="form-control" required> -->
-      <div class="custom-control custom-checkbox">
-      <input type="checkbox" class="custom-control-input" id="customCheck1">
-      <label class="custom-control-label" for="customCheck1">Permanen</label></br>
-      <input type="checkbox" class="custom-control-input" id="customCheck2">
-      <label class="custom-control-label" for="customCheck2">Kontrak</label>
-    </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <div class="form">
+      <div class="col-3">
+        <label>ID#</label>
+        <input type="number" name="id_karyawan" class="form-control" required>
+      </div>
+      <div class="col-3">
         <label>Departemen</label>
         <input type="text" name="id_karyawan" class="form-control" required>
       </div>
-    </div>
-    
-    <div class="col">
-      
-  </div>
-
-  </div>
-
-  <div class="row">
-    <div class="col">
-      <div class="form">
-        <label>Open Posisi</label>
-        <input type="text" name="id_karyawan" class="form-control" required>
+      <div class="col-3">
+        <label>Job Type</label>
+        <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Permanen</label></br>
+        <input type="checkbox" class="custom-control-input" id="customCheck2">
+        <label class="custom-control-label" for="customCheck2">Kontrak</label>
+      </div>
       </div>
     </div>
-    <div class="col">
-      <label>No.of request</label>
-      <input type="" name="id_karyawan" class="form-control" required>
-    </div>
-  </div>
-
+</br>
   <div class="row">
-    <div class="col">
+    <div class="col-3">
       <div class="form">
-        <label>Join date</label>
-        <input type="text" name="id_karyawan" class="form-control" required>
+        <label>Open Position</label>
+          <select class="custom-select">
+            <option selected>Open Position</option>
+            <option value="1">Operator</option>
+            <option value="2">Staff</option>
+            <option value="3">Manager</option>
+          </select>
       </div>
     </div>
+    <div class="col-3">
+      <div class="form">
+        <label>No. of Request</label>
+          <input type="number" name="id_karyawan" class="form-control" required>
+      </div>
+    </div>
+     <div class="col-3">
+      <div class="form">
+        <label>To Replace</label>
+          <input type="text" name="id_karyawan" class="form-control" required>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="form">
+        <label>Join Date</label>
+          <input type="date" name="id_karyawan" class="form-control" required>
+      </div>
+    </div>    
+  </div>
+</br>
+  <div class="row">
     <div class="col">
       <label>Supporting Document</label>
-      <input type="" name="id_karyawan" class="form-control" required>
+      <input type="text" name="id_karyawan" class="form-control" required>
     </div>
   </div>
   
   <div class="row">
   <div class="col">
-    <label>Supporting Document</label>
-      <input type="" name="id_karyawan" class="form-control" required>
-  </div>
-  <div class="col">
+    <div class="form">
       <label>Supporting Document</label>
       <input type="" name="id_karyawan" class="form-control" required>
   </div>
@@ -185,7 +181,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </div>
   </footer>
-  <!-- End of Footer
+  <!-- End of Footer -->
 
   </div>
   <!-- End of Content Wrapper -->
@@ -208,7 +204,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <!--  <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
+        
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>
