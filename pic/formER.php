@@ -70,15 +70,14 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 
   <!-- Data Tables  -->
    <form class="form-horizontal"> 
-  <div class="card shadow mb-4">
+  <div class="card shadow mb-">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Formulir Employment Requisition</h6>
     </div>
   </div>
 
 <!-- Page container Formulir ER -->
-   
-    <div class="container">
+   <div class="container">
       <div class="row justify-content-between">
     <div class="col-3">
       <div class="form">
@@ -86,12 +85,13 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
         <input type="number" name="id_karyawan" class="form-control" required>
       </div>
     </div>
-    <div class="col-3" right>
+    <div class="col-4">
       <label>Date</label>
       <input type="date" name="id_karyawan" class="form-control" required>
     </div>
   </div>
-<div class="row">
+
+<div class="form-row">
     <div class="col-4">
       <div class="form">
         <label>Requester</label>
@@ -131,6 +131,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       <input type="" name="id_karyawan" class="form-control" required>
     </div>
   </div>
+
   <div class="row">
     <div class="col">
       <div class="form">
@@ -143,30 +144,28 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       <input type="" name="id_karyawan" class="form-control" required>
     </div>
   </div>
+  
   <div class="row">
   <div class="col">
     <label>Supporting Document</label>
-      <input type="" name="id_karyawan" class="form-control" required></div>
-  <div class="col">
-<label>Supporting Document</label>
       <input type="" name="id_karyawan" class="form-control" required>
   </div>
   <div class="col">
-    <label>Supporting Document</label>
+      <label>Supporting Document</label>
       <input type="" name="id_karyawan" class="form-control" required>
   </div>
-  <div class="col">
-    <label>Supporting Document</label>
-      <input type="" name="id_karyawan" class="form-control" required>
-  </div>
-</div>
+
+ 
 
 
-    
-  </div>     
-  </form>    
 
-  <!-- Footer -->
+
+
+    </div>
+   </div>     
+</form>    
+
+<!--   Footer -->
   <footer class="sticky-footer bg-white">
     <div class="container my-auto">
       <div class="copyright text-center my-auto">
@@ -174,7 +173,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </div>
   </footer>
-  <!-- End of Footer -->
+  <!-- End of Footer
 
   </div>
   <!-- End of Content Wrapper -->
