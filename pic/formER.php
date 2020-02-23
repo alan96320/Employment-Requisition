@@ -108,17 +108,25 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </div>
   <div class="row">
-    <div class="col-4">
+    <div class="col-6">
       <div class="form">
         <label>Departemen</label>
         <input type="text" name="id_karyawan" class="form-control" required>
       </div>
     </div>
+    
     <div class="col">
       <label>Job Type</label>
-      <input type="" name="id_karyawan" class="form-control" required>
+      <!-- <input type="" name="id_karyawan" class="form-control" required> -->
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="customCheck1">
+      <label class="custom-control-label" for="customCheck1">Permanen</label></br>
+      <label class="custom-control-label" for="customCheck1">Permanen</label>
     </div>
   </div>
+
+  </div>
+
   <div class="row">
     <div class="col">
       <div class="form">
