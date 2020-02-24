@@ -77,7 +77,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   </div>
 
 <!-- Page container Formulir ER -->
-<div class="container">
+<div class="container-fluid">
   <div class="row justify-content-between">
     <div class="col-3">
       <div class="form">
@@ -119,7 +119,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 </br>
   <div class="row">
     <div class="col-3">
-      <div class="form">
+      <div class="form-group">
         <label>Open Position</label>
           <select class="custom-select">
             <option selected>Open Position</option>
@@ -138,7 +138,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
      <div class="col-3">
       <div class="form">
         <label>To Replace</label>
-          <input type="text" name="id_karyawan" class="form-control" required>
+          <input type="text" name="id_karyawan" class="form-control" aria-describedby="addon-wrapping" required>
       </div>
     </div>
     <div class="col-3">
@@ -148,20 +148,20 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </div>    
   </div>
-</br>
-  <div class="row">
+
+  <div class="row">  
     <div class="col">
       <label>Supporting Document</label>
-      <input type="text" name="id_karyawan" class="form-control" required>
+      <input type="text" name="id_karyawan" placeholder="Role Profile" class="input form-control" required>
     </div>
   </div>
 </br>
   
-  <div class="row">
+<div class="row">
   <div class="col">
     <div class="form">
       <label>Education Requirement</label>
-      <input type="" name="id_karyawan" class="form-control" required>
+      <input type="text" name="id_karyawan" class="form-control" required>
   </div>
 </br>
 
@@ -190,14 +190,14 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       </div>
 
       <div class="col-3">
-        <div class="form">
+        <!-- <div class="form"> -->
           <label>Approved  by</label>
             <input type="number" name="id_karyawan" class="form-control" required>
         </div>
       </div>
 
       <div class="col-3">
-        <div class="form">
+        <!-- <div class="form"> -->
           <label>PIC HRD</label>
             <input type="number" name="id_karyawan" class="form-control" required>
         </div>
@@ -205,14 +205,13 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   </div>
 </br>
 
-
-
+          </div>
+          </div>
+        </div>
       </div>
-      </div>
-     </div>
-    </div>
-   </div>     
-  </form>    
+    </div>     
+   </form>    
+  </div>
 </div>
 
 <!--   Footer -->
