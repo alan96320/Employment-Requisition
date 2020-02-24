@@ -87,7 +87,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <div class="col-3">
       <label>Date</label>
-      <input type="date" name="id_karyawan" class="form-control" required>
+      <input type="date" name="date" class="form-control" required>
     </div>
   </div> 
 </br>
