@@ -62,13 +62,12 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
           <!-- Page Heading -->
           <div class="align-items-center justify-content-between mb-0">
             <center>
-              <h2 <p class="text-primary"> Selamat Datang Manager </h2>
+              <h2 class="text-primary"> Selamat Datang Manager </h2>
               <img src="../img/CVB.jpg" style="
                         width: all; 
                         height: 400px;
                         padding-bottom: 5px;
-                        padding-top: 5px;
-                        ">
+                        padding-top: 5px;">
             </center>
           </div>
 

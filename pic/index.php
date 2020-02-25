@@ -61,8 +61,12 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <center>
-            <h2 <p class="text-primary"> Halaman PIC Departemen </h2>
-            <img src="../img/CVB.jpg" />
+            <h2 class="text-primary"> Halaman PIC Departemen </h2>
+            <img src="../img/CVB.jpg" style="
+                    width: all; 
+                    height: 400px;
+                    padding-bottom: 5px;
+                    padding-top: 5px;">
           </center>
         </div>
         <!-- <div container-fluid></div> -->
