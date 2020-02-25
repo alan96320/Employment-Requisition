@@ -68,7 +68,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       <i></i>
   </div>
 
-  <!-- Form  -->
+<!-- Form  -->
 <form class="form-horizontal-sm"> 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -76,26 +76,26 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </div>
 
-<!-- Page container Formulir ER -->
-<div class="container-fluid">
-  <div class="row justify-content-between">
-    <div class="col-3">
-      <div class="form">
-        <label>No. Formulir</label>
-        <input type="number" name="id_karyawan" class="form-control" required>
+  <!-- Page container Formulir ER -->
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-3">
+        <div class="form">
+          <label>No. Formulir</label>
+          <input type="number" name="id_formulir" class="form-control" required>
+        </div>
       </div>
-    </div>
-    <div class="col-3">
-      <label>Date</label>
-      <input type="date" name="date" class="form-control" required>
-    </div>
-  </div> 
-</br>
+      <div class="col-3">
+        <label>Date</label>
+        <input type="date" name="date" class="form-control" required>
+      </div>
+    </div> 
+<hr>
   <div class="form-row">
       <div class="col-3">
         <div class="form">
           <label>Requester</label>
-          <input type="text" name="id_karyawan" class="form-control" required>
+          <input type="text" name="id_karyawan" class="form-control">
         </div>
       </div>
       <div class="col-3">
@@ -104,7 +104,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       </div>
       <div class="col-3">
         <label>Departemen</label>
-        <input type="text" name="id_karyawan" class="form-control" required>
+        <input type="text" name="id_karyawan" class="form-control">
       </div>
       <div class="col-3">
         <label>Job Type</label>
@@ -116,7 +116,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       </div>
       </div>
     </div>
-</br>
+<hr>
   <div class="row">
     <div class="col-3">
       <div class="form-group">
@@ -147,71 +147,81 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
           <input type="date" name="id_karyawan" class="form-control" required>
       </div>
     </div>    
-  </div>
-
+</div>
+<hr>
   <div class="row">  
-    <div class="col">
-      <label>Supporting Document</label>
-      <input type="text" name="id_karyawan" placeholder="Role Profile" class="input form-control" required>
-    </div>
+      <div class="col">
+          <label>Supporting Document</label>
+          <input type="text" name="id_karyawan" placeholder="Role Profile" class="input form-control" required>
+      </div>
+       <div class="col">
+          <label>Supporting Document1</label>
+          <input type="text" name="id_karyawan" placeholder="Org. Chart" class="input form-control" required>
+      </div>
+      <div class="col">
+          <label>Supporting Document2</label>
+          <input type="text" name="id_karyawan" placeholder="Upload File" class="input form-control" required>
+      </div>
   </div>
-</br>
-  
-<div class="row">
-  <div class="col">
-    <div class="form">
-      <label>Education Requirement</label>
-      <input type="text" name="id_karyawan" class="form-control" required>
-  </div>
-</br>
-
-<div class="row">
-  <div class="col">
-    <div class="form">
-      <label>Major Function</label>
-      <input type="" name="id_karyawan" class="form-control" required>
-  </div>
-</br>
-
+<hr>
   <div class="row">
     <div class="col">
       <div class="form">
-        <label>Experience & Background Requirement</label>
+        <label>Education Requirement</label>
+        <input type="text" name="id_karyawan" class="form-control" required>
+    </div>
+<hr>
+  <div class="row">
+    <div class="col">
+      <div class="form">
+        <label>Major Function</label>
         <input type="" name="id_karyawan" class="form-control" required>
     </div>
-</br>
-
+<hr>
+    <div class="row">
+      <div class="col">
+        <div class="form">
+          <label>Experience & Background Requirement</label>
+          <input type="" name="id_karyawan" class="form-control">
+      </div>
+<hr>
   <div class="row">
       <div class="col-3">
         <div class="form">
-          <label>Verified</label>
-            <input type="number" name="id_karyawan" class="form-control" required>
+          <label>Verified by</label>
+            <input type="text" name="id_karyawan" class="form-control" required>
         </div>
       </div>
-
       <div class="col-3">
-        <!-- <div class="form"> -->
-          <label>Approved  by</label>
-            <input type="number" name="id_karyawan" class="form-control" required>
+        <div class="form">
+          <label>Approved by</label>
+            <input type="text" name="id_karyawan" class="form-control" required>
         </div>
       </div>
-
-      <div class="col-3">
-        <!-- <div class="form"> -->
+      <div class="col-2">
+        <div class="form">
           <label>PIC HRD</label>
-            <input type="number" name="id_karyawan" class="form-control" required>
+            <input type="text" name="id_karyawan" class="form-control">
+        </div>
+      </div>
+        <div class="col-3">
+          <input type="button" class="btn btn-info" value="Edit">
+        </div>
+      </div>
+       <div class="col-3">
+            <input type="button" class="btn btn-info" value="Submit">
         </div>
       </div>
   </div>
 </br>
 
-          </div>
-          </div>
-        </div>
+</div>
+    </div>
+      </div>
       </div>
     </div>     
-   </form>    
-  </div>
+  </form>    
+</div>
 </div>
 
 <!--   Footer -->
