@@ -1,4 +1,4 @@
-<!-- Content Wrapper -->
+Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
 
   <!-- Main Content -->
@@ -6,6 +6,7 @@
 
     <!-- Topbar -->
     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+      <!-- <img class="img-profile rounded-circle" src="../img/alcon.jpg"> -->
       <p class="font-weight-bold" style="margin-top: 10px"> SISTEM INFORMASI EMPLOYMENT REQUISITION </p>
 
       <!-- Sidebar Toggle (Topbar) -->
@@ -36,4 +37,4 @@
         </li>
       </ul>
     </nav>
-    <!-- End of Topbar -->
+    <!-- End of Topbar
