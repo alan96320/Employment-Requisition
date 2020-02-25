@@ -118,36 +118,36 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     </div>
 <hr>
   <div class="row">
-    <div class="col-3">
-      <div class="form-group">
-        <label>Open Position</label>
-          <select class="custom-select">
-            <option selected>Open Position</option>
-            <option value="1">Operator</option>
-            <option value="2">Staff</option>
-            <option value="3">Manager</option>
-          </select>
+      <div class="col-3">
+        <div class="form-group">
+          <label>Open Position</label>
+            <select class="custom-select">
+              <option selected>Open Position</option>
+              <option value="1">Operator</option>
+              <option value="2">Staff</option>
+              <option value="3">Manager</option>
+            </select>
+        </div>
       </div>
-    </div>
-    <div class="col-3">
-      <div class="form">
-        <label>No. of Request</label>
-          <input type="number" name="id_karyawan" class="form-control" required>
+      <div class="col-3">
+        <div class="form">
+          <label>No. of Request</label>
+            <input type="number" name="id_karyawan" class="form-control" required>
+        </div>
       </div>
-    </div>
-     <div class="col-3">
-      <div class="form">
-        <label>To Replace</label>
-          <input type="text" name="id_karyawan" class="form-control" aria-describedby="addon-wrapping" required>
+       <div class="col-3">
+        <div class="form">
+          <label>To Replace</label>
+            <input type="text" name="id_karyawan" class="form-control" aria-describedby="addon-wrapping" required>
+        </div>
       </div>
-    </div>
-    <div class="col-3">
-      <div class="form">
-        <label>Join Date</label>
-          <input type="date" name="id_karyawan" class="form-control" required>
-      </div>
-    </div>    
-</div>
+      <div class="col-3">
+        <div class="form">
+          <label>Join Date</label>
+            <input type="date" name="id_karyawan" class="form-control" required>
+        </div>
+      </div>    
+  </div>
 <hr>
   <div class="row">  
       <div class="col">
@@ -166,65 +166,70 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 <hr>
   <div class="row">
     <div class="col">
-      <div class="form">
+      <div class="form-group">
         <label>Education Requirement</label>
-        <input type="text" name="id_karyawan" class="form-control" required>
+          <select class="custom-select">
+            <option selected>Education Requirement</option>
+            <option value="1">SMK</option>
+            <option value="2">D3/D4</option>
+            <option value="3">Sarjana</option>
+          </select>
+      </div>
     </div>
+  </div>
 <hr>
   <div class="row">
     <div class="col">
       <div class="form">
         <label>Major Function</label>
-        <input type="" name="id_karyawan" class="form-control" required>
+        <input type="text-area" name="id_karyawan" class="form-control" required>
+      </div>
     </div>
+  </div>
 <hr>
     <div class="row">
       <div class="col">
         <div class="form">
           <label>Experience & Background Requirement</label>
-          <input type="" name="id_karyawan" class="form-control">
+          <input type="text" name="id_karyawan" class="form-control">
+        </div>
       </div>
+    </div>
 <hr>
   <div class="row">
       <div class="col-3">
         <div class="form">
           <label>Verified by</label>
-            <input type="text" name="id_karyawan" class="form-control" required>
+          <input type="text" name="id_karyawan" class="form-control" required>
         </div>
       </div>
       <div class="col-3">
         <div class="form">
           <label>Approved by</label>
-            <input type="text" name="id_karyawan" class="form-control" required>
+          <input type="text" name="id_karyawan" class="form-control" required>
         </div>
       </div>
-      <div class="col-2">
+      <div class="col-3">
         <div class="form">
           <label>PIC HRD</label>
-            <input type="text" name="id_karyawan" class="form-control">
+          <input type="text" name="id_karyawan" class="form-control">
         </div>
       </div>
-        <div class="col-3">
-          <input type="button" class="btn btn-info" value="Edit">
-        </div>
-      </div>
-       <div class="col-3">
-            <input type="button" class="btn btn-info" value="Submit">
+      <div class="col-3">
+        <div class="form">
+          <button type="submit" class="btn btn-info">Edit</button>
+          <button type="submit" class="btn btn-info">Simpan</button>
         </div>
       </div>
   </div>
-</br>
-
-</div>
+<br>
     </div>
-      </div>
-      </div>
-    </div>     
-  </form>    
-</div>
-</div>
+         </div>
+      </form>   
+  </div>
 
-<!--   Footer -->
+
+  <!-- Footer -->
   <footer class="sticky-footer bg-white">
     <div class="container my-auto">
       <div class="copyright text-center my-auto">
@@ -238,14 +243,14 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   <!-- End of Content Wrapper -->
 
   </div>
-  <!-- End of Page Wrapper -->
+   <!-- End of Page Wrapper -->
 
-  <!-- Scroll to Top Button-->
+   <!-- Scroll to Top Button -->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
+   <!-- Logout Modal -->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -264,14 +269,14 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript-->
+   <!-- Bootstrap core JavaScript -->
   <script src="../assets/vendor/jquery/jquery.min.js"></script>
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
+   <!-- Core plugin JavaScript -->
   <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
+  <!-- Custom scripts for all pages -->
   <script src="../assets/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
