@@ -45,7 +45,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 <div id="wrapper">
 
       <?php
-      include "../components/sidebar-pic.php";
+      include "../components/sidebar-mngr.php";
       ?>
 
 <!-- Content Wrapper -->
@@ -55,7 +55,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 <div id="content">
 
       <?php
-      include "../components/navbar-pic.php";
+      include "../components/navbar-mngr.php";
       ?>
 
 <!-- Begin Page Content -->
