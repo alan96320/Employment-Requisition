@@ -23,7 +23,7 @@
                   <th>Salary</th>
                   <th>Start date</th>
                   <th>Salary</th>
-                  <th class="" colspan="1" style="width: 157px;">Action</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -48,6 +48,8 @@
                   <td>$170,750</td>
                   <td>2011/07/25</td>
                   <td>$170,750</td>
+                  <td a class="btn btn-outline-primary btn-sm">EDIT</a></td>
+                  <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
                 <tr>
                   <td>Garrett Winters</td>
@@ -58,6 +60,8 @@
                   <td>$170,750</td>
                   <td>2011/07/25</td>
                   <td>$170,750</td>
+                  <td a class="btn btn-outline-primary btn-sm">EDIT</a></td>
+                  <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
                 <tr>
                   <td>Garrett Winters</td>
@@ -68,6 +72,8 @@
                   <td>$170,750</td>
                   <td>2011/07/25</td>
                   <td>$170,750</td>
+                  <td a class="btn btn-outline-primary btn-sm">EDIT</a></td>
+                  <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
                 <tr>
                   <td>Garrett Winters</td>
@@ -78,6 +84,8 @@
                   <td>$170,750</td>
                   <td>2011/07/25</td>
                   <td>$170,750</td>
+                  <td a class="btn btn-outline-primary btn-sm">EDIT</a></td>
+                  <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
               </tbody>
             </table>
