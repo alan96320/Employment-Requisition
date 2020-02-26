@@ -41,101 +41,86 @@ if (!isset($_SESSION['username'])) {
 
 <body id="page-top">
 
-<!-- Page Wrapper -->
-<div id="wrapper">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
 
-      <?php
-      include "../components/sidebar-pic.php";
-      ?>
+    <?php
+    include "../components/sidebar-pic.php";
+    ?>
 
-<!-- Content Wrapper -->
-<div id="content-wrapper" class="d-flex flex-column">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
-<!-- Main Content -->
-<div id="content">
+      <!-- Main Content -->
+      <div id="content">
 
-      <?php
-      include "../components/navbar-pic.php";
-      ?>
+        <?php
+        include "../components/navbar-pic.php";
+        ?>
 
-<!-- Begin Page Content -->
-<div class="container-fluid">
+        <?php
+        include "../components/table.php";
+        ?>
 
-  <!-- Page Heading -->
-  <div class="row">
-  
-  <!-- card models  -->
-  <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Status Formulir</h6>
-    </div>
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
 
-<!-- Page container Komentar -->
-    <div class="container">
-      <div class="form-group">
-        <label for="comment">Comment:</label>
-        <textarea class="form-control" rows="5" id="comment"></textarea>
-      </div>
-    </div>
-      
+              <!-- Footer -->
+              <!-- <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                  <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
+                  </div>
+                </div>
+              </footer> -->
+              <!-- End of Footer -->
 
+            </div>
+            <!-- End of Content Wrapper -->
 
-  <!-- Footer -->
-  <footer class="sticky-footer bg-white">
-    <div class="container my-auto">
-      <div class="copyright text-center my-auto">
-        <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
-      </div>
-    </div>
-  </footer>
-  <!-- End of Footer -->
+          </div>
+          <!-- End of Page Wrapper -->
 
-  </div>
-  <!-- End of Content Wrapper -->
+          <!-- Scroll to Top Button-->
+          <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+          </a>
 
-  </div>
-  <!-- End of Page Wrapper -->
+          <!-- Logout Modal-->
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">PIC ready to Log Out?</h5>
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <!--  <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                  <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+          <!-- Bootstrap core JavaScript-->
+          <script src="../assets/vendor/jquery/jquery.min.js"></script>
+          <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">PIC ready to Log Out?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <!--  <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- Core plugin JavaScript-->
+          <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="../assets/vendor/jquery/jquery.min.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <!-- Custom scripts for all pages-->
+          <script src="../assets/js/sb-admin-2.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+          <!-- Page level plugins -->
+          <script src="../assets/vendor/chart.js/Chart.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="../assets/js/sb-admin-2.min.js"></script>
-
-  <!-- Page level plugins -->
-  <script src="../assets/vendor/chart.js/Chart.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="../assets/js/demo/chart-area-demo.js"></script>
-  <script src="../assets/js/demo/chart-pie-demo.js"></script>
+          <!-- Page level custom scripts -->
+          <script src="../assets/js/demo/chart-area-demo.js"></script>
+          <script src="../assets/js/demo/chart-pie-demo.js"></script>
 
 </body>
 
