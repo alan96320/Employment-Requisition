@@ -5,12 +5,27 @@ if (!isset($_SESSION['username'])) {
   header("location: index.php");
 }
 
-$stm = $pdo_conn->prepare("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept 
-                           FROM `karyawan` 
-                           INNER JOIN departemen ON karyawan.id_dept = departemen.id_dept");
+$user_id=$_SESSION['id'];
+$stm = $pdo_conn->prepare("SELECT * FROM users as u JOIN departemen as d ON u.departemen = d.id_dept  WHERE user_id=$user_id");
 
 $stm->execute();
-$rows = $stm->fetchAll(PDO::FETCH_ASSOC);
+$data_user = $stm->fetch(PDO::FETCH_ASSOC);
+//lihat($data_user);
+
+$stm = $pdo_conn->prepare("SELECT max(id_formulir) as maxid FROM formulir");
+
+$stm->execute();
+$data_max = $stm->fetch(PDO::FETCH_ASSOC);
+//lihat($data_max);
+$idx= $data_max['maxid'] + 1;
+
+// $stm = $pdo_conn->prepare("SELECT `id_karyawan`, `username`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, departemen.nama_dept 
+//                            FROM `karyawan` 
+//                            INNER JOIN departemen ON karyawan.id_dept = departemen.id_dept");
+
+// $stm->execute();
+// $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
+//lihat($rows);
 
 //print_r($rows);
 
@@ -64,7 +79,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800"></h1>
-    <a href="#" class="d-none d-sm-inline-block shadow-sm">
+    <a href="#" class="d-none d-sm-inline-block shadow-sm"></a>
       <i></i>
   </div>
 
@@ -82,7 +97,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       <div class="col-3">
         <div class="form">
           <label>No. Formulir</label>
-          <input type="number" name="id_formulir" class="form-control" required>
+          <input type="number" readonly="" name="id_formulir" value="<?= $idx;?>" class="form-control" required>
         </div>
       </div>
       <div class="col-3">
@@ -94,31 +109,32 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   <div class="form-row">
       <div class="col-3">
         <div class="form">
-          <label>Requester</label>
-          <input type="text" name="id_karyawan" class="form-control">
+          <label>ID# PIC</label>
+          <input readonly=""  value="<?= $data_user['user_id']; ?>" type="text" name="id_karyawan" class="form-control">
         </div>
       </div>
       <div class="col-3">
-        <label>ID#</label>
-        <input type="number" name="id_karyawan" class="form-control" required>
+        <label>Requester Name</label>
+        <input type="text" readonly="" value="<?= $data_user['nama']; ?>" name="id_karyawan" class="form-control" required>
       </div>
       <div class="col-3">
         <label>Departemen</label>
-        <input type="text" name="id_karyawan" class="form-control">
+        <input type="text"  readonly="" value="<?= $data_user['nama_dept']; ?>"  class="form-control">
+        <input hidden="" type="text" name="id_dept"  readonly="" value="<?= $data_user['departemen']; ?>"  class="form-control">
       </div>
       <div class="col-3">
         <label>Job Type</label>
-        <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="customCheck1">
-        <label class="custom-control-label" for="customCheck1">Permanen</label></br>
-        <input type="checkbox" class="custom-control-input" id="customCheck2">
-        <label class="custom-control-label" for="customCheck2">Kontrak</label>
+        <div class="custom-control " style="padding-left: 0px;">
+        <input type="checkbox" name="job_type" value="permanen" class="" style="transform: scale(1.3);" >
+        <label class=" ">Permanen</label></br>
+        <input type="checkbox" name="job_type" value="kontrak" class=" " style="transform: scale(1.3);" >
+        <label class=" " >Kontrak</label>
       </div>
       </div>
     </div>
 <hr>
   <div class="row">
-      <div class="col-3">
+      <div class="col-4">
         <div class="form-group">
           <label>Open Position</label>
             <select class="custom-select">
@@ -129,19 +145,19 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
             </select>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-4">
         <div class="form">
           <label>No. of Request</label>
             <input type="number" name="id_karyawan" class="form-control" required>
         </div>
       </div>
-       <div class="col-3">
+       <!-- <div class="col-3">
         <div class="form">
           <label>To Replace</label>
             <input type="text" name="id_karyawan" class="form-control" aria-describedby="addon-wrapping" required>
         </div>
-      </div>
-      <div class="col-3">
+      </div> -->
+      <div class="col-4">
         <div class="form">
           <label>Join Date</label>
             <input type="date" name="id_karyawan" class="form-control" required>
@@ -150,17 +166,23 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
   </div>
 <hr>
   <div class="row">  
-      <div class="col">
+      <div class="col-4">
+        <div class="form-group">
           <label>Supporting Document</label>
-          <input type="text" name="id_karyawan" placeholder="Role Profile" class="input form-control" required>
+         <!--  <input type="text" name="id_karyawan" placeholder="Role Profile" class="input form-control" required> -->
+         <select class="custom-select">
+              <option selected>Supporting Document</option>
+              <option value="1">Role Profile</option>
+              <option value="2">Org. Chart</option>
+            </select>
       </div>
-       <div class="col">
+       <!-- <div class="col">
           <label>Supporting Document1</label>
           <input type="text" name="id_karyawan" placeholder="Org. Chart" class="input form-control" required>
-      </div>
+      </div> -->
       <div class="col">
-          <label>Supporting Document2</label>
-          <input type="text" name="id_karyawan" placeholder="Upload File" class="input form-control" required>
+          <label>Upload File</label>
+          <input type="file" name="upload_file" placeholder="Upload File" class="" required>
       </div>
   </div>
 <hr>
@@ -196,7 +218,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </div>
 <hr>
-  <div class="row">
+  <!-- <div class="row">
       <div class="col-3">
         <div class="form">
           <label>Verified by</label>
@@ -221,8 +243,8 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
           <button type="submit" class="btn btn-info">Simpan</button>
         </div>
       </div>
-  </div>
-<br>
+  </div> -->
+<!-- <br> -->
     </div>
          </div>
       </form>   

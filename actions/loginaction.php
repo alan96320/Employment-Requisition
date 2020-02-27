@@ -15,6 +15,7 @@ include ("../config/conn.php");
             session_start();
             $_SESSION ["username"] = $row ["username"];
             $_SESSION ["hak_akses"] = $row ["hak_akses"];
+            $_SESSION ["id"] = $row ["user_id"];
             
             if ($row ['hak_akses'] == 'admin'){
                 header("location: ../admin/index.php");
