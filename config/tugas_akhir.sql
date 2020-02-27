@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2020 at 08:56 AM
+-- Generation Time: Feb 27, 2020 at 01:31 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -79,15 +79,19 @@ CREATE TABLE `formulir` (
   `approved_by` varchar(50) NOT NULL,
   `verif_by` varchar(50) NOT NULL,
   `open_position` varchar(50) NOT NULL,
-  `budget` int(11) NOT NULL
+  `join_date` date NOT NULL,
+  `budget` int(11) NOT NULL,
+  `education_req` varchar(100) NOT NULL,
+  `major_function` varchar(250) NOT NULL,
+  `experience_backgrnd` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `formulir`
 --
 
-INSERT INTO `formulir` (`id_pic`, `id_formulir`, `id_departemen`, `requester`, `job_type`, `status_verif`, `status_approved`, `approved_by`, `verif_by`, `open_position`, `budget`) VALUES
-(1, 1, 1, 'Siantro', 'Officer', 'Disetujui', 'Ok', 'manager', 'Admin', 'Operator', 5);
+INSERT INTO `formulir` (`id_pic`, `id_formulir`, `id_departemen`, `requester`, `job_type`, `status_verif`, `status_approved`, `approved_by`, `verif_by`, `open_position`, `join_date`, `budget`, `education_req`, `major_function`, `experience_backgrnd`) VALUES
+(1, 1, 1, 'Siantro', 'Officer', 'Disetujui', 'Ok', 'manager', 'Admin', 'Operator', '0000-00-00', 5, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -127,8 +131,8 @@ CREATE TABLE `karyawan` (
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   `nama` varchar(50) DEFAULT NULL,
-  `jabatan` varchar(50) DEFAULT NULL,
-  `marital_status` varchar(50) DEFAULT NULL,
+  `jabatan` int(11) DEFAULT NULL,
+  `marital_status` int(11) DEFAULT NULL,
   `tanggal_masuk` date DEFAULT NULL,
   `jenis_kelamin` varchar(20) DEFAULT NULL,
   `status_karyawan` varchar(50) DEFAULT NULL,
@@ -146,11 +150,13 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`id_karyawan`, `id_dept`, `username`, `password`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, `foto`, `hak_akses`) VALUES
-(1260, 6, NULL, NULL, 'Ivan5', '5', '2', '2012-11-30', 'Laki-laki', 'Permanen', 'Medan', '1997-11-27', 'Piayu', NULL, NULL, NULL, 'karyawan'),
-(10301, 9, NULL, NULL, 'Rodo Sianturi', '2', '3', '1994-01-03', 'Laki-laki', 'Kontrak', 'Batam ', '1991-01-01', 'Batam', NULL, NULL, NULL, 'karyawan'),
-(10302, 1, NULL, NULL, 'Dong Herti', '5', '4', '2018-10-25', 'Laki-laki', 'Permanen', 'Medan', '2006-07-25', 'Plamo Garden', NULL, NULL, NULL, 'karyawan'),
-(44444, 5, NULL, NULL, 'Suparyono', '4', '4', '2007-11-29', 'Laki-laki', 'Permanen', 'Solo', '1987-02-09', 'Piayu', NULL, NULL, NULL, 'karyawan'),
-(123456, 3, NULL, NULL, 'Rodo', '4', '3', '2013-10-29', 'Perempuan', 'Permanen', 'Padang', '1993-12-31', 'Batu Aji - Batam Center', NULL, NULL, NULL, 'karyawan');
+(1030, 5, NULL, NULL, 'Siantro21325', 2, 1, '2015-11-30', 'Laki-laki', 'Permanen', 'asda', '2019-10-30', 'Tiban', NULL, NULL, NULL, 'karyawan'),
+(1260, 6, NULL, NULL, 'Ivan5', 5, 2, '2012-11-30', 'Laki-laki', 'Permanen', 'Medan', '1997-11-27', 'Piayu', NULL, NULL, NULL, 'karyawan'),
+(5555, 1, NULL, NULL, 'Ratna ', 4, 3, '2005-12-30', 'Perempuan', 'Permanen', 'Tegal', '1990-07-21', 'Pi', NULL, NULL, NULL, 'karyawan'),
+(10301, 9, NULL, NULL, 'Rodo Sianturi', 2, 3, '1994-01-03', 'Laki-laki', 'Kontrak', 'Batam ', '1991-01-01', 'Batam', NULL, NULL, NULL, 'karyawan'),
+(10302, 1, NULL, NULL, 'Dong Herti', 5, 4, '2018-10-25', 'Laki-laki', 'Permanen', 'Medan', '2006-07-25', 'Plamo Garden', NULL, NULL, NULL, 'karyawan'),
+(44444, 5, NULL, NULL, 'Suparyono', 4, 4, '2007-11-29', 'Laki-laki', 'Permanen', 'Solo', '1987-02-09', 'Piayu', NULL, NULL, NULL, 'karyawan'),
+(123456, 3, NULL, NULL, 'Rodo', 4, 3, '2013-10-29', 'Perempuan', 'Permanen', 'Padang', '1993-12-31', 'Batu Aji - Batam Center', NULL, NULL, NULL, 'karyawan');
 
 -- --------------------------------------------------------
 
@@ -225,7 +231,7 @@ CREATE TABLE `users` (
   `nama` varchar(100) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(256) NOT NULL,
-  `departemen` varchar(50) NOT NULL,
+  `departemen` int(11) NOT NULL,
   `hak_akses` enum('admin','pic','manager','') NOT NULL,
   `image` varchar(128) NOT NULL,
   `email` varchar(128) NOT NULL
@@ -236,9 +242,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `nama`, `username`, `password`, `departemen`, `hak_akses`, `image`, `email`) VALUES
-(1, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'HRD', 'admin', '', ''),
-(2, 'pic', 'pic', 'ed09636a6ea24a292460866afdd7a89a', 'LND', 'pic', '', ''),
-(3, 'manager', 'manager', '1d0258c2440a8d19e716292b231e3190', 'LND', 'manager', '', '');
+(1, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 'admin', '', ''),
+(2, 'pic', 'pic', 'ed09636a6ea24a292460866afdd7a89a', 2, 'pic', '', ''),
+(3, 'manager', 'manager', '1d0258c2440a8d19e716292b231e3190', 1, 'manager', '', '');
 
 --
 -- Indexes for dumped tables
@@ -260,7 +266,9 @@ ALTER TABLE `departemen`
 -- Indexes for table `formulir`
 --
 ALTER TABLE `formulir`
-  ADD PRIMARY KEY (`id_formulir`);
+  ADD PRIMARY KEY (`id_formulir`),
+  ADD KEY `id_pic` (`id_pic`),
+  ADD KEY `id_departemen` (`id_departemen`);
 
 --
 -- Indexes for table `jabatan`
@@ -272,7 +280,10 @@ ALTER TABLE `jabatan`
 -- Indexes for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  ADD PRIMARY KEY (`id_karyawan`);
+  ADD PRIMARY KEY (`id_karyawan`),
+  ADD KEY `id_dept` (`id_dept`),
+  ADD KEY `jabatan` (`jabatan`),
+  ADD KEY `marital_status` (`marital_status`);
 
 --
 -- Indexes for table `manager`
@@ -298,7 +309,9 @@ ALTER TABLE `pesan`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD KEY `departemen` (`departemen`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -332,7 +345,7 @@ ALTER TABLE `jabatan`
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123458;
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123457;
 
 --
 -- AUTO_INCREMENT for table `manager`
@@ -356,7 +369,32 @@ ALTER TABLE `pesan`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `formulir`
+--
+ALTER TABLE `formulir`
+  ADD CONSTRAINT `formulir_ibfk_1` FOREIGN KEY (`id_pic`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `formulir_ibfk_2` FOREIGN KEY (`id_departemen`) REFERENCES `departemen` (`id_dept`);
+
+--
+-- Constraints for table `karyawan`
+--
+ALTER TABLE `karyawan`
+  ADD CONSTRAINT `karyawan_ibfk_1` FOREIGN KEY (`id_dept`) REFERENCES `departemen` (`id_dept`),
+  ADD CONSTRAINT `karyawan_ibfk_2` FOREIGN KEY (`jabatan`) REFERENCES `jabatan` (`id_jabatan`),
+  ADD CONSTRAINT `karyawan_ibfk_3` FOREIGN KEY (`marital_status`) REFERENCES `marital_status` (`id_marital`);
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`departemen`) REFERENCES `departemen` (`id_dept`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
