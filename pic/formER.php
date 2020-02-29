@@ -230,7 +230,7 @@ $idx= $data_max['maxid'] + 1;
     </div>
 <hr>
   
-    </div>
+    </div>        
          </div>
       </form>   
   </div>
