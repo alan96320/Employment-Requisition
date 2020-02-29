@@ -166,28 +166,39 @@ $idx= $data_max['maxid'] + 1;
   </div>
 <hr>
   <div class="row">  
-      <div class="col-4">
+      <div class="col-3">
         <div class="form-group">
           <label>Supporting Document</label>
          <!--  <input type="text" name="id_karyawan" placeholder="Role Profile" class="input form-control" required> -->
-         <select class="custom-select">
+            <select class="custom-select">
               <option selected>Supporting Document</option>
               <option value="1">Role Profile</option>
               <option value="2">Org. Chart</option>
             </select>
+        </div>
       </div>
-       <!-- <div class="col">
-          <label>Supporting Document1</label>
-          <input type="text" name="id_karyawan" placeholder="Org. Chart" class="input form-control" required>
-      </div> -->
       <div class="col">
           <label>Upload File</label>
           <input type="file" name="upload_file" placeholder="Upload File" class="" required>
       </div>
+      <!-- <div class="col">  -->
+          <!-- <label>Upload File</label>
+          <input type="file" name="upload_file" placeholder="Upload File" class="" required> -->
+      <div class="col-4">
+      <div class="form-group">
+        <label>Education Requirement</label>
+          <select class="custom-select">
+            <option selected>Education Requirement</option>
+            <option value="1">SMK</option>
+            <option value="2">D3/D4</option>
+            <option value="3">Sarjana</option>
+          </select>
+      </div>
+      </div>
   </div>
 <hr>
   <div class="row">
-    <div class="col">
+    <div class="col-4">
       <div class="form-group">
         <label>Education Requirement</label>
           <select class="custom-select">
@@ -218,33 +229,7 @@ $idx= $data_max['maxid'] + 1;
       </div>
     </div>
 <hr>
-  <!-- <div class="row">
-      <div class="col-3">
-        <div class="form">
-          <label>Verified by</label>
-          <input type="text" name="id_karyawan" class="form-control" required>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="form">
-          <label>Approved by</label>
-          <input type="text" name="id_karyawan" class="form-control" required>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="form">
-          <label>PIC HRD</label>
-          <input type="text" name="id_karyawan" class="form-control">
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="form">
-          <button type="submit" class="btn btn-info">Edit</button>
-          <button type="submit" class="btn btn-info">Simpan</button>
-        </div>
-      </div>
-  </div> -->
-<!-- <br> -->
+  
     </div>
          </div>
       </form>   

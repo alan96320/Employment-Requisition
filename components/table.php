@@ -15,11 +15,12 @@
             <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>ID#</th>
-                  <th>Nama</th>
+                  <th>No.Form</th> #diambildari IDFomulir#
+                  <th>ID Kar.</th>
+                  <th>Requester</th>
                   <th>Departemen</th>
                   <th>Jabatan</th>
-                  <th>Start date</th>
+                  <th>Education Requirement</th>
                   <th>Salary</th>
                   <th>Start date</th>
                   <th>Salary</th>
@@ -28,19 +29,21 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
-                  <td>Edinburgh</td>
+                  <td>1</td>
+                  <td>10000</td>
+                  <td>A</td>
+                  <td>Officer</td>
                   <td>61</td>
                   <td>2011/04/25</td>
                   <td>$320,800</td>
                   <td>2011/04/25</td>
                   <td>$320,800</td>
-                  <td a class="btn btn-outline-primary btn-sm">EDIT</a></td>
+                  <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
                   <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
                 <tr>
-                  <td>Garrett Winters</td>
+                  <td>2</td>
+                  <td>10001</td>
                   <td>Accountant</td>
                   <td>Tokyo</td>
                   <td>63</td>
@@ -48,11 +51,12 @@
                   <td>$170,750</td>
                   <td>2011/07/25</td>
                   <td>$170,750</td>
-                  <td a class="btn btn-outline-primary btn-sm">EDIT</a></td>
+                  <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
                   <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
                 <tr>
-                  <td>Garrett Winters</td>
+                  <td>3</td>
+                  <td>10002</td>
                   <td>Accountant</td>
                   <td>Tokyo</td>
                   <td>63</td>
@@ -60,11 +64,12 @@
                   <td>$170,750</td>
                   <td>2011/07/25</td>
                   <td>$170,750</td>
-                  <td a class="btn btn-outline-primary btn-sm">EDIT</a></td>
+                  <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
                   <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
                 <tr>
-                  <td>Garrett Winters</td>
+                  <td>4</td>
+                  <td>10003</td>
                   <td>Accountant</td>
                   <td>Tokyo</td>
                   <td>63</td>
@@ -72,11 +77,12 @@
                   <td>$170,750</td>
                   <td>2011/07/25</td>
                   <td>$170,750</td>
-                  <td a class="btn btn-outline-primary btn-sm">EDIT</a></td>
+                  <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
                   <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
                 <tr>
-                  <td>Garrett Winters</td>
+                  <td>5</td>
+                  <td>10004</td>
                   <td>Accountant</td>
                   <td>Tokyo</td>
                   <td>63</td>
@@ -84,7 +90,7 @@
                   <td>$170,750</td>
                   <td>2011/07/25</td>
                   <td>$170,750</td>
-                  <td a class="btn btn-outline-primary btn-sm">EDIT</a></td>
+                  <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
                   <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
               </tbody>
