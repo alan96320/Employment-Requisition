@@ -24,7 +24,7 @@
                   <th>Salary</th>
                   <th>Start date</th>
                   <th>Salary</th>
-                  <th>Action</th>
+                  <th class="justify-content-center">Action</th>
                 </tr>
               </thead>
               <tbody>

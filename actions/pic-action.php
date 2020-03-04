@@ -10,6 +10,6 @@ query= INSERT INTO formulir VALUES (`id_pic`, `id_formulir`, `id_departemen`, `r
 
 window.location('../pic/formER.php');
 
-lihat($data_user);
+// lihat($data_user);
 
 ?>

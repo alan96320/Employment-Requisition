@@ -77,17 +77,18 @@ $idx= $data_max['maxid'] + 1;
 <div class="container-fluid">
 
   <!-- Page Heading -->
-  <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">List Status Pengajuan</h1>
-    <a href="#" class="d-none d-sm-inline-block shadow-sm"></a>
-      <i></i>
+  <div class="d-sm-flex align justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Formulir Employment Requisition (ER)</h1>
+    <!-- <a href="#" class="d-none d-sm-inline-block shadow-sm"></a> -->
+    <!-- <p class="mb-4">Ini adalah Formulir Employment Requisition ke HRD dari PIC ke Admin.</a>.</p> -->
+    <!-- <i></i> -->
   </div>
 
 <!-- Form  -->
-<form class="form-horizontal-sm">
+<!-- <form class="form-horizontal-sm"> -->
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Formulir Employment Requisition</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Formulir ER</h6>
     </div>
   <!-- </div> -->
 <!-- Page container Formulir ER -->
@@ -124,10 +125,10 @@ $idx= $data_max['maxid'] + 1;
    <div class="row">
       <div class="col">
          <label>Job Type</label>
-            <div class="form-group" style="padding-left: 0px;">
-             <input type="checkbox" name="job_type" value="permanen" class="" style="transform: scale(1.3);" >
+          <div class="form-group" style="padding-left: 0px;">
+          <input type="checkbox" name="job_type" value="permanen" class="" style="transform: scale(1.3);" >
           <label class="">Permanen</label></br>
-             <input type="checkbox" name="job_type" value="kontrak" class=" " style="transform: scale(1.3);" >
+          <input type="checkbox" name="job_type" value="kontrak" class=" " style="transform: scale(1.3);" >
           <label class=" ">Kontrak</label>
       </div>
     </div>
@@ -149,13 +150,13 @@ $idx= $data_max['maxid'] + 1;
       <div class="col-3">
         <div class="form">
           <label>No. of Request</label>
-            <input type="number" name="id_karyawan" class="form-control" required>
+            <input type="number" name="id_karyawan" placeholder="jumlah orang yang diganti" class="form-control" required>
         </div>
       </div>
        <div class="col-3">
         <div class="form">
           <label>To Replace</label>
-            <input type="text" name="id_karyawan" class="form-control" aria-describedby="addon-wrapping" required>
+            <input type="text" name="id_karyawan" placeholder="masukkan nama pengganti" class="form-control" aria-describedby="addon-wrapping" required>
         </div>
       </div>
       <div class="col">
@@ -171,7 +172,7 @@ $idx= $data_max['maxid'] + 1;
         <div class="form-group">
           <label>Supporting Document</label>
             <select class="custom-select">
-              <option selected>Supporting Document</option>
+              <option selected>Dokumen Pendukung</option>
               <option value="1">Role Profile</option>
               <option value="2">Org. Chart</option>
             </select>
@@ -185,7 +186,7 @@ $idx= $data_max['maxid'] + 1;
       <div class="form-group">
         <label>Education Requirement</label>
           <select class="custom-select">
-            <option selected>Education Requirement</option>
+            <option selected>Persyaratan Pendidikan</option>
             <option value="1">SMK</option>
             <option value="2">D3/D4</option>
             <option value="3">Sarjana</option>
@@ -218,6 +219,7 @@ $idx= $data_max['maxid'] + 1;
       </div>
     </form>
   </div>
+
 
   <!-- Footer -->
   <footer class="sticky-footer bg-white">
