@@ -208,7 +208,8 @@ $idx= $data_max['maxid'] + 1;
         <div class="form">
           <label>Experience & Background Requirement</label>
           <input type="text" name="experiece" class="form-control">
-        </div>
+        </div><br>
+              <center><a class='btn btn-success' href='../pic/statusform.php'>Simpan</a></center>
       </div>
     </div>
 <hr>
