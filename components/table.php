@@ -8,37 +8,46 @@
       <!-- DataTales Example -->
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+          <h6 class="m-0 font-weight-bold text-primary">List Pengajuan Form ER</h6>
         </div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>No.Form</th> #diambildari IDFomulir#
-                  <th>ID Kar.</th>
-                  <th>Tanggal Pengajuan<th>
+                  <th>No.Form</th> /* #diambildari IDFomulir#* /
+                  <th>Date</th>
+                  <th>ID# PIC</th>
                   <th>Requester</th>
                   <th>Departemen</th>
-                  <th>Jabatan</th>
+                  <th>Job Type</th>
+                  <th>Open Position</th>
+                  <th>No. of Request</th>
+                  <th>To Replace</th>
+                  <th>Join Date</th>
+                  <th>Supporting Document</th>
                   <th>Education Requirement</th>
-                  <th>Salary</th>
-                  <th>Start date</th>
-                  <th>Salary</th>
+                  <th>Major Function</th>
+                  <th>Experience Requirement</th>
                   <th class="justify-content-center">Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>10000</td>
-                  <td>A</td>
+                  <td>03 Mar 2020</td>
+                  <td>1234</td>
                   <td>Officer</td>
                   <td>61</td>
                   <td>2011/04/25</td>
                   <td>$320,800</td>
                   <td>2011/04/25</td>
                   <td>$320,800</td>
+                  <td>2011/04/25</td>
+                  <td>$320,800</td>
+                  <td>2011/04/25</td>
+                  <td>$320,800</td>
+                  <td>$320,800</td>                  
                   <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
                   <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
@@ -46,16 +55,21 @@
                   <td>2</td>
                   <td>10001</td>
                   <td>Accountant</td>
-                  <td>Tokyo</td>
-                  <td>63</td>
-                  <td>2011/07/25</td>
-                  <td>$170,750</td>
-                  <td>2011/07/25</td>
-                  <td>$170,750</td>
+                  <td>Officer</td>
+                  <td>61</td>
+                  <td>2011/04/25</td>
+                  <td>$320,800</td>
+                  <td>2011/04/25</td>
+                  <td>$320,800</td>
+                  <td>2011/04/25</td>
+                  <td>$320,800</td>
+                  <td>2011/04/25</td>
+                  <td>$320,800</td>
+                  <td>$320,800</td>
                   <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
                   <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
-                <tr>
+               <!--  <tr>
                   <td>3</td>
                   <td>10002</td>
                   <td>Accountant</td>
@@ -93,7 +107,7 @@
                   <td>$170,750</td>
                   <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
                   <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
           </div>
