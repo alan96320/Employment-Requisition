@@ -17,6 +17,7 @@
                 <tr>
                   <th>No.Form</th> #diambildari IDFomulir#
                   <th>ID Kar.</th>
+                  <th>Tanggal Pengajuan<th>
                   <th>Requester</th>
                   <th>Departemen</th>
                   <th>Jabatan</th>
