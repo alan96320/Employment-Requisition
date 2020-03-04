@@ -58,6 +58,14 @@
     </a>
   </li>
 
+  <!-- Log Out -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="../actions/logoutaction.php">
+      <i class="fas fa-sign-out-alt"></i>
+      <span>Log Out</span>
+    </a>
+  </li>
+
   <!-- Button memperkecil sidebar -->
   <div class="text-center d-none d-md-inline">
     <button class="rounded-circle border-0" id="sidebarToggle"></button>

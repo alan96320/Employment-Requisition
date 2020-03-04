@@ -40,13 +40,6 @@
     </a>
   </li>
 
-   <!-- formulir ER -->
-  <!-- <li class="nav-item">
-    <a class="nav-link collapsed" href="#">
-      <i class="fas fa-fw fa-file"></i>
-      <span> Formulir Persetujuan </span>
-    </a>
-  </li> -->
 
   <!-- Divider -->
   <hr class="sidebar-divider">
@@ -59,6 +52,14 @@
     <a class="nav-link collapsed" href="./profile-pic.php">
       <i class="fas fa-user"></i>
       <span> Profile PIC</span>
+    </a>
+  </li>
+
+  <!-- Log Out -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="../actions/logoutaction.php">
+      <i class="fas fa-sign-out-alt"></i>
+      <span>Log Out</span>
     </a>
   </li>
 
