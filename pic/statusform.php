@@ -65,8 +65,8 @@ if (!isset($_SESSION['username'])) {
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-              <!-- Footer -->
-              <!-- <footer class="sticky-footer bg-white">
+              <!-- Footer --> 
+             <!--  <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                   <div class="copyright text-center my-auto">
                     <span>Copyright &copy; Sistem Informasi Employment Requisition 2019</span>
@@ -96,7 +96,7 @@ if (!isset($_SESSION['username'])) {
                     <span aria-hidden="true">×</span>
                   </button>
                 </div>
-                <!--  <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
+               
                 <div class="modal-footer">
                   <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                   <a class="btn btn-primary" href="../actions/logoutaction.php">Logout</a>

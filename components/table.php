@@ -2,8 +2,8 @@
     <div class="container-fluid">
 
       <!-- Page Heading -->
-      <h1 class="h3 mb-2 text-gray-800">Status Pengajuan</h1>
-      <p class="mb-4">Status Pengajuan ini merupakan List Status dari pengajuan Formulir ER ke HRD melalui Admin dan disetujui oleh Manager</a>.</p>
+      <h1 class="h3 mb-2 text-gray-800">List Status Pengajuan</h1>
+      <p class="mb-4">Ini merupakan List Status dari pengajuan Formulir ER ke HRD melalui Admin dan disetujui oleh Manager</a>.</p>
 
       <!-- DataTales Example -->
       <div class="card shadow mb-4">

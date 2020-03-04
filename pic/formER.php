@@ -78,7 +78,7 @@ $idx= $data_max['maxid'] + 1;
 
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800"></h1>
+    <h1 class="h3 mb-0 text-gray-800">List Status Pengajuan</h1>
     <a href="#" class="d-none d-sm-inline-block shadow-sm"></a>
       <i></i>
   </div>
@@ -89,7 +89,7 @@ $idx= $data_max['maxid'] + 1;
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Formulir Employment Requisition</h6>
     </div>
-  </div>
+  <!-- </div> -->
 <!-- Page container Formulir ER -->
 <div class="container">
     <div class="row justify-content-between">
@@ -113,7 +113,7 @@ $idx= $data_max['maxid'] + 1;
         </div>
       </div>
       <div class="col-3">
-        <label>Requester Name</label>
+        <label>Requester</label>
         <input type="text" readonly="" value="<?= $data_user['nama']; ?>" name="id_karyawan" class="form-control" required>
       </div>
       <div class="col-3">
@@ -121,11 +121,10 @@ $idx= $data_max['maxid'] + 1;
         <input type="text"  readonly="" value="<?= $data_user['nama_dept']; ?>"  class="form-control">
         <input hidden="" type="text" name="id_dept"  readonly="" value="<?= $data_user['departemen']; ?>"  class="form-control">
       </div>
-  <!-- </div> -->
    <div class="row">
-      <div class="col-3">
+      <div class="col">
          <label>Job Type</label>
-            <div class="form-group" style="padding-left: 10px;">
+            <div class="form-group" style="padding-left: 0px;">
              <input type="checkbox" name="job_type" value="permanen" class="" style="transform: scale(1.3);" >
           <label class="">Permanen</label></br>
              <input type="checkbox" name="job_type" value="kontrak" class=" " style="transform: scale(1.3);" >
@@ -159,7 +158,7 @@ $idx= $data_max['maxid'] + 1;
             <input type="text" name="id_karyawan" class="form-control" aria-describedby="addon-wrapping" required>
         </div>
       </div>
-      <div class="col-43">
+      <div class="col">
         <div class="form">
           <label>Join Date</label>
             <input type="date" name="id_karyawan" class="form-control" required>
@@ -199,7 +198,7 @@ $idx= $data_max['maxid'] + 1;
     <div class="col">
       <div class="form">
         <label>Major Function</label>
-        <input type="text-area" name="id_karyawan" class="form-control" required>
+        <input type="text" name="majorfunction" class="form-control" required>
       </div>
     </div>
   </div>
@@ -208,18 +207,16 @@ $idx= $data_max['maxid'] + 1;
       <div class="col">
         <div class="form">
           <label>Experience & Background Requirement</label>
-          <input type="text" name="id_karyawan" class="form-control">
+          <input type="text" name="experiece" class="form-control">
         </div>
       </div>
     </div>
 <hr>
-</div>
-    </div>
+  </div> 
+    </form> 
+      </div>
+    </form>
   </div>
-</form>
-
-  
-
 
   <!-- Footer -->
   <footer class="sticky-footer bg-white">
