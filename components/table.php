@@ -15,10 +15,10 @@
             <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>No.Form</th> /* #diambildari IDFomulir#* /
+                  <th>No.Form</th>
                   <th>Date</th>
                   <th>ID# PIC</th>
-                  <th>Requester</th>
+                  <th>Requester Name</th>
                   <th>Departemen</th>
                   <th>Job Type</th>
                   <th>Open Position</th>
@@ -47,7 +47,7 @@
                   <td>$320,800</td>
                   <td>2011/04/25</td>
                   <td>$320,800</td>
-                  <td>$320,800</td>                  
+                  <td>$320,800</td>
                   <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
                   <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
@@ -69,7 +69,7 @@
                   <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
                   <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
-               <!--  <tr>
+                <!--  <tr>
                   <td>3</td>
                   <td>10002</td>
                   <td>Accountant</td>
