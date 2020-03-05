@@ -95,7 +95,7 @@ $idx = $data_max['maxid'] + 1;
               <div class="row justify-content-between">
                 <div class="col-3">
                   <div class="form">
-                    <label>No. Formulir</label>
+                    <label>Form. No.</label>
                     <input type="number" readonly="" name="id_formulir" value="<?= $idx; ?>" class="form-control" required>
                   </div>
                 </div>

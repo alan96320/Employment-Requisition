@@ -15,7 +15,7 @@
             <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>No.Form</th>
+                  <th>Form. No.</th>
                   <th>Date</th>
                   <th>ID# PIC</th>
                   <th>Requester Name</th>
@@ -69,50 +69,6 @@
                   <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
                   <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
-                <!--  <tr>
-                  <td>3</td>
-                  <td>10002</td>
-                  <td>Accountant</td>
-                  <td>Tokyo</td>
-                  <td>63</td>
-                  <td>2011/07/25</td>
-                  <td>$170,750</td>
-                  <td>2011/07/25</td>
-                  <td>$170,750</td>
-                  <td>2011/07/25</td>
-                  <td>$170,750</td>
-                  <td>2011/07/25</td>
-                  <td>$170,750</td>
-                  <td>2011/07/25</td>
-                  <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
-                  <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>10003</td>
-                  <td>Accountant</td>
-                  <td>Tokyo</td>
-                  <td>63</td>
-                  <td>2011/07/25</td>
-                  <td>$170,750</td>
-                  <td>2011/07/25</td>
-                  <td>$170,750</td>
-                  <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
-                  <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>10004</td>
-                  <td>Accountant</td>
-                  <td>Tokyo</td>
-                  <td>63</td>
-                  <td>2011/07/25</td>
-                  <td>$170,750</td>
-                  <td>2011/07/25</td>
-                  <td>$170,750</td>
-                  <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
-                  <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
-                </tr> -->
               </tbody>
             </table>
           </div>
