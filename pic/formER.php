@@ -125,7 +125,11 @@ $idx = $data_max['maxid'] + 1;
                   <div class="col">
                     <label>Job Type</label>
                     <div class="form-group" style="padding-left: 0px;">
-                      <input type="checkbox" name="job_type" value="permanen" class="" style="transform: scale(1.3);">
+                      <input type="checkbox" name="checked" value="1" class="" style="transform: scale(1.3);">
+                      <?php if(!isset($_POST['checked'])){ ?>
+                        <span class="error">* <?php echo "please tick one";?></span>
+                        <?php
+                        } ?>
                       <label class="">Permanen</label></br>
                       <input type="checkbox" name="job_type" value="kontrak" class=" " style="transform: scale(1.3);">
                       <label class=" ">Kontrak</label>
@@ -170,7 +174,7 @@ $idx = $data_max['maxid'] + 1;
                 <div class="col-3">
                   <div class="form-group">
                     <label>Supporting Document</label>
-                    <select class="custom-select">
+                    <select name=""class="custom-select">
                       <option selected>Dokumen Pendukung</option>
                       <option value="1">Role Profile</option>
                       <option value="2">Org. Chart</option>
@@ -209,7 +213,7 @@ $idx = $data_max['maxid'] + 1;
                     <label>Experience & Background Requirement</label>
                     <input type="text" name="experiece" class="form-control">
                   </div><br>
-                  <center><a class='btn btn-success' href='../pic/statusform.php'>Simpan</a></center>
+                  <center><a class='btn btn-success' value = "submit" href='../pic/statusform.php'>Simpan</a></center>
                 </div>
               </div>
               <hr>
