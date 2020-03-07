@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2020 at 03:23 AM
+-- Generation Time: Mar 07, 2020 at 03:45 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.27
 
@@ -91,7 +91,8 @@ CREATE TABLE `formulir` (
 --
 
 INSERT INTO `formulir` (`id_pic`, `id_formulir`, `id_departemen`, `requester`, `job_type`, `status_verif`, `status_approved`, `approved_by`, `verif_by`, `open_position`, `join_date`, `budget`, `education_req`, `major_function`, `experience_backgrnd`) VALUES
-(1, 1, 1, 'Siantro', 'Officer', 'Disetujui', 'Ok', 'manager', 'Admin', 'Operator', '0000-00-00', 5, 'SMK', '', '1 Year');
+(1, 1, 1, 'Siantro', 'Officer', 'Disetujui', 'Ok', 'manager', 'Admin', 'Operator', '2020-03-30', 5, 'SMK', 'vfafvdvzdvfz', '1 Year'),
+(1, 9, 2, 'rodo', 'operator', 'ditolak', 'n/a', 'n/a', 'admin', 'operator', '2020-03-23', 12, 'jnasdkjnksacndcasjncdjnjndciuan', 'kjncankjnjnlmnh oa sdaksjnapdf', '1 tahun pengalaman');
 
 -- --------------------------------------------------------
 
@@ -150,13 +151,11 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`id_karyawan`, `id_dept`, `username`, `password`, `nama`, `jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, `foto`, `hak_akses`) VALUES
-(1030, 5, NULL, NULL, 'Siantro21325', 2, 1, '2015-11-30', 'Laki-laki', 'Permanen', 'asda', '2019-10-30', 'Tiban', NULL, NULL, NULL, 'karyawan'),
 (1260, 6, NULL, NULL, 'Ivan5', 5, 2, '2012-11-30', 'Laki-laki', 'Permanen', 'Medan', '1997-11-27', 'Piayu', NULL, NULL, NULL, 'karyawan'),
 (5555, 1, NULL, NULL, 'Ratna ', 4, 3, '2005-12-30', 'Perempuan', 'Permanen', 'Tegal', '1990-07-21', 'Pi', NULL, NULL, NULL, 'karyawan'),
 (10301, 9, NULL, NULL, 'Rodo Sianturi', 2, 3, '1994-01-03', 'Laki-laki', 'Kontrak', 'Batam ', '1991-01-01', 'Batam', NULL, NULL, NULL, 'karyawan'),
 (10302, 1, NULL, NULL, 'Dong Herti', 5, 4, '2018-10-25', 'Laki-laki', 'Permanen', 'Medan', '2006-07-25', 'Plamo Garden', NULL, NULL, NULL, 'karyawan'),
-(44444, 5, NULL, NULL, 'Suparyono', 4, 4, '2007-11-29', 'Laki-laki', 'Permanen', 'Solo', '1987-02-09', 'Piayu', NULL, NULL, NULL, 'karyawan'),
-(123456, 3, NULL, NULL, 'Rodo', 4, 3, '2013-10-29', 'Perempuan', 'Permanen', 'Padang', '1993-12-31', 'Batu Aji - Batam Center', NULL, NULL, NULL, 'karyawan');
+(44444, 5, NULL, NULL, 'Suparyono', 4, 4, '2007-11-29', 'Laki-laki', 'Permanen', 'Solo', '1987-02-09', 'Piayu', NULL, NULL, NULL, 'karyawan');
 
 -- --------------------------------------------------------
 
@@ -333,7 +332,7 @@ ALTER TABLE `departemen`
 -- AUTO_INCREMENT for table `formulir`
 --
 ALTER TABLE `formulir`
-  MODIFY `id_formulir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_formulir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `jabatan`
