@@ -181,7 +181,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
                   </div>
                   <div class="col">
                     <label>Upload File Supporting Document</label>
-                    <input type="file" name="upload_file" placeholder="" class="" required>
+                    <input type="file" name="image" placeholder="" class="" required>
                   </div>
                   <div class="col">
                     <div class="form-group">
