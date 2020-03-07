@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2020 at 01:31 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Generation Time: Mar 07, 2020 at 03:23 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -91,7 +91,7 @@ CREATE TABLE `formulir` (
 --
 
 INSERT INTO `formulir` (`id_pic`, `id_formulir`, `id_departemen`, `requester`, `job_type`, `status_verif`, `status_approved`, `approved_by`, `verif_by`, `open_position`, `join_date`, `budget`, `education_req`, `major_function`, `experience_backgrnd`) VALUES
-(1, 1, 1, 'Siantro', 'Officer', 'Disetujui', 'Ok', 'manager', 'Admin', 'Operator', '0000-00-00', 5, '', '', '');
+(1, 1, 1, 'Siantro', 'Officer', 'Disetujui', 'Ok', 'manager', 'Admin', 'Operator', '0000-00-00', 5, 'SMK', '', '1 Year');
 
 -- --------------------------------------------------------
 
@@ -138,7 +138,7 @@ CREATE TABLE `karyawan` (
   `status_karyawan` varchar(50) DEFAULT NULL,
   `tempat_lahir` varchar(50) DEFAULT NULL,
   `tanggal_lahir` date DEFAULT NULL,
-  `alamat` text,
+  `alamat` text DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `no_telepon` varchar(20) DEFAULT NULL,
   `foto` varchar(200) DEFAULT NULL,
