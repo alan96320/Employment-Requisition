@@ -1,7 +1,7 @@
 <?php
 include "../config/conn.php";
 session_start();
-if (!isset($_SESSION['username'])) {
+if (isset($_GET['del'])) {
   header("location: index.php");
 }
 
