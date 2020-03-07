@@ -29,32 +29,32 @@
                   <th>Education Requirement</th>
                   <th>Major Function</th>
                   <th>Experience Requirement</th>
-                  <th class="justify-content-center">Action</th>
+                  <th class="" colspan="2" style="width: 157px;">Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>03 Mar 2020</td>
+                  <td>03Mar2020</td>
                   <td>1234</td>
-                  <td>Officer</td>
-                  <td>61</td>
-                  <td>2011/04/25</td>
-                  <td>$320,800</td>
-                  <td>2011/04/25</td>
-                  <td>$320,800</td>
-                  <td>2011/04/25</td>
-                  <td>$320,800</td>
-                  <td>2011/04/25</td>
-                  <td>$320,800</td>
-                  <td>$320,800</td>
-                  <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
-                  <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
+                  <td>Rodo</td>
+                  <td>HRD</td>
+                  <td>Operator</td>
+                  <td>1</td>
+                  <td>Dian</td>
+                  <td>27Mar2020</td>
+                  <td>27Mar2020</td>
+                  <td>RoleProfile</td>
+                  <td>SMK</td>
+                  <td>Pernah Kerja</td>
+                  <td>SMK</td>
+                  <td> <a class="btn btn-outline-info btn-sm">EDIT</a></td>
+                  <td> <a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td>10001</td>
-                  <td>Accountant</td>
+                  <td>07Mar2020</td>
+                  <td>2345</td>
                   <td>Officer</td>
                   <td>61</td>
                   <td>2011/04/25</td>
@@ -66,8 +66,8 @@
                   <td>2011/04/25</td>
                   <td>$320,800</td>
                   <td>$320,800</td>
-                  <td a class="btn btn-outline-info btn-sm">EDIT</a></td>
-                  <td a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
+                  <td> <a class="btn btn-outline-info btn-sm">EDIT</a></td>
+                  <td> <a class="btn btn-outline-primary btn-sm">SUBMIT</a></td>
                 </tr>
               </tbody>
             </table>
