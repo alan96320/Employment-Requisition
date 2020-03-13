@@ -27,6 +27,6 @@ $stm->execute([$NIK, $Nama, $Departemen, $Jabatan, $TanggalMasuk, $MaritalStatus
 				$Status, $tmpt_lahir, $tgl_lahir, $alamat, "karyawan"]);
 
 //echo $stm->debugDumpParams();
-header('location: ../admin/list-karyawan.php');
+	header('location: ../admin/list-karyawan.php');
 
 ?>

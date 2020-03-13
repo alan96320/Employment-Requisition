@@ -1,4 +1,6 @@
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Dahasboard</h1>
-    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+<div class="align-items-center justify-content-between mb-0">
+    <center>
+        <h1 class="text-primary"> PT. CIBA VISION Batam </h1>
+        <img src="../assets/img/CVB.jpg" style="width: all; height: 400px; padding-bottom: 5px; padding-top: 5px; ">
+    </center>
 </div>

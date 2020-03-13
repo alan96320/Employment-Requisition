@@ -17,7 +17,16 @@
             break;
             case 'requisition':
 				include "requisition/index.php";
-            break;			
+			break;
+			// form karyawan
+            case 'formKaryawan':
+				include "karyawan/form.php";
+			break;
+			case 'profileKaryawan':
+				include "karyawan/profile.php";
+			break;
+			
+
 			default:
 				echo "<center><h3>Maaf. Halaman tidak di temukan !</h3></center>";
             break;

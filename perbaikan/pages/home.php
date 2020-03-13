@@ -1,6 +1,8 @@
 <?php
+    include "../action/config.php";
     session_start();
-?>
+    if (isset($_SESSION ["username"])) { ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +20,15 @@
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="../assets/js/custom/toast.js"></script>
+    <!-- for datepicker -->
+    <link rel="stylesheet" href="../assets/vendor/datepicker/datepicker.css">
 
+    <!-- custom style -->
+    <link rel="stylesheet" href="../assets/css/customStyle.css">
 </head>
 
 <body id="page-top">
@@ -84,6 +94,54 @@
                     </button>
                     <p class="font-weight-bold" style="margin-top: 10px"> SISTEM INFORMASI EMPLOYMENT REQUISITION </p>
                     <ul class="navbar-nav ml-auto">
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bell fa-fw"></i>
+                            <!-- Counter - Alerts -->
+                            <span class="badge badge-danger badge-counter">3+</span>
+                        </a>
+                        <!-- Dropdown - Alerts -->
+                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                            <h6 class="dropdown-header">
+                            Alerts Center
+                            </h6>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="mr-3">
+                                    <div class="icon-circle bg-primary">
+                                    <i class="fas fa-file-alt text-white"></i>
+                                    </div>
+                                </div>
+                            <div>
+                                <div class="small text-gray-500">December 12, 2019</div>
+                                <span class="font-weight-bold">Pengajuan baru dari PIC ....</span>
+                            </div>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                            <div class="mr-3">
+                                <div class="icon-circle bg-success">
+                                <i class="fas fa-check-circle text-white"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="small text-gray-500">December 7, 2019</div>
+                                Pengajuan pada tanggal ... disetujui oleh ...
+                            </div>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                            <div class="mr-3">
+                                <div class="icon-circle bg-danger">
+                                <i class="fas fa-times-circle text-white"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="small text-gray-500">December 2, 2019</div>
+                                Pengajuan pada tanggal ... di reject oleh ....
+                            </div>
+                            </a>
+                            <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                        </div>
+                        </li>
                         <div class="topbar-divider d-none d-sm-block"></div>
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -130,6 +188,25 @@
     <!-- Custom scripts for all pages-->
     <script src="../assets/js/sb-admin-2.min.js"></script>
 
+    <!-- Page level plugins -->
+    <script src="../assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- js for datepicker -->
+    <script src="../assets/vendor/datepicker/datepicker.js"></script>
+
+    <!-- custom scripts -->
+    <script src="../assets/js/custom/customAlert.js"></script>
+    <script src="../assets/js/custom/customDatepicker.js"></script>
+
+    
+    
 </body>
 
 </html>
+
+
+<?php
+    }else{
+        header("location: ../");
+    }
+?>
