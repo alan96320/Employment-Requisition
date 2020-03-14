@@ -74,11 +74,6 @@
                 <span>Pengajuan</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?page=persetujuan">
-                <i class="fas fa-fw fa-file-alt"></i>
-                <span>Emp. Requisition</span></a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="?page=requisition">
                 <i class="fas fa-fw fa-file-alt"></i>
                 <span>Persetujuan</span></a>

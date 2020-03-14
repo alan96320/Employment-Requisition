@@ -18,9 +18,6 @@
             case 'persetujuan':
 				include "persetujuan/index.php";
             break;
-            case 'requisition':
-				include "requisition/index.php";
-			break;
 
 			// form karyawan
             case 'formKaryawan':
