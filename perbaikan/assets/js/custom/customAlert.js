@@ -12,45 +12,54 @@ $(document).ready(function () {
         }).then((result) => {
             if (result.value) {
                 var id = $(this).attr('id');
+                var page = $(this).attr('page');
+                var urls = "";
+                if (page = "karyawan") {
+                    urls = "../action/actionKaryawan.php?status=delete"
+                }
+                if (page = "budget") {
+                    urls = "../action/actionBudget.php?status=delete"
+                }
                 $.ajax({
                     type: 'POST',
-                    url: '../action/actionKaryawan.php?status=delete',
+                    url: urls,
                     data: { id: id },
                     success: function (response) {
-                        if (response = 'sukses') {
-                            Swal.fire({
-                                title: 'Tunggu',
-                                html: 'Data bsedang di hapus dalam <b></b> milliseconds.',
-                                timer: 2000,
-                                timerProgressBar: true,
-                                allowOutsideClick: false,
-                                onBeforeOpen: () => {
-                                    Swal.showLoading()
-                                    timerInterval = setInterval(() => {
-                                        const content = Swal.getContent()
-                                        if (content) {
-                                            const b = content.querySelector('b')
-                                            if (b) {
-                                                b.textContent = Swal.getTimerLeft()
-                                            }
+                        Swal.fire({
+                            title: 'Tunggu',
+                            html: 'Data bsedang di hapus dalam <b></b> milliseconds.',
+                            timer: 2000,
+                            timerProgressBar: true,
+                            allowOutsideClick: false,
+                            onBeforeOpen: () => {
+                                Swal.showLoading()
+                                timerInterval = setInterval(() => {
+                                    const content = Swal.getContent()
+                                    if (content) {
+                                        const b = content.querySelector('b')
+                                        if (b) {
+                                            b.textContent = Swal.getTimerLeft()
                                         }
-                                    }, 100)
-                                },
-                                onClose: () => {
-                                    clearInterval(timerInterval)
-                                }
-                            }).then((result) => {
-                                /* Read more about handling dismissals below */
-                                if (result.dismiss === Swal.DismissReason.timer) {
+                                    }
+                                }, 100)
+                            },
+                            onClose: () => {
+                                clearInterval(timerInterval)
+                            }
+                        }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                if (response = 'sukses') {
                                     location.reload(true);
+                                } else {
+                                    Toast.fire({
+                                        icon: 'error',
+                                        title: `Oppsss... Gagal Menghapus Data`
+                                    })
                                 }
-                            })
-                        } else {
-                            Toast.fire({
-                                icon: 'error',
-                                title: `Oppsss... Gagal Menghapus Data`
-                            })
-                        }
+                            }
+                        })
+                        
                     }
                 });
                 

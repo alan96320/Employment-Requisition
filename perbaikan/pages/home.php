@@ -64,6 +64,11 @@
                 <span>Data Karyawan</span></a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="?page=budget">
+                <i class="fas fa-fw fa-database"></i>
+                <span>Budget</span></a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="?page=pengajuan">
                 <i class="fas fa-fw fa-file-alt"></i>
                 <span>Pengajuan</span></a>
@@ -113,8 +118,8 @@
                                     </div>
                                 </div>
                             <div>
-                                <div class="small text-gray-500">December 12, 2019</div>
                                 <span class="font-weight-bold">Pengajuan baru dari PIC ....</span>
+                                <div class="small text-gray-500">. 56m Ago</div>
                             </div>
                             </a>
                             <a class="dropdown-item d-flex align-items-center" href="#">

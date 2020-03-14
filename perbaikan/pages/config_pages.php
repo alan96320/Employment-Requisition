@@ -5,19 +5,23 @@
 		switch ($page) {
 			case 'dashboard':
 				include "dashboard/index.php";
-				break;
+			break;
 			case 'karyawan':
 				include "karyawan/index.php";
-				break;
+			break;
+			case 'budget':
+				include "budget/index.php";
+			break;
 			case 'pengajuan':
 				include "pengajuan/index.php";
-                break;
+            break;
             case 'persetujuan':
 				include "persetujuan/index.php";
             break;
             case 'requisition':
 				include "requisition/index.php";
 			break;
+
 			// form karyawan
             case 'formKaryawan':
 				include "karyawan/form.php";
@@ -26,6 +30,10 @@
 				include "karyawan/profile.php";
 			break;
 			
+			// form Budget
+			case 'formBudget':
+				include "budget/form.php";
+			break;
 
 			default:
 				echo "<center><h3>Maaf. Halaman tidak di temukan !</h3></center>";

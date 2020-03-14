@@ -120,7 +120,6 @@ if(isset($_GET['status'])){
                     echo "<script>window.history.back();</script>";
                 }
             }elseif($status == "delete"){
-                $_SESSION['alert'] = "suksesDelete";
                 $id = $_POST['id'];
                 $stm = $pdo_conn->prepare("DELETE FROM karyawan WHERE id_karyawan = '$id' ");
                 $stm->execute();
