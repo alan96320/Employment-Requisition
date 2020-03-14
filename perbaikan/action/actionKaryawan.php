@@ -47,6 +47,7 @@ if(isset($_GET['status'])){
                     $newfilename = $getData['foto'];
                 }
             }
+            
         }
         $params = [
             $id,
@@ -78,23 +79,20 @@ if(isset($_GET['status'])){
                     }else{
                         move_uploaded_file( $_FILES['foto'] ['tmp_name'], $path);
                     }
-                }else{
-                    $newfilename = null ;
                 }
                 $sql= "UPDATE karyawan SET id_dept='$departemen', username='$username', password='$password', nama='$nama', id_jabatan='$jabatan', marital_status='$marital', tanggal_masuk='$ttm', jenis_kelamin='$jk', status_karyawan='$sk', tempat_lahir='$tl', tanggal_lahir='$ttl', alamat='$alamat', email='$email', no_telepon='$nomor', foto='$newfilename', hak_akses='$hak' WHERE id_karyawan=$id ";
                 $sth = $pdo_conn->prepare($sql);
                 $sth->execute();
                 if ($sth->rowCount() > 0) {
-                $_SESSION['alert'] = "suksesEdit";
-                header('location: ../pages/home.php?page=karyawan');
+                    $_SESSION['alert'] = "suksesEdit";
+                    header('location: ../pages/home.php?page=karyawan');
                 }else{
                     if($foto !== ""){
                         unlink($path);
                     }
                     $_SESSION['alert'] = "gagal";
                     $_SESSION['error'] = $sth->errorInfo();
-                    print_r($sth->errorInfo());
-                    // echo "<script>window.history.back();</script>";
+                    echo "<script>window.history.back();</script>";
                 }
             }elseif($status == "add"){
                 if($foto !== ""){
