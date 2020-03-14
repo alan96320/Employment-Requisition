@@ -11,9 +11,9 @@
 
     $row = $stm->fetch(PDO::FETCH_ASSOC);
     if ($row != null) {
+      $_SESSION ["id"] = $row ["id_karyawan"];
       $_SESSION ["username"] = $row ["username"];
       $_SESSION ["hak_akses"] = $row ["hak_akses"];
-      $_SESSION ["id"] = $row ["user_id"];
       $_SESSION ["image"] = $row ["foto"];
       header("location: ../pages/home.php");
     }else{
