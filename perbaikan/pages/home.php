@@ -74,7 +74,7 @@
                 <span>Pengajuan</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?page=requisition">
+                <a class="nav-link" href="?page=persetujuan">
                 <i class="fas fa-fw fa-file-alt"></i>
                 <span>Persetujuan</span></a>
             </li>
