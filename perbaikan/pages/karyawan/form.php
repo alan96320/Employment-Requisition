@@ -44,7 +44,7 @@
     <div class="card o-hidden border-0 shadow-lg">
         <div class="card-body p-0">
             <div class="card-header">
-                <h1 class="h4 text-gray-900">Form Tambah Karyawan</h1>
+                <h1 class="h4 text-gray-900 text-capitalize">Form <?=$status?> Karyawan</h1>
             </div>
             <div class="row" style="margin-top: -30px">
                 <div class="col-lg-12">
@@ -143,14 +143,24 @@
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input type="file" class="form-control form-control-user" tooltip="tooltip" title="Foto" name="foto">
                                 </div>
-                                <div class="col-sm-6 mb-3 mb-sm-0" tooltip="tooltip" title="<?=isset($_SESSION['hak_akses']) ? $_SESSION['hak_akses'] !== 'admin' ? 'Not Akses Edit Here...'  : 'NIK'  : '' ?>">
-                                    <select name="hak" class="form-control form-control-user" <?=isset($_SESSION['hak_akses']) ? $_SESSION['hak_akses'] !== 'admin' ? 'readonly'  : ''  : '' ?> >
+                                <div class="col-sm-6 mb-3 mb-sm-0" tooltip="tooltip" title="<?=isset($_SESSION['hak_akses']) ? $_SESSION['hak_akses'] !== 'admin' && $status == "update" ? 'Not Akses Edit Here...'  : 'NIK'  : '' ?>">
+                                    <select name="hak" class="form-control form-control-user" <?=isset($_SESSION['hak_akses']) ? $_SESSION['hak_akses'] !== 'admin' && $status == "update" ? 'disabled'  : ''  : '' ?> >
                                         <option value="" selected="selected">Hak Akses</option>
                                         <option value="karyawan" <?=isset($getData['hak_akses']) ? $getData['hak_akses'] == 'karyawan' ? 'selected'  : ''  : '' ?> >Karyawan</option>
                                         <option value="admin"<?=isset($getData['hak_akses']) ? $getData['hak_akses'] == 'admin' ? 'selected'  : ''  : '' ?> >Admin</option>
                                         <option value="pic" <?=isset($getData['hak_akses']) ? $getData['hak_akses'] == 'pic' ? 'selected'  : ''  : '' ?> >PIC</option>
                                         <option value="manager" <?=isset($getData['hak_akses']) ? $getData['hak_akses'] == 'manager' ? 'selected'  : ''  : '' ?> >Manager</option>
                                     </select>
+                                    <?php
+                                        if(isset($_SESSION['hak_akses'])){
+                                            if($_SESSION['hak_akses'] !== 'admin' && $status == "update"){
+                                                if(isset($getData['hak_akses'])){ ?>
+                                                    <input type="hidden" name="hak" value="<?=$getData['hak_akses']?> ">
+                                                <?php
+                                                }
+                                            }
+                                        }
+                                    ?>
                                 </div>
                             </div>
                             <div class="form-group row">
