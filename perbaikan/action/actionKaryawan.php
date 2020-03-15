@@ -8,8 +8,8 @@ if(isset($_GET['status'])){
             $password = null;
         }else{
             if ($_POST['username'] == "") {
-                $username = "user";
-                $password = md5("user");
+                $username = "user".date('dYm');
+                $password = md5("user".date('dYm'));
             }else{
                 $username = $_POST['username'];
                 $password = $_POST['password'];

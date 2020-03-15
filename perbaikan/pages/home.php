@@ -26,9 +26,14 @@
     <script src="../assets/js/custom/toast.js"></script>
     <!-- for datepicker -->
     <link rel="stylesheet" href="../assets/vendor/datepicker/datepicker.css">
-
+    <!-- for select slime -->
+    <link rel="stylesheet" href="../assets/vendor/selectslime/slimselect.css">
+    <!-- for jquery toas -->
+    <link rel="stylesheet" href="../assets/vendor/jqueryToast/jquery.toast.min.css">
     <!-- custom style -->
     <link rel="stylesheet" href="../assets/css/customStyle.css">
+
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -74,9 +79,14 @@
                 <span>Pengajuan</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?page=persetujuan">
+                <a class="nav-link" href="?page=verify">
                 <i class="fas fa-fw fa-file-alt"></i>
-                <span>Persetujuan</span></a>
+                <span>Verify</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="?page=approval">
+                <i class="fas fa-fw fa-file-alt"></i>
+                <span>Approval</span></a>
             </li>
 
             <hr class="sidebar-divider d-none d-md-block">
@@ -145,7 +155,7 @@
                         <div class="topbar-divider d-none d-sm-block"></div>
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small text-capitalize"><?=$_SESSION ["username"]?></span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small text-capitalize"><?=$_SESSION ["name"]?></span>
                                 <img class="img-profile rounded-circle" src="../assets/uploadImage/<?=$_SESSION ["image"]?>">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -179,7 +189,7 @@
     </a>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -193,8 +203,13 @@
     <script src="../assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <!-- js for datepicker -->
     <script src="../assets/vendor/datepicker/datepicker.js"></script>
+    <!-- js for select slim -->
+    <script src="../assets/vendor/selectslime/slimselect.js"></script>
+    <!-- js for jquery Toast -->
+    <script src="../assets/vendor/jqueryToast/jquery.toast.min.js"></script>
 
     <!-- custom scripts -->
+    <script src="../assets/js/custom/custom.js" type="text/javascript"></script>
     <script src="../assets/js/custom/customAlert.js"></script>
     <script src="../assets/js/custom/customDatepicker.js"></script>
 

@@ -15,8 +15,11 @@
 			case 'pengajuan':
 				include "pengajuan/index.php";
             break;
-            case 'persetujuan':
-				include "persetujuan/index.php";
+            case 'verify':
+				include "verify/index.php";
+			break;
+            case 'approval':
+				include "approval/index.php";
             break;
 
 			// form karyawan
@@ -34,7 +37,16 @@
 
 			default:
 				include "404.php";
-            break;
+			break;
+			
+			// form pengajuan
+			case 'formPengajuan':
+				include "pengajuan/form.php";
+			break;
+			case 'details':
+				include "pengajuan/detailsPengajuan.php";
+			break;
+
 		}
 	}else{
 		include "dashboard/index.php";

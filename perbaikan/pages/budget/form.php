@@ -39,7 +39,7 @@
             <div class="row" style="margin-top: -30px">
                 <div class="col-lg-12">
                     <div class="p-5">
-                        <form class="user" action="../action/actionBudget.php?status=<?=$status?>&id=<?=$id?>" method="post">
+                        <form class="user" action="../action/actionBudget.php?status=<?=$status.'&id='.isset($id)?>" method="post">
                             <div class="form-group row">
                                 <div class="col-sm-2 offset-sm-3 mb-3 mb-sm-0 text-right mt-3">
                                     <label for="department">Department</label>

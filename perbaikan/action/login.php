@@ -15,6 +15,8 @@
       $_SESSION ["username"] = $row ["username"];
       $_SESSION ["hak_akses"] = $row ["hak_akses"];
       $_SESSION ["image"] = $row ["foto"];
+      $_SESSION ["department"] = $row ["id_dept"];
+      $_SESSION ["name"] = $row ["nama"];
       header("location: ../pages/home.php");
     }else{
       $_SESSION ["statusLogin"] = "gagal";

@@ -2,7 +2,7 @@
     $id = $_SESSION ["id"];
     $stm = $pdo_conn->prepare("SELECT * FROM formulir_er 
                                JOIN statusapproval USING (idFormulir)
-                               WHERE idPic = $id
+                               WHERE status = 5
                              ");
     $stm->execute();
     $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
