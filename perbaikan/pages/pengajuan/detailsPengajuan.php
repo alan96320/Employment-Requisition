@@ -1,7 +1,12 @@
 <?php 
     if(isset($_GET['id'])){
         $id = str_replace(date('mYd'),'',$_GET['id']);
-        $sql = $pdo_conn->prepare("SELECT * FROM formulir_er WHERE idFormulir='$id'");
+        $sql = $pdo_conn->prepare("SELECT * FROM formulir_er
+                                   INNER JOIN karyawan ON karyawan.id_karyawan = formulir_er.idPic
+                                   INNER JOIN budget ON budget.idDepartment = karyawan.id_dept
+                                   JOIN departemen USING(id_dept)
+                                   JOIN statusapproval USING(idFormulir)
+                                   WHERE idFormulir='$id' ");
         $sql->execute();
         $getData = $sql->fetch(PDO::FETCH_ASSOC);
         $name = explode(',',$getData['repleace']);
@@ -20,60 +25,172 @@
         }elseif($hak == "manager"){
             $back = "approval";
         }
+
+        if(isset($_SESSION['alert'])){
+            $message = $_SESSION['error'];
+            if ($_SESSION['alert'] == "error") {
+                echo '
+                    <script type="text/javascript">
+                                $(document).ready(function () {
+                                    toastError("'.$message.'");
+                                });
+                            </script>
+                ';
+            }
+            unset($_SESSION['alert']);
+            unset($_SESSION['error']);
+        }
     }
 ?>
-<div style="padding-left:200px; padding-right:200px;">
+
+<div style="padding-left:100px; padding-right:100px;">
     <div class="card o-hidden border-0 shadow-lg">
-        <div class="card-body p-0">
-            <div class="row p-4" style="font-family: times new roman; font-size: 16px;">
-                <div class="col-sm-2">Number Formulir</div>
-                <div class="col-sm-4">: <span class="badge badge-light" style="font-size: 16px;"><?=$getData['idFormulir'] ?></span></div>
-                <div class="col-sm-6 text-right"><?=date('d F Y', strtotime($getData['created']) ) ?></div>
-                <br><br><br>
-                <div class="col-sm-2">Open Position</div>
-                <div class="col-sm-2 text-capitalize">: <?=$getData['position'] ?></div>
-                <div class="col-sm-2 text-right">Job Type</div>
-                <div class="col-sm-2 text-capitalize">: <?=$getData['job'] ?></div>
-                <div class="col-sm-2">No. Of Request</div>
-                <div class="col-sm-2">: <?=$getData['reques'] ?> Orang</div>
-                <div class="w-100 mt-2"><hr></div>
-                <div class="col-sm-2">To replace</div>
-                <div class="col-sm-10">:
-                    <?php 
-                        foreach ($nameRepleace as $data) { ?>
-                            <a href="#" class="badge badge-primary"><?=$data?></a>
-                        <?php
-                        }
-                    ?>
-                </div>
-                <div class="w-100"><hr></div>
-                <div class="col-sm-2">Join Date</div>
-                <div class="col-sm-10">: <?=date('d F Y', strtotime($getData['joinDate']) ) ?></div>
-                <div class="w-100"><hr></div>
-                <div class="col-sm-2">Major Function</div>
-                <div class="col-sm-10">: <?=$getData['major'] ?></div>
-                <div class="w-100"><hr></div>
-                <div class="col-sm-3">Support Document</div>
-                <div class="col-sm-9">: <?=$getData['typeDocument'] ?></div> 
-                <div class="w-100"><hr></div>
-                <div class="col-sm-3">Education Requirement</div>
-                <div class="col-sm-9 text-uppercase">: <?=$getData['education'] ?></div>
-                <div class="w-100"><hr></div>
-                <div class="col-sm-4">Experience & Background Requirement</div>
-                <div class="col-sm-8">: <?=$getData['experience'] ?></div>
-                <div class="w-100"><hr></div>
-                <div class="col-sm-12">
-                    <embed src="../assets/uploadFiles/<?=$getData['document'] ?>" type="application/pdf" width="100%" height="200px" />
-                </div>
-                <div class=" col-sm-12">
-                    <a href="?page=<?=$back?>" class="btn btn-info btn-icon-split float-right">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-arrow-left"></i>
-                        </span>
-                        <span class="text">Back</span>
-                    </a>
+        <div class="card-body">
+            <a href="?page=<?=$back?>" class="btn btn-info btn-icon-split btn-sm float-right">
+                <span class="icon text-white-50">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+                <span class="text">Back</span>
+            </a> <br><br>
+            <div style="padding-left:100px; padding-right:100px;" class="border">
+                <p class="font-weight-bold text-center" style="margin-top: 10px">EMPLOYMENT REQUISITION FORM</p>
+                <b>NO : <?=$getData['idFormulir'] ?></b>
+                <b class="float-right">DATE : <?=date('d F Y', strtotime($getData['created']) ) ?></b>
+                <div class="mt-1" style="font-family: times new roman; font-size: 16px;">
+                    <table class="table table-bordered table-sm">
+                        <tr>
+                            <td >Dept : <?=$getData['nama_dept'] ?></td>
+                            <td >Cost Centre : <?=$getData['cost_center'] ?></td>
+                            <td >Hiring PIC : <?=$getData['nama'] ?></td>
+                            <td rowspan="2">Job Type :
+                                <div class="form-check ml-2">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" <?=$getData['job'] == "permanen" ? "checked" : "" ?> disabled >
+                                    <label class="form-check-label" for="exampleCheck1">Permanen</label>
+                                </div>
+                                <div class="form-check ml-2">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck2" <?=$getData['job'] == "kontrak" ? "checked" : "" ?> disabled>
+                                    <label class="form-check-label" for="exampleCheck2">Kontrak</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-capitalize" >Open Position : <?=$getData['position'] ?></td>
+                            <td>Number Of Request : <?=$getData['reques'] ?> Orang</td>
+                            <td>ID PIC : <?=$getData['idPic'] ?></td>
+                        </tr>
+                        <tr>
+                            <td>Budget : <?=$getData['budget'] ?> Orang</td>
+                            <td colspan="2">Repleace Name : 
+                                <?php 
+                                    foreach ($nameRepleace as $data) { ?>
+                                        <a href="#" class="badge badge-primary"><?=$data?></a>
+                                    <?php
+                                    }
+                                ?>
+                            </td>
+                            <td>Join Date : <?=date('d F Y', strtotime($getData['joinDate']) ) ?></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Education Requirement : <?=$getData['education'] ?></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Experience and Background Requirement : <?=$getData['experience'] ?></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Major Function : <?=$getData['major'] ?></td>
+                        </tr>
+                        <tr>
+                            <td colspan=4> Supporting Document : <br>
+                                <div class="row">
+                                    <div class="form-check col" style="margin-left: 150px">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" <?=$getData['typeDocument'] == "Role Profile" ? "checked" : "" ?> disabled >
+                                        <label class="form-check-label" for="exampleCheck1">Role Profile</label>
+                                    </div>
+                                    <div class="form-check col">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck2" <?=$getData['typeDocument'] == "Organization Chart" ? "checked" : "" ?> disabled>
+                                        <label class="form-check-label" for="exampleCheck2">Organization Chart</label>
+                                    </div>
+                                
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <embed src="../assets/uploadFiles/<?=$getData['document'] ?>" type="application/pdf" width="100%" height="200px" />
+                            </td>
+                        </tr>
+                        <tr style="height: 80px; border-bottom: 0px">
+                            <td class="text-center align-middle" colspan="4" style="border-bottom: 0px">
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="text-success"><i class="fas fa-check fa-lg"></i></span>
+                                    </div>
+                                    <div class="col">
+                                        <?php 
+                                            if ($getData['status'] == 5 ) { ?>
+                                                <a href="../action/actionVerify.php?status=verify&id=<?=$getData['idFormulir'] ?>" class="text-success"><i class="fas fa-check fa-lg"></i></a>
+                                                <a href="../action/actionVerify.php?status=notVerify&id=<?=$getData['idFormulir'] ?>" class="text-danger"><i class="fas fa-times fa-lg"></i></a>
+                                            <?php
+                                            }elseif ($getData['status'] == 1 ) {?>
+                                                <span class="text-success"><i class="fas fa-check fa-lg"></i></span>
+                                            <?php
+                                            }elseif ($getData['status'] == 2 ) { ?>
+                                                <span class="text-danger"><i class="fas fa-times fa-lg"></i></span>
+                                            <?php
+                                            }
+                                        ?>
+                                        
+                                    </div>
+                                    <div class="col">
+                                        <?php 
+                                            if ($_SESSION ["hak_akses"] == "manager") { ?>
+                                                <a href="../action/actionVerify.php?status=approve&id=<?=$getData['idFormulir'] ?>" class="text-success"><i class="fas fa-check fa-lg"></i></a>
+                                                <a href="../action/actionVerify.php?status=notApprove&id=<?=$getData['idFormulir'] ?>" class="text-danger"><i class="fas fa-times fa-lg"></i></a>
+                                            <?php
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr  >
+                            <td class="text-center align-middle" colspan="4" style="border-top: 0px">
+                                <div class="row">
+                                    <div class="col">
+                                        <b>Requester</b>
+                                    </div>
+                                    <div class="col">
+                                        <b>Verify By</b>
+                                    </div>
+                                    <div class="col">
+                                        <b>Approved By</b>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <?=$getData['nama'] ?>
+                                    </div>
+                                    <div class="col">
+                                        Admin
+                                    </div>
+                                    <div class="col">
+                                        Manager
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
