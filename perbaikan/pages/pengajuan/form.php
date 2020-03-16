@@ -109,7 +109,7 @@
                                     </select>
                                 </div>
                                 <div class="col-sm-6" tooltip="tooltip" title="Upload File Supporting Document">
-                                    <input type="file" class="form-control form-control-user" tooltip="tooltip" title="Foto" name="document" >
+                                    <input type="file" class="form-control form-control-user" name="document" >
                                 </div>
                             </div>
                             

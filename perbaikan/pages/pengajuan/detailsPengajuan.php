@@ -22,7 +22,7 @@
         }
     }
 ?>
-<div style="padding-left:300px; padding-right:300px;">
+<div style="padding-left:200px; padding-right:200px;">
     <div class="card o-hidden border-0 shadow-lg">
         <div class="card-body p-0">
             <div class="row p-4" style="font-family: times new roman; font-size: 16px;">

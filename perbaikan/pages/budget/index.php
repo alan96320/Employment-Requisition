@@ -42,6 +42,8 @@
                         <th>Periode</th>
                         <th>Department</th>
                         <th>Budget</th>
+                        <th>Terpakai</th>
+                        <th>Balance</th>
                         <th style="width: 130px" >Action</th>
                     </tr>
                 </thead>
@@ -52,6 +54,8 @@
                                 <td class="text-center"><?=$data['periode']?></td>
                                 <td><?=$data['nama_dept']?></td>
                                 <td class="text-center"><?=$data['budget']?></td>
+                                <td class="text-center"><?=$data['terpakai']?></td>
+                                <td class="text-center"><?=$data['budget']-$data['terpakai']?></td>
                                 <td class="text-center">
                                     <a href="?page=formBudget&id=<?=date("mYd").$data['idBudget']?>" class="btn btn-warning btn-circle btn-sm">
                                         <i class="fas fa-eye-dropper"></i>

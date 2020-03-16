@@ -2,15 +2,17 @@
     $stmDep = $pdo_conn->prepare("SELECT * FROM `departemen`");
     $stmDep->execute();
     $rowsDepartemen = $stmDep->fetchAll(PDO::FETCH_ASSOC);
-    
+    $idnya = '';
     if(isset($_GET['id'])){
         $id = str_replace(date('mYd'),'',$_GET['id']);
         $status = "update";
         $sql = $pdo_conn->prepare("SELECT * FROM budget WHERE idBudget='$id'");
         $sql->execute();
         $getData = $sql->fetch(PDO::FETCH_ASSOC);
+        $url = '../action/actionBudget.php?status='.$status.'&id='.$_GET['id'];
     }else{
-        $status = "add";
+        $status = "add"; 
+        $url = '../action/actionBudget.php?status='.$status;
     }
     if(isset($_SESSION['alert'])){
         $message = "";
@@ -39,7 +41,7 @@
             <div class="row" style="margin-top: -30px">
                 <div class="col-lg-12">
                     <div class="p-5">
-                        <form class="user" action="../action/actionBudget.php?status=<?=$status.'&id='.isset($id)?>" method="post">
+                        <form class="user" action="<?=$url?>" method="post">
                             <div class="form-group row">
                                 <div class="col-sm-2 offset-sm-3 mb-3 mb-sm-0 text-right mt-3">
                                     <label for="department">Department</label>

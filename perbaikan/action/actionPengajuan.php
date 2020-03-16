@@ -53,15 +53,10 @@
                 $error['reques'] = ["Sisa budget kamu ".$budget." pastikan tidak melebihi budget"];
                 $statusError = true;
             }
-            if($replace == ''){
-                $error['replace'] = ['Replace Wajib Di isi'];
+            $r = explode(',', $replace);
+            if (count($r) > $reques) {
+                $error['releace'] = ["Pastikan Jumlah Replace tidak melebihi jumlah reques"];
                 $statusError = true;
-            }else{
-                $r = explode(',', $replace);
-                if (count($r) > $reques) {
-                    $error['releace'] = ["Pastikan Jumlah Replace tidak melebihi jumlah reques"];
-                    $statusError = true;
-                }
             }
             if($joinDate == ''){
                 $error['joinDate'] = ['Join Date Wajib Di isi'];
