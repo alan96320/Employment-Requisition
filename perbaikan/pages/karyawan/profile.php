@@ -73,7 +73,16 @@
                             </span>
                             <span class="text">Edit</span>
                         </a>
-                        <a href="?page=karyawan" class="btn btn-info btn-icon-split float-right">
+                        <?php
+                            if ($_SESSION ["hak_akses"] == "admin") {
+                                $back = "karyawan";
+                            }elseif($_SESSION ["hak_akses"] == "pic") {
+                                $back = "pengajuan";
+                            }elseif ($_SESSION ["hak_akses"] == "manager") {
+                                $back = "approval";
+                            }
+                        ?>
+                        <a href="?page=<?=$back?>" class="btn btn-info btn-icon-split float-right">
                             <span class="icon text-white-50">
                                 <i class="fas fa-arrow-left"></i>
                             </span>

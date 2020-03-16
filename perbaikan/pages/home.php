@@ -63,6 +63,8 @@
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
             </li>
+            <?php 
+                if ($_SESSION ["hak_akses"] == "admin") { ?>
             <li class="nav-item">
                 <a class="nav-link" href="?page=karyawan">
                 <i class="fas fa-fw fa-database"></i>
@@ -74,20 +76,28 @@
                 <span>Budget</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?page=pengajuan">
-                <i class="fas fa-fw fa-file-alt"></i>
-                <span>Pengajuan</span></a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="?page=verify">
                 <i class="fas fa-fw fa-file-alt"></i>
                 <span>Verify</span></a>
             </li>
+            <?php
+                }elseif ($_SESSION ["hak_akses"] == "pic") { ?>
+            <li class="nav-item">
+                <a class="nav-link" href="?page=pengajuan">
+                <i class="fas fa-fw fa-file-alt"></i>
+                <span>Pengajuan</span></a>
+            </li>
+            <?php
+                }elseif ($_SESSION ["hak_akses"] == "manager"){?>
             <li class="nav-item">
                 <a class="nav-link" href="?page=approval">
                 <i class="fas fa-fw fa-file-alt"></i>
                 <span>Approval</span></a>
             </li>
+                <?php
+                }
+            ?>
+            
 
             <hr class="sidebar-divider d-none d-md-block">
             
@@ -98,6 +108,7 @@
 
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
+                <!-- // navbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
@@ -169,9 +180,12 @@
                         </li>
                     </ul>
                 </nav>
+                <!-- end navbar -->
+                <!-- isi atau content -->
                 <div class="container-fluid">
                     <?php include "config_pages.php" ?>
                 </div>
+                <!-- end content -->
             </div>
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
