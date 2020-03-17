@@ -52,13 +52,13 @@
                             <span class="icon text-gray-600" style="background: transparent;">
                                 <i class="fas fa-envelope fa-lg"></i>
                             </span>
-                            <span class="text text-capitalize" style="color: #152aca"><?=$getData['email']?> </span>
+                            <span class="text text" style="color: #152aca"><?=$getData['email']?> </span>
                         </a> <br>
                         <a href="#" class="btn btn-icon-split">
                             <span class="icon text-gray-600" style="background: transparent;">
                                 <i class="fas fa-phone fa-lg"></i>
                             </span>
-                            <span class="text text-capitalize" style="color: #152aca"><?=$getData['no_telepon']?> </span>
+                            <span class="text text" style="color: #152aca"><?=$getData['no_telepon']?> </span>
                         </a> <br>
                         <a href="#" class="btn btn-icon-split">
                             <span class="icon text-gray-600" style="background: transparent;">

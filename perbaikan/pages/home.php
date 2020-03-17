@@ -78,7 +78,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="?page=verify">
                 <i class="fas fa-fw fa-file-alt"></i>
-                <span>Verify</span></a>
+                <span>List Status Verify</span></a>
             </li>
             <?php
                 }elseif ($_SESSION ["hak_akses"] == "pic") { ?>
