@@ -15,9 +15,11 @@
         }elseif($status == "approve") {
             $query = mysqli_query($conn, "UPDATE statusapproval SET status=3 WHERE idFormulir='$id' ");
             $link = 'approval';
+            $alert = "suksesVerify";
         }elseif ($status == "notApprove") {
             $query = mysqli_query($conn, "UPDATE statusapproval SET status=4 WHERE idFormulir='$id' ");
             $link = 'approval';
+            $alert = "notVerify";
         }
         if (mysqli_affected_rows($conn) > 0) {
             $_SESSION['alert'] = $alert;

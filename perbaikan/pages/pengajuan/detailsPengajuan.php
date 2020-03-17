@@ -20,12 +20,11 @@
         $back = "";
         if ($hak == "admin") {
             $back = "verify";
-        }elseif($hak == "pic"){
-            $back == "pengajuan";
+        }if($hak == "pic"){
+            $back = "pengajuan";
         }elseif($hak == "manager"){
             $back = "approval";
         }
-
         if(isset($_SESSION['alert'])){
             $message = $_SESSION['error'];
             if ($_SESSION['alert'] == "error") {
@@ -119,6 +118,17 @@
                                 <embed src="../assets/uploadFiles/<?=$getData['document'] ?>" type="application/pdf" width="100%" height="200px" />
                             </td>
                         </tr>
+                        <?php 
+                            $hide = 0;
+                            if ($_SESSION ["hak_akses"] == "manager") {
+                                $hide = 1;
+                            }elseif ($_SESSION ["hak_akses"] == "admin") {
+                                $hide = 5;
+                            }
+                        ?>
+                        <tr class="<?= $getData['status'] == $hide ? "d-none" : "" ?>">
+                            <td colspan="4" >Komentar : </tr>
+                        </tr>
                         <tr style="height: 80px; border-bottom: 0px">
                             <td class="text-center align-middle" colspan="4" style="border-bottom: 0px">
                                 <div class="row">
@@ -127,14 +137,20 @@
                                     </div>
                                     <div class="col">
                                         <?php 
-                                            if ($getData['status'] == 5 ) { ?>
-                                                <a href="../action/actionVerify.php?status=verify&id=<?=$getData['idFormulir'] ?>" class="text-success"><i class="fas fa-check fa-lg"></i></a>
-                                                <a href="../action/actionVerify.php?status=notVerify&id=<?=$getData['idFormulir'] ?>" class="text-danger"><i class="fas fa-times fa-lg"></i></a>
-                                            <?php
-                                            }elseif ($getData['status'] == 1 ) {?>
+                                            if ($getData['status'] == 5 ) { 
+                                                if ($_SESSION ["hak_akses"] == "admin") { ?>
+                                                    <a href="javascript:void(0)" class="text-success action" id="verify" idForm="<?=$getData['idFormulir'] ?>">
+                                                        <i class="fas fa-check fa-lg"></i>
+                                                    </a>
+                                                    <a href="javascript:void(0)" class="text-danger action" id="notVerify" idForm="<?=$getData['idFormulir'] ?>">
+                                                        <i class="fas fa-times fa-lg"></i>
+                                                    </a>    
+                                                <?php
+                                                }
+                                            }elseif ($getData['status'] == 1 || $_SESSION ["hak_akses"] == "manager" || $getData['status'] == 3 || $getData['status'] == 4) {?>
                                                 <span class="text-success"><i class="fas fa-check fa-lg"></i></span>
                                             <?php
-                                            }elseif ($getData['status'] == 2 ) { ?>
+                                            }elseif ($getData['status'] == 2 || $getData['status'] == 3 || $getData['status'] == 4) { ?>
                                                 <span class="text-danger"><i class="fas fa-times fa-lg"></i></span>
                                             <?php
                                             }
@@ -143,9 +159,24 @@
                                     </div>
                                     <div class="col">
                                         <?php 
-                                            if ($_SESSION ["hak_akses"] == "manager") { ?>
-                                                <a href="../action/actionVerify.php?status=approve&id=<?=$getData['idFormulir'] ?>" class="text-success"><i class="fas fa-check fa-lg"></i></a>
-                                                <a href="../action/actionVerify.php?status=notApprove&id=<?=$getData['idFormulir'] ?>" class="text-danger"><i class="fas fa-times fa-lg"></i></a>
+                                            if ($getData['status'] == 1 ) {
+                                                if ($_SESSION ["hak_akses"] == "manager") { ?>
+                                                    <a href="javascript:void(0)" class="text-success action" id="approve" idForm="<?=$getData['idFormulir'] ?>">
+                                                        <i class="fas fa-check fa-lg"></i>
+                                                    </a>
+                                                    <a href="javascript:void(0)" class="text-danger action" id="notApprove"  idForm="<?=$getData['idFormulir'] ?>">
+                                                        <i class="fas fa-times fa-lg"></i>
+                                                    </a>
+                                                <?php
+                                                } 
+                                            ?>
+                                                
+                                            <?php
+                                            }elseif ( $getData['status'] == 3 ) { ?>
+                                                <span class="text-success"><i class="fas fa-check fa-lg"></i></span>
+                                            <?php
+                                            }elseif ( $getData['status'] == 4 ) { ?>
+                                                <span class="text-danger"><i class="fas fa-times fa-lg"></i></span>
                                             <?php
                                             }
                                         ?>
