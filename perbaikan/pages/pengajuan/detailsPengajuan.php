@@ -79,7 +79,7 @@
                         </tr>
                         <tr>
                             <td>Budget : <?=$getData['budget'] ?> Orang</td>
-                            <td colspan="2">Repleace Name : 
+                            <td colspan="2">Replace Name : 
                                 <?php 
                                     foreach ($nameRepleace as $data) { ?>
                                         <a href="#" class="badge badge-primary"><?=$data?></a>
