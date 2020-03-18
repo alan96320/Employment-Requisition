@@ -2,19 +2,12 @@
     $id = $_SESSION ["id"];
     $stm = $pdo_conn->prepare("SELECT * FROM formulir_er 
                                JOIN statusapproval USING (idFormulir)
-                               WHERE status = 5 OR status = 1 OR status = 2
                              ");
     $stm->execute();
     $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
     if(isset($_SESSION['alert'])){
         $message = "";
-        if ($_SESSION['alert'] == "suksesDelete") {
-            $message = "Berhasil Mengahpus Data";
-        }elseif ($_SESSION['alert'] == "suksesEdit") {
-            $message = "Berhasil Merubah Data";
-        }elseif ($_SESSION['alert'] == "suksesAdd") {
-            $message = "Berhasil Menambahkan Data";
-        }elseif ($_SESSION['alert'] == "suksesVerify" ) {
+        if ($_SESSION['alert'] == "suksesVerify" ) {
             $message = "Berhasil Memverifikasi Data";
         }elseif ($_SESSION['alert'] == "notVerify" ) {
             $message = "Berhasil Mereject Data";
