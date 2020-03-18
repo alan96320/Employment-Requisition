@@ -11,16 +11,37 @@
             $message = "Berhasil Mengahpus Data";
         }elseif ($_SESSION['alert'] === "suksesEdit") {
             $message = "Berhasil Merubah Data";
+            if (isset($_SESSION['sendUSername'])) {
+                $username = $_SESSION['sendUSername'];
+                echo '
+                    <script type="text/javascript">
+                                $(document).ready(function () {
+                                    toastInfo(["Username : '.$username.'", "Password : '.$username.'"]);
+                                });
+                            </script>
+                ';
+            }
         }elseif ($_SESSION['alert'] === "suksesAdd") {
             $message = "Berhasil Menambahkan Data";
+            if (isset($_SESSION['sendUSername'])) {
+                $username = $_SESSION['sendUSername'];
+                echo '
+                    <script type="text/javascript">
+                                $(document).ready(function () {
+                                    toastInfo(["Username : '.$username.'", "Password : '.$username.'"]);
+                                });
+                            </script>
+                ';
+            }
         }
         echo "<script>
                 Toast.fire({
                     icon: 'success',
-                    title: `".$message."`
+                    title: '".$message."'
                 })
             </script>";
         unset($_SESSION['alert']);
+        unset($_SESSION['sendUSername']);
     }
     
 ?>
@@ -64,7 +85,7 @@
                                     <a href="?page=formKaryawan&id=<?=date("mYd").$data['id_karyawan']?>" class="btn btn-warning btn-circle btn-sm">
                                         <i class="fas fa-eye-dropper"></i>
                                     </a>
-                                    <a href="javascript:void(0)" class="btn btn-danger btn-circle btn-sm btnDelete" id="<?=$data['id_karyawan']?>" >
+                                    <a href="javascript:void(0)" class="btn btn-danger btn-circle btn-sm btnDelete" page="<?=$_GET['page']?>" id="<?=$data['id_karyawan']?>" >
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </td>

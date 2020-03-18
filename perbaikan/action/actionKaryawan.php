@@ -3,6 +3,7 @@
     session_start();
 if(isset($_GET['status'])){
     if ($_GET['status'] == "update" || $_GET['status'] == "add") {
+        $addPassword = false;
         if ($_POST['hak'] == "karyawan") {
             $username = null;
             $password = null;
@@ -10,6 +11,8 @@ if(isset($_GET['status'])){
             if ($_POST['username'] == "") {
                 $username = date('isdYm');
                 $password = md5(date('isdYm'));
+                $_SESSION['sendUSername'] = $username;
+                $addPassword = true;
             }else{
                 $username = $_POST['username'];
                 $password = $_POST['password'];
@@ -84,6 +87,9 @@ if(isset($_GET['status'])){
                 $sth = $pdo_conn->prepare($sql);
                 $sth->execute();
                 if ($sth->rowCount() > 0) {
+                    if ($addPassword == true) {
+                        mysqli_query($conn, "INSERT INTO cangepassword (idUser, oldPassword) VALUES ('$id', '$password') ");
+                    }
                     $_SESSION['alert'] = "suksesEdit";
                     header('location: ../pages/home.php?page=karyawan');
                 }else{
@@ -108,9 +114,12 @@ if(isset($_GET['status'])){
                 $sql= "INSERT INTO karyawan (id_karyawan, id_dept,username,password,nama,id_jabatan, marital_status, tanggal_masuk, jenis_kelamin, status_karyawan, tempat_lahir, tanggal_lahir, alamat,email,no_telepon,foto,hak_akses) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
                 $sth = $pdo_conn->prepare($sql);
                 $sth->execute($params);
-                if ($sth->rowCount() > 0) { 
-                $_SESSION['alert'] = "suksesAdd";
-                header('location: ../pages/home.php?page=karyawan');
+                if ($sth->rowCount() > 0) {
+                    if ($addPassword == true) {
+                        mysqli_query($conn, "INSERT INTO cangepassword (idUser, oldPassword) VALUES ('$id', '$password') ");
+                    }
+                    $_SESSION['alert'] = "suksesAdd";
+                    header('location: ../pages/home.php?page=karyawan');
                 }else{
                     if($foto !== ""){
                         unlink($path);
@@ -124,6 +133,7 @@ if(isset($_GET['status'])){
                 $stm = $pdo_conn->prepare("DELETE FROM karyawan WHERE id_karyawan = '$id' ");
                 $stm->execute();
                 if ($stm->rowCount() > 0) {
+                    mysqli_query($conn, "DELETE FROM cangepassword WHERE idUser = '$id' ");
                     $_SESSION['alert'] = "suksesDelete";
                     echo "sukses";
                 }else{

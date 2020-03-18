@@ -14,10 +14,10 @@ $(document).ready(function () {
                 var id = $(this).attr('id');
                 var page = $(this).attr('page');
                 var urls = "";
-                if (page = "karyawan") {
+                if (page == "karyawan") {
                     urls = "../action/actionKaryawan.php?status=delete"
                 }
-                if (page = "budget") {
+                if (page == "budget") {
                     urls = "../action/actionBudget.php?status=delete"
                 }
                 $.ajax({
@@ -27,7 +27,7 @@ $(document).ready(function () {
                     success: function (response) {
                         Swal.fire({
                             title: 'Tunggu',
-                            html: 'Data bsedang di hapus dalam <b></b> milliseconds.',
+                            html: 'Data Sedang di hapus dalam <b></b> milliseconds.',
                             timer: 2000,
                             timerProgressBar: true,
                             allowOutsideClick: false,
@@ -59,7 +59,6 @@ $(document).ready(function () {
                                 }
                             }
                         })
-                        
                     }
                 });
                 

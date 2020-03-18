@@ -44,7 +44,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 	<?php 
 		if(isset($_SESSION['statusLogin'])){
-			if ($_SESSION['statusLogin'] === "gagal") { ?>
+			if ($_SESSION['statusLogin'] == "gagal") { ?>
 				<script>
 					const Toast = Swal.mixin({
 						toast: true,
@@ -63,8 +63,48 @@
 					});
 				</script>
 				<?php
-				unset($_SESSION['statusLogin']);
+			}elseif ($_SESSION['statusLogin'] == "suksesChange") { ?>
+			<script>
+				Swal.fire({
+					icon: 'success',
+					title: 'Good Job..',
+					html: '<b>Password</b> berhasil di ganti, silahkan login kembali dengan Password baru anda...',
+				})
+			</script>
+			<?php
 			}
+			unset($_SESSION['statusLogin']);
+		}
+
+		if (isset($_SESSION['change'])) {
+			if ($_SESSION['change'] == "change") { ?>
+				<script>
+					(async () => {
+						const { value: password  } = await Swal.fire({
+							title: 'Silahkan ganti Password default anda.. ',
+							input: 'password',
+							allowOutsideClick: false,
+							inputAttributes: {
+								'aria-label': 'Type your message here'
+							},
+							showCancelButton: true
+						})
+
+						if (password) {
+							location.href = "action/changePassword.php?change=" + password;
+						} else {
+							Swal.fire({
+								icon: 'error',
+								title: 'Oops...',
+								html: 'Maaf anda tidak di ijinkan masuk jika tidak mengganti <u><b>password</b></u> default anda, Silahkan login kembali dan lakukan perubahan password',
+							})
+						}
+
+					})()
+				</script>
+			<?php
+			}
+			unset($_SESSION['change']);
 		}
 	?>
 	

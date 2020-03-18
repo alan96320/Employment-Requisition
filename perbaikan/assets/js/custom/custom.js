@@ -59,6 +59,18 @@ function toastError(message) {
     })
 }
 
+function toastInfo(message) {
+    $.toast({
+        heading: 'Information',
+        text: message,
+        icon: 'info',
+        position: 'top-center',
+        showHideTransition: 'slide',
+        hideAfter: 'false',
+        stack: 10,
+    })
+}
+
 function action(id, status) {
     if (status == 'approve' || status == 'verify') {
         var Placeholder = 'Berikan sedikit komentar atau alasan kenapa data ini di setujui...';
@@ -89,8 +101,3 @@ function action(id, status) {
 
     })()
 }
-
-function reject(id, komentar) {
-    
-}
-
