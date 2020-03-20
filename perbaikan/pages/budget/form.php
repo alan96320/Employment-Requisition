@@ -43,7 +43,7 @@ if (isset($_SESSION['alert'])) {
                     <div class="p-5">
                         <form class="user" action="<?= $url ?>" method="post">
                             <div class="form-group row">
-                                <div class="col-sm-3 offset-sm-3 mb-3 mb-sm-0 text-right mt-3">
+                                <div class="col-sm-2 offset-sm-3 mb-3 mb-sm-0 text-right mt-3">
                                     <label for="department">Department</label>
                                 </div>
                                 <div class="col-sm-4">

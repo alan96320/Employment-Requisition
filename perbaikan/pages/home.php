@@ -1,7 +1,28 @@
 <?php
     include "../action/config.php";
     session_start();
-    if (isset($_SESSION ["username"])) { ?>
+    date_default_timezone_set("Asia/Bangkok");
+    $date = date('Y-m-d H:i:s');
+    if (isset($_SESSION ["username"])) { 
+        $hak = $_SESSION ["hak_akses"];
+        if ($hak == "admin") {
+            $stm = $pdo_conn->prepare("SELECT * FROM statusapproval JOIN formulir_er USING(idFormulir) INNER JOIN karyawan ON karyawan.id_karyawan = formulir_er.idPic JOIN departemen USING(id_dept) WHERE status=5 && isReadA IS NULL LIMIT 5 ");
+        }elseif ($hak == "manager") {
+            $stm = $pdo_conn->prepare("SELECT * FROM statusapproval JOIN formulir_er USING(idFormulir) INNER JOIN karyawan ON karyawan.id_karyawan = formulir_er.idPic JOIN departemen USING(id_dept) WHERE status=1 and isReadM IS NULL LIMIT 5 ");
+        }else{
+            $stm = $pdo_conn->prepare("SELECT * FROM statusapproval WHERE status !=5 && isReadP IS NULL LIMIT 5 ");
+        }
+        $stm->execute();
+        $alert = $stm->fetchAll(PDO::FETCH_ASSOC);
+        // $tes = $stm->fetch(PDO::FETCH_ASSOC);
+        $count = $stm->rowCount();
+//         $result = $stm->fetch(PDO::FETCH_ASSOC);
+// // print_r($result);
+//         $dif = date_diff(date_create($date),date_create($result['created']));
+//         echo 'sekarang = '.$date.'<br>';
+//         echo 'database = '.$result['created'].'<br>';
+        // echo $dif->format('%y Year %m Month %d Day %h Hours %i Minute %s Seconds');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -120,47 +141,118 @@
                         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-bell fa-fw"></i>
                             <!-- Counter - Alerts -->
-                            <span class="badge badge-danger badge-counter">3+</span>
+                            <span class="badge badge-counter <?=$count == 0 ? 'd-none' : '' ?> ">
+                                <span class="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="false"></span>
+                            </span>
                         </a>
                         <!-- Dropdown - Alerts -->
                         <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                             <h6 class="dropdown-header">
                             Alerts Center
                             </h6>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <div class="mr-3">
-                                    <div class="icon-circle bg-primary">
-                                    <i class="fas fa-file-alt text-white"></i>
-                                    </div>
+                            <?php
+                            if ($count > 0) {
+                                if ($hak != "pic") { 
+                                    foreach ($alert as $data) {
+                                        $dif = date_diff(date_create($date),date_create($data['created'])); ?>
+                                        <a class="dropdown-item d-flex align-items-center" href="../action/actionAlert.php?id=<?=$data['idFormulir']?>">
+                                            <div class="mr-3">
+                                                <div class="icon-circle bg-primary">
+                                                    <i class="fas fa-file-alt text-white"></i>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span class="font-weight-bold">Pengajuan baru dari Department <?=$data['nama_dept'] ?> </span>
+                                                <div class="small text-gray-500">
+                                                    <?php
+                                                        if ($dif->format("%y") > 0) {
+                                                            echo $dif->format("%y Year Ago");
+                                                        }elseif ($dif->format("%m") > 0) {
+                                                            echo $dif->format("%m Mount Ago");
+                                                        }elseif ($dif->format("%d") > 0) {
+                                                            echo $dif->format("%d Day Ago");
+                                                        }elseif ($dif->format("%h") > 0) {
+                                                            echo $dif->format("%h Hours Ago");
+                                                        }elseif ($dif->format("%i") > 0) {
+                                                            echo $dif->format("%i Minute Ago");
+                                                        }elseif ($dif->format("%s") > 0) {
+                                                            echo $dif->format("%s Seconds Ago");
+                                                        }
+                                                    ?>
+                                                </div>
+                                            </div>
+                                        </a> 
+                                    <?php
+                                    } ?>
+                                       
+                                <?php
+                                }else{ 
+                                    foreach ($alert as $data) {
+                                        if ($data['status'] == 1) {
+                                            $dif = date_diff(date_create($date),date_create($data['timeVerify']));
+                                            $message = "Pengajuan pada tanggal ".date('F d Y', strtotime($data['created']) ) ." disetujui oleh admin";
+                                            $bg = "bg-success";
+                                            $icon = "fa-check-circle";
+                                        } elseif ($data['status'] == 2) {
+                                            $dif = date_diff(date_create($date),date_create($data['timeVerify']));
+                                            $message = "Pengajuan pada tanggal ".date('F d Y', strtotime($data['created']) ) ." tidak disetujui oleh admin";
+                                            $bg = "bg-danger";
+                                            $icon = "fa-times-circle";
+                                        } elseif ($data['status'] == 3) {
+                                            $dif = date_diff(date_create($date),date_create($data['timeApprove']));
+                                            $message = "Pengajuan pada tanggal ".date('F d Y', strtotime($data['created']) ) ." disetujui oleh manager";
+                                            $bg = "bg-success";
+                                            $icon = "fa-check-circle";
+                                        } elseif ($data['status'] == 4) {
+                                            $dif = date_diff(date_create($date),date_create($data['timeApprove']));
+                                            $message = "Pengajuan pada tanggal ".date('F d Y', strtotime($data['created']) ) ." tidak disetujui oleh manager";
+                                            $bg = "bg-danger";
+                                            $icon = "fa-times-circle";
+                                        }
+                                        // echo 'sekarang = '.$date.'<br>';
+                                        // echo 'database = '.$data['timeApprove'].'<br>';
+                                        // echo $dif->format('%y Year %m Month %d Day %h Hours %i Minute %s Seconds'); 
+                                        ?>
+                                        
+                                        <a class="dropdown-item d-flex align-items-center" href="../action/actionAlert.php?id=<?=$data['idFormulir']?>">
+                                            <div class="mr-3">
+                                                <div class="icon-circle <?=$bg?>">
+                                                    <i class="fas <?=$icon?> text-white"></i>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span class="font-weight-bold"><?=$message ?> </span>
+                                                <div class="small text-gray-500">
+                                                    <?php
+                                                        if ($dif->format("%y") > 0) {
+                                                            echo $dif->format("%y Year Ago");
+                                                        }elseif ($dif->format("%m") > 0) {
+                                                            echo $dif->format("%m Mount Ago");
+                                                        }elseif ($dif->format("%d") > 0) {
+                                                            echo $dif->format("%d Day Ago");
+                                                        }elseif ($dif->format("%h") > 0) {
+                                                            echo $dif->format("%h Hours Ago");
+                                                        }elseif ($dif->format("%i") > 0) {
+                                                            echo $dif->format("%i Minute Ago");
+                                                        }elseif ($dif->format("%s") > 0) {
+                                                            echo $dif->format("%s Seconds Ago");
+                                                        }
+                                                    ?>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        
+                                    <?php
+                                    } 
+                                }
+                            }else{ ?>
+                                <div class="dropdown-item d-flex align-items-center">
+                                    <div class="small text-gray-500">Maaf tidak ada informasi terbaru...</div>
                                 </div>
-                            <div>
-                                <span class="font-weight-bold">Pengajuan baru dari PIC ....</span>
-                                <div class="small text-gray-500">. 56m Ago</div>
-                            </div>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="mr-3">
-                                <div class="icon-circle bg-success">
-                                <i class="fas fa-check-circle text-white"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="small text-gray-500">December 7, 2019</div>
-                                Pengajuan pada tanggal ... disetujui oleh ...
-                            </div>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="mr-3">
-                                <div class="icon-circle bg-danger">
-                                <i class="fas fa-times-circle text-white"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="small text-gray-500">December 2, 2019</div>
-                                Pengajuan pada tanggal ... di reject oleh ....
-                            </div>
-                            </a>
-                            <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            <?php
+                            }
+                                
+                            ?>
                         </div>
                         </li>
                         <div class="topbar-divider d-none d-sm-block"></div>
