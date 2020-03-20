@@ -90,10 +90,10 @@ function action(id, status) {
         })
 
         if (text) {
-            location.href = "../action/actionVerify.php?status=" + status + "&id=" + id;
+            location.href = "../action/actionVerify.php?status=" + status + "&id=" + id + "&komentar=" + text;
         } else {
             if (status == 'approve' || status == 'verify') {
-                location.href = "../action/actionVerify.php?status=" + status + "&id=" + id;
+                location.href = "../action/actionVerify.php?status=" + status + "&id=" + id + "&komentar=" + text;
             } else {
                 Swal.fire('Sorry...', 'Anda tidak bisa menolak pengajuan ini tanpa alasan..', 'warning')
             }

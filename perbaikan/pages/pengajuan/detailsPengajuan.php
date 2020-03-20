@@ -127,7 +127,10 @@
                             }
                         ?>
                         <tr class="<?= $getData['status'] == $hide ? "d-none" : "" ?>">
-                            <td colspan="4" >Komentar : </tr>
+                            <td colspan="4" >
+                                <p><b>Komentar by admin : </b> <?=$getData['komentarA'] ?> </p>
+                                <p><b>Komentar by manager : </b> <?=$getData['komentarM'] ?> </p> 
+                            </td>
                         </tr>
                         <tr style="height: 80px; border-bottom: 0px">
                             <td class="text-center align-middle" colspan="4" style="border-bottom: 0px">
