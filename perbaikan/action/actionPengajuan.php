@@ -56,19 +56,19 @@
                 $statusError = true;
             }
             if($position == ''){
-                $error['position'] = ['Open position Wajib Di isi'];
+                $error['position'] = ['Open Position Wajib Di isi'];
                 $statusError = true;
             }
             if($reques == ''){
                 $error['reques'] = ['Budget Wajib Di isi'];
                 $statusError = true;
             }elseif ($reques > $budget) {
-                $error['reques'] = ["Sisa budget kamu ".$budget." pastikan tidak melebihi budget"];
+                $error['reques'] = ["Sisa budget adalah ".$budget." pastikan tidak melebihi budget"];
                 $statusError = true;
             }
             $r = explode(',', $replace);
             if (count($r) > $reques) {
-                $error['releace'] = ["Pastikan Jumlah Replace tidak melebihi jumlah reques"];
+                $error['releace'] = ["Pastikan Jumlah Replace tidak melebihi jumlah request"];
                 $statusError = true;
             }
             if($joinDate == ''){
@@ -80,23 +80,23 @@
                 $statusError = true;
             }
             if($major == ''){
-                $error['major'] = ['Major Wajib Di isi'];
+                $error['major'] = ['Major Wajib Diisi'];
                 $statusError = true;
             }
             if($experience == '' && $education !== 'smk'){
-                $error['experience'] = ['Exerince Wajib Di isi, Jika edication lebih dari SMK'];
+                $error['experience'] = ['Experience Wajib Diisi, Jika education lebih dari SMK'];
                 $statusError = true;
             }
             if($typeDocument == ''){
-                $error['typeDocument'] = ['Type Document Wajib Di isi'];
+                $error['typeDocument'] = ['Type Document Wajib Diisi'];
                 $statusError = true;
             }
             if($document == ''){
-                $error['document'] = ['Document Wajib Di isi'];
+                $error['document'] = ['Document Wajib Diisi'];
                 $statusError = true;
             }else{
                 if(!in_array($ext, $allowed) ) { 
-                    $error['document'] = ['Document not Support, pastikan type document yang anda masukan Word or PDF'];
+                    $error['document'] = ['Document not support, pastikan type document yang anda masukan Word or PDF'];
                     $statusError = true;
                 }
             }
@@ -107,7 +107,8 @@
                 
             }else{
                 move_uploaded_file( $_FILES['document'] ['tmp_name'], $path);
-                $query = "INSERT INTO formulir_er (idFormulir, idPic, job, position, reques, repleace, joinDate, typeDocument, document, education, major, experience, created) VALUES ('$idFormulir','$idPic','$job','$position','$reques','$replace','$joinDate','$typeDocument','$rename','$education','$major','$experience','$created')";
+                $query = "INSERT INTO formulir_er (idFormulir, idPic, job, position, reques, repleace, joinDate, typeDocument, document, education, major, experience, created) 
+                            VALUES ('$idFormulir','$idPic','$job','$position','$reques','$replace','$joinDate','$typeDocument','$rename','$education','$major','$experience','$created')";
                 $sth = $pdo_conn->prepare($query);
                 $sth->execute();
                 if ($sth->rowCount() > 0) {
