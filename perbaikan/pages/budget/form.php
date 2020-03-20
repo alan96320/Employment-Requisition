@@ -43,10 +43,10 @@ if (isset($_SESSION['alert'])) {
                     <div class="p-5">
                         <form class="user" action="<?= $url ?>" method="post">
                             <div class="form-group row">
-                                <div class="col-sm-3 offset-sm-3 mb-3 mb-sm-0 text-right mt-3">
+                                <div class="col-sm-3 offset-sm-2 mb-0 mb-sm-0 text-right mt-3">
                                     <label for="department">Department</label>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-6">
                                     <select class="form-control form-control-user" name='departemen' id="department" required>
                                         <option value="">Pilih Departemen</option>
                                         <?php foreach ($rowsDepartemen as $rowDepartemen) { ?>
@@ -60,18 +60,18 @@ if (isset($_SESSION['alert'])) {
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-2 offset-sm-3 mb-3 mb-sm-0 text-right mt-3">
+                                <div class="col-sm-2 offset-sm-2 mb-3 mb-sm-0 text-right mt-3">
                                     <label for="periode">Periode</label>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-6">
                                     <input type="number" class="form-control form-control-user" placeholder="<?= date('Y') ?>" name="periode" id="periode" required value="<?= isset($getData['periode']) ? $getData['periode'] : '' ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-2 offset-sm-3 mb-3 mb-sm-0 text-right mt-3">
+                                <div class="col-sm-2 offset-sm-2 mb-3 mb-sm-0 text-right mt-3">
                                     <label for="budget">Budget</label>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-6">
                                     <input type="number" class="form-control form-control-user" placeholder="Insert Budget" name="budget" id="budget" required value="<?= isset($getData['budget']) ? $getData['budget'] : '' ?>">
                                 </div>
                             </div>
@@ -79,11 +79,11 @@ if (isset($_SESSION['alert'])) {
                             <hr>
 
                             <div class="form-group row">
-                                <div class="col-sm-3 offset-sm-3 mb-3 mb-sm-0 text-right">
-                                    <button type="submit" class="btn btn-primary btn-user btn-block"><?= $status == 'update' ? 'Save' : 'Tambah Budget' ?></button>
+                                <div class="col-sm-3 offset-sm-3 mb-2 mb-sm-0 text-right">
+                                    <button type="submit" class="btn btn-outline-primary"><?= $status == 'update' ? 'Save' : 'Tambah Budget' ?></button>
                                 </div>
                                 <div class="col-sm-3">
-                                    <a href="?page=budget" class="btn btn-google btn-user btn-block">Cancel</a>
+                                    <a href="?page=budget" class="btn btn-outline-danger">Cancel</a>
                                 </div>
                             </div>
                         </form>
