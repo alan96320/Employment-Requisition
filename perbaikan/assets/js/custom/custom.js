@@ -70,6 +70,17 @@ function toastInfo(message) {
         stack: 10,
     })
 }
+function toastNotif(message) {
+    $.toast({
+        heading: 'Information',
+        text: message,
+        icon: 'info',
+        position: 'top-center',
+        showHideTransition: 'slide',
+        hideAfter: 'false',
+        stack: 10,
+    })
+}
 
 function action(id, status) {
     if (status == 'approve' || status == 'verify') {

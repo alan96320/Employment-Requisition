@@ -14,21 +14,13 @@
         }
         $stm->execute();
         $alert = $stm->fetchAll(PDO::FETCH_ASSOC);
-        // $tes = $stm->fetch(PDO::FETCH_ASSOC);
         $count = $stm->rowCount();
-//         $result = $stm->fetch(PDO::FETCH_ASSOC);
-// // print_r($result);
-//         $dif = date_diff(date_create($date),date_create($result['created']));
-//         echo 'sekarang = '.$date.'<br>';
-//         echo 'database = '.$result['created'].'<br>';
-        // echo $dif->format('%y Year %m Month %d Day %h Hours %i Minute %s Seconds');
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -209,9 +201,6 @@
                                             $bg = "bg-danger";
                                             $icon = "fa-times-circle";
                                         }
-                                        // echo 'sekarang = '.$date.'<br>';
-                                        // echo 'database = '.$data['timeApprove'].'<br>';
-                                        // echo $dif->format('%y Year %m Month %d Day %h Hours %i Minute %s Seconds'); 
                                         ?>
                                         
                                         <a class="dropdown-item d-flex align-items-center" href="../action/actionAlert.php?id=<?=$data['idFormulir']?>">
@@ -314,12 +303,84 @@
     <!-- js for jquery Toast -->
     <script src="../assets/vendor/jqueryToast/jquery.toast.min.js"></script>
 
+    <script src="https://js.pusher.com/5.1/pusher.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var hak = '<?=$_SESSION ["hak_akses"]?>';
+            Pusher.logToConsole = true;
+
+            var pusher = new Pusher('e9afb284b65046a5d995', {
+                cluster: 'ap1',
+                forceTLS: true
+            });
+
+            var channel = pusher.subscribe('my-channel');
+            channel.bind('my-event', function(data) {
+                if (data.status === 5 && hak === 'admin') {
+                    $.toast({
+                        heading: 'Info..',
+                        text: data.message,
+                        icon: 'info',
+                        position: 'bottom-right',
+                        showHideTransition: 'slide',
+                        stack: 10,
+                    })    
+                }else if (data.status === 1 && hak === 'manager') {
+                    $.toast({
+                        heading: 'Info..',
+                        text: data.message,
+                        icon: 'info',
+                        position: 'bottom-right',
+                        showHideTransition: 'slide',
+                        stack: 10,
+                    })    
+                }else if (data.status === 1 && hak === 'pic') {
+                    $.toast({
+                        heading: 'Info..',
+                        text: data.message,
+                        icon: 'success',
+                        position: 'bottom-right',
+                        showHideTransition: 'slide',
+                        stack: 10,
+                    })    
+                }else if (data.status === 3 && hak === 'pic') {
+                    $.toast({
+                        heading: 'Info..',
+                        text: data.message,
+                        icon: 'success',
+                        position: 'bottom-right',
+                        showHideTransition: 'slide',
+                        stack: 10,
+                    })    
+                }else if (data.status === 2 && hak === 'pic') {
+                    $.toast({
+                        heading: 'Info..',
+                        text: data.message,
+                        icon: 'error',
+                        position: 'bottom-right',
+                        showHideTransition: 'slide',
+                        stack: 10,
+                    })    
+                }else if (data.status === 4 && hak === 'pic') {
+                    $.toast({
+                        heading: 'Info..',
+                        text: data.message,
+                        icon: 'error',
+                        position: 'bottom-right',
+                        showHideTransition: 'slide',
+                        stack: 10,
+                    })    
+                }
+                
+            });
+
+        });
+    </script>
     <!-- custom scripts -->
     <script src="../assets/js/custom/custom.js" type="text/javascript"></script>
     <script src="../assets/js/custom/customAlert.js"></script>
     <script src="../assets/js/custom/customDatepicker.js"></script>
 
-    
     
 </body>
 
