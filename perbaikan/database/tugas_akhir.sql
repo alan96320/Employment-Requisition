@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2020 at 05:19 PM
+-- Generation Time: Mar 20, 2020 at 07:57 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.28
 
@@ -36,6 +36,13 @@ CREATE TABLE `budget` (
   `terpakai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `budget`
+--
+
+INSERT INTO `budget` (`idBudget`, `idDepartment`, `periode`, `budget`, `terpakai`) VALUES
+(8, 1, 2020, 30, 12);
+
 -- --------------------------------------------------------
 
 --
@@ -53,7 +60,9 @@ CREATE TABLE `cangepassword` (
 --
 
 INSERT INTO `cangepassword` (`idUser`, `oldPassword`, `newPassword`) VALUES
-(123456, 'bddacb5c604f017f1b80d97dd6d14d60', '21232f297a57a5a743894a0e4a801fc3');
+(123456, 'bddacb5c604f017f1b80d97dd6d14d60', '21232f297a57a5a743894a0e4a801fc3'),
+(897, 'e1110364e6b458c9b6cbf4f68b44b4f2', 'ed09636a6ea24a292460866afdd7a89a'),
+(8977, 'c2a1a5a4b365009b7aea3967b634a3b7', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
@@ -104,6 +113,14 @@ CREATE TABLE `formulir_er` (
   `experience` varchar(50) NOT NULL,
   `created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `formulir_er`
+--
+
+INSERT INTO `formulir_er` (`idFormulir`, `idPic`, `job`, `position`, `reques`, `repleace`, `joinDate`, `typeDocument`, `document`, `education`, `major`, `experience`, `created`) VALUES
+('192020064903', 897, 'permanen', 'operator', 10, '8977,123456', '2020-03-13', 'Role Profile', '1584623238.pdf', 'd3/d4', 'tes aja', '1 Year', '2020-03-19 00:00:00'),
+('212020451803', 897, 'permanen', 'operator', 2, '8977', '2020-03-03', 'Role Profile', '1584729940.pdf', 'smk', 'dsdsdasdas', 'asdasdas', '2020-03-20 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -162,6 +179,8 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`id_karyawan`, `id_dept`, `username`, `password`, `nama`, `id_jabatan`, `marital_status`, `tanggal_masuk`, `jenis_kelamin`, `status_karyawan`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `no_telepon`, `foto`, `hak_akses`) VALUES
+(897, 1, '020119202003', 'ed09636a6ea24a292460866afdd7a89a', 'pic', 2, 2, '2020-03-10', 'laki-laki', 'permanen', 'dadsdas', '2020-03-13', 'perumahan laguna raya blok i no 12b', 'acepalan3@gmail.com', '087728379454', '1584622921.PNG', 'pic'),
+(8977, 3, '031419202003', '21232f297a57a5a743894a0e4a801fc3', 'admin', 2, 1, '2020-03-18', 'laki-laki', 'permanen', 'dadsdas', '2019-07-18', 'Perumahan Laguna Raya Blok I No 12b', 'acepalan3@gmail.com', '087728379454', '1584622994.PNG', 'admin'),
 (123456, 3, '234018202003', '21232f297a57a5a743894a0e4a801fc3', 'mutia oktavia', 1, 1, '2020-10-03', 'laki-laki', 'permanen', 'dadsdas', '1970-01-01', 'perumahan laguna raya blok i no 12b', 'acepalan3@gmail.com', '0812121212', '1584544993.PNG', 'manager'),
 (15113034, NULL, 'aa', '4124bc0a9335c27f086f24ba207a4912', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin');
 
@@ -206,6 +225,14 @@ CREATE TABLE `statusapproval` (
   `komentarA` text DEFAULT NULL,
   `komentarM` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `statusapproval`
+--
+
+INSERT INTO `statusapproval` (`idStatus`, `idFormulir`, `status`, `isReadP`, `isReadA`, `isReadM`, `created`, `timeVerify`, `timeApprove`, `komentarA`, `komentarM`) VALUES
+(6, '192020064903', 1, 1, 1, 1, '2020-03-19 20:07:17', '2020-03-20 23:54:18', '2020-03-20 11:36:37', 'as', 'tes ting reject'),
+(7, '212020451803', 5, NULL, NULL, NULL, '2020-03-21 01:45:40', NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -264,7 +291,7 @@ ALTER TABLE `statusapproval`
 -- AUTO_INCREMENT for table `budget`
 --
 ALTER TABLE `budget`
-  MODIFY `idBudget` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idBudget` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `departemen`
@@ -294,7 +321,7 @@ ALTER TABLE `marital_status`
 -- AUTO_INCREMENT for table `statusapproval`
 --
 ALTER TABLE `statusapproval`
-  MODIFY `idStatus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idStatus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

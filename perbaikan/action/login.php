@@ -27,6 +27,7 @@
         $_SESSION ["image"] = $row ["foto"];
         $_SESSION ["department"] = $row ["id_dept"];
         $_SESSION ["name"] = $row ["nama"];
+        echo "<script>sessionStorage.setItem('hak', '".$row["hak_akses"]."');</script>";
         header("location: ../pages/home.php");
         // 234018202003
       }

@@ -1,6 +1,19 @@
 <?php
     include "../action/config.php";
+    require '../vendor/autoload.php';
     session_start();
+
+    $options = array(
+        'cluster' => 'ap1',
+        'useTLS' => true
+    );
+    $pusher = new Pusher\Pusher(
+        'e9afb284b65046a5d995',
+        '542706c8b9d3024bccb3',
+        '966829',
+        $options
+    );
+
     if (isset($_GET['status'])) {
         $status = $_GET['status'];
         if ($status == 'add') {
@@ -106,6 +119,9 @@
                     $statusForm->execute();
                     $budget->execute();
                     $_SESSION['alert'] = "suksesAdd";
+                    $data['message'] = 'Ada pengajuan data baru, silahkan reload brouwser untuk get data.';
+                    $data['status'] = 5;
+                    $pusher->trigger('my-channel', 'my-event', $data);
                     header('location: ../pages/home.php?page=pengajuan');
                 }else{
                     unlink($path);
