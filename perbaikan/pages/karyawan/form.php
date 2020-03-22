@@ -18,7 +18,7 @@
         $sql->execute();
         $getData = $sql->fetch(PDO::FETCH_ASSOC);
     }else{
-        $status = "add";
+        $status = "Add";
     }
     if(isset($_SESSION['alert'])){
         $message = "";
@@ -44,7 +44,7 @@
     <div class="card o-hidden border-0 shadow-lg">
         <div class="card-body p-0">
             <div class="card-header">
-                <h1 class="h4 text-gray-900 text-capitalize">Form <?=$status?> Karyawan</h1>
+                <h1 class="h4 m-0 font-weight-bold text-primary text-capitalize">Form <?=$status?> Karyawan</h1>
             </div>
             <div class="row" style="margin-top: -30px">
                 <div class="col-lg-12">

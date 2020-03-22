@@ -70,6 +70,17 @@ function toastInfo(message) {
         stack: 10,
     })
 }
+function toastNotif(message) {
+    $.toast({
+        heading: 'Information',
+        text: message,
+        icon: 'info',
+        position: 'top-center',
+        showHideTransition: 'slide',
+        hideAfter: 'false',
+        stack: 10,
+    })
+}
 
 function action(id, status) {
     if (status == 'approve' || status == 'verify') {
@@ -90,10 +101,10 @@ function action(id, status) {
         })
 
         if (text) {
-            location.href = "../action/actionVerify.php?status=" + status + "&id=" + id;
+            location.href = "../action/actionVerify.php?status=" + status + "&id=" + id + "&komentar=" + text;
         } else {
             if (status == 'approve' || status == 'verify') {
-                location.href = "../action/actionVerify.php?status=" + status + "&id=" + id;
+                location.href = "../action/actionVerify.php?status=" + status + "&id=" + id + "&komentar=" + text;
             } else {
                 Swal.fire('Sorry...', 'Anda tidak bisa menolak pengajuan ini tanpa alasan..', 'warning')
             }

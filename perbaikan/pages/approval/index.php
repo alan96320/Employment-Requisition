@@ -27,12 +27,6 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">List Status Pengajuan ER</h6>
-        <a href="?page=formPengajuan" class="btn btn-primary btn-icon-split btn-sm" id="delete">
-            <span class="icon text-white-50">
-                <i class="fas fa-plus"></i>
-            </span>
-            <span class="text">Tambah Data</span>
-        </a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
