@@ -9,8 +9,8 @@ if (isset($_GET['status'])) {
             $password = null;
         } else {
             if ($_POST['username'] == "") {
-                $username = date('isdYm');
-                $password = md5(date('isdYm'));
+                $username = $_POST['nik'];
+                $password = md5($_POST['nik']);
                 $_SESSION['sendUSername'] = $username;
                 $addPassword = true;
             } else {
