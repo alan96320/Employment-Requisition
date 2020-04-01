@@ -34,7 +34,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr class="text-center">
                         <th style="width: 50px">No.</th>
@@ -45,7 +45,7 @@
                 <tbody>
                     <?php 
                         foreach ($rows as $no => $data) { ?>
-                            <tr class="text-center">
+                            <tr class="text-left">
                                 <td><?=$no+1?></td>
                                 <td><?=$data['nama_jbt']?></td>
                                 <td>
