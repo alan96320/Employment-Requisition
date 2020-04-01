@@ -89,6 +89,22 @@
                 <span>Budget</span></a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="?page=department">
+                <i class="fas fa-fw fa-database"></i>
+                <span>Department</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="?page=jabatan">
+                <i class="fas fa-fw fa-database"></i>
+                <span>Jabatan</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="?page=marrid">
+                <i class="fas fa-fw fa-database"></i>
+                <span>Marrid</span></a>
+            </li>
+            
+            <li class="nav-item">
                 <a class="nav-link" href="?page=verify">
                 <i class="fas fa-fw fa-file-alt"></i>
                 <span>List Status Verify</span></a>

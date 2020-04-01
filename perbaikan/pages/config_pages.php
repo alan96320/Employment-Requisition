@@ -18,9 +18,24 @@
             case 'verify':
 				include "verify/index.php";
 			break;
+			case 'department':
+				include "department/index.php";
+			break;
+			case 'jabatan':
+				include "jabatan/index.php";
+			break;
+			case 'marrid':
+				include "marrid/index.php";
+			break;
             case 'approval':
 				include "approval/index.php";
-            break;
+			break;
+			
+			default:
+				include "404.php";
+			break;
+
+
 
 			// form karyawan
             case 'formKaryawan':
@@ -35,10 +50,21 @@
 				include "budget/form.php";
 			break;
 
-			default:
-				include "404.php";
+			// form Department
+			case 'formDepartment':
+				include "department/form.php";
 			break;
-			
+
+			// form Jabatan
+			case 'formJabatan':
+				include "jabatan/form.php";
+			break;
+
+			// form marrid
+			case 'formMarrid':
+				include "marrid/form.php";
+			break;
+
 			// form pengajuan
 			case 'formPengajuan':
 				include "pengajuan/form.php";

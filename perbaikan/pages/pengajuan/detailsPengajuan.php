@@ -45,6 +45,12 @@
 <div style="padding-left:100px; padding-right:100px;">
     <div class="card o-hidden border-0 shadow-lg">
         <div class="card-body">
+            <a href="../pages/fpdf?id=<?=$_GET['id']?>" class="btn btn-primary btn-icon-split btn-sm float-left" target="_blank">
+                <span class="icon text-white-50">
+                    <i class="fas fa-print"></i>
+                </span>
+                <span class="text">Print</span>
+            </a>
             <a href="?page=<?=$back?>" class="btn btn-info btn-icon-split btn-sm float-right">
                 <span class="icon text-white-50">
                     <i class="fas fa-arrow-left"></i>
@@ -115,7 +121,8 @@
                         </tr>
                         <tr>
                             <td colspan="4">
-                                <embed src="../assets/uploadFiles/<?=$getData['document'] ?>" type="application/pdf" width="100%" height="200px" />
+                            <iframe src="../assets/uploadFiles/<?=$getData['document'] ?>" frameborder="1" width="100%" height="200px" type="application/pdf"></iframe>
+                            
                             </td>
                         </tr>
                         <?php 
