@@ -55,6 +55,16 @@
 				include "department/form.php";
 			break;
 
+			// form Jabatan
+			case 'formJabatan':
+				include "jabatan/form.php";
+			break;
+
+			// form marrid
+			case 'formMarrid':
+				include "marrid/form.php";
+			break;
+
 			// form pengajuan
 			case 'formPengajuan':
 				include "pengajuan/form.php";

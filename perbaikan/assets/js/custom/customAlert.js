@@ -23,6 +23,12 @@ $(document).ready(function () {
                 if (page == "department") {
                     urls = "../action/actionDepartment.php?status=delete"
                 }
+                if (page == "jabatan") {
+                    urls = "../action/actionJabatan.php?status=delete"
+                }
+                if (page == "marrid") {
+                    urls = "../action/actionMarrid.php?status=delete"
+                }
                 $.ajax({
                     type: 'POST',
                     url: urls,
