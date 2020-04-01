@@ -20,6 +20,9 @@ $(document).ready(function () {
                 if (page == "budget") {
                     urls = "../action/actionBudget.php?status=delete"
                 }
+                if (page == "department") {
+                    urls = "../action/actionDepartment.php?status=delete"
+                }
                 $.ajax({
                     type: 'POST',
                     url: urls,
