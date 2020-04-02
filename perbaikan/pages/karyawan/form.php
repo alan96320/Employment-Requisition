@@ -18,7 +18,7 @@
         $sql->execute();
         $getData = $sql->fetch(PDO::FETCH_ASSOC);
     }else{
-        $status = "Add";
+        $status = "add";
     }
     if(isset($_SESSION['alert'])){
         $message = "";
