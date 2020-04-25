@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2020 at 07:57 PM
+-- Generation Time: Apr 25, 2020 at 02:30 AM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.28
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -232,7 +232,7 @@ CREATE TABLE `statusapproval` (
 
 INSERT INTO `statusapproval` (`idStatus`, `idFormulir`, `status`, `isReadP`, `isReadA`, `isReadM`, `created`, `timeVerify`, `timeApprove`, `komentarA`, `komentarM`) VALUES
 (6, '192020064903', 1, 1, 1, 1, '2020-03-19 20:07:17', '2020-03-20 23:54:18', '2020-03-20 11:36:37', 'as', 'tes ting reject'),
-(7, '212020451803', 5, NULL, NULL, NULL, '2020-03-21 01:45:40', NULL, NULL, NULL, NULL);
+(7, '212020451803', 5, NULL, 1, NULL, '2020-03-21 01:45:40', NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
